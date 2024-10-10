@@ -1,0 +1,139 @@
+2024-10-09 21:52:15,510 - INFO - No author file found at authors.txt. Starting with an empty list.
+2024-10-09 21:54:38,703 - INFO - No author file found at authors.txt. Starting with an empty list.
+2024-10-09 21:54:45,781 - INFO - Exiting application.
+2024-10-09 21:54:48,557 - INFO - No author file found at authors.txt. Starting with an empty list.
+2024-10-09 21:54:49,382 - INFO - Restarting application.
+2024-10-09 21:54:49,497 - INFO - No author file found at authors.txt. Starting with an empty list.
+2024-10-10 00:15:54,262 - INFO - No author file found at authors.txt. Starting with an empty list.
+2024-10-10 00:16:02,237 - INFO - Saved authors to authors.txt
+2024-10-10 00:16:02,237 - INFO - Added new author: Ross
+2024-10-10 00:16:07,284 - INFO - Exiting application.
+2024-10-10 00:16:14,783 - INFO - Loaded authors from authors.txt
+2024-10-10 00:16:25,180 - INFO - Saved authors to authors.txt
+2024-10-10 00:16:25,181 - INFO - Added new author: Boss
+2024-10-10 00:18:55,081 - INFO - Loaded authors from authors.txt
+2024-10-10 00:19:03,553 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-10 00:19:04,274 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-10 00:19:05,955 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-10 00:19:06,140 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-10 00:19:14,613 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Ross
+2024-10-10 00:19:15,640 - INFO - Renaming completed successfully.
+2024-10-10 00:19:20,643 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by folder name and Ross
+2024-10-10 00:19:21,354 - INFO - Renaming by folder name completed successfully.
+2024-10-10 00:19:35,796 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName
+2024-10-10 00:19:35,796 - INFO - Renaming images in C:/1MYPROG\AutoName by Ross
+2024-10-10 00:19:37,825 - INFO - Renaming completed successfully.
+2024-10-10 00:19:49,386 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-10 00:19:49,386 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Ross
+2024-10-10 00:19:50,297 - INFO - Renaming completed successfully.
+2024-10-10 00:20:02,173 - ERROR - Invalid directory path entered: 
+2024-10-10 00:20:02,879 - INFO - Exiting application.
+2024-10-10 00:53:41,547 - INFO - Loaded authors from authors.txt
+2024-10-10 00:53:44,815 - INFO - Double-clicked on directory: C:/
+2024-10-10 00:53:56,751 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 00:53:56,752 - INFO - Some files could not be renamed because no matching character names were found:
+
+test_images by Ross 1 by Ross.gif
+test_images by Ross 2 by Ross.jpg
+test_images by Ross 3 by Ross.jpg
+2024-10-10 00:54:20,613 - INFO - Restarting application.
+2024-10-10 00:54:20,730 - INFO - Loaded authors from authors.txt
+2024-10-10 00:54:49,860 - INFO - Loaded authors from authors.txt
+2024-10-10 00:54:53,779 - INFO - Double-clicked on directory: C:/1MYPROG
+2024-10-10 00:55:02,655 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 00:55:12,738 - ERROR - Error renaming images by character names: [WinError 183] Cannot create a file when that file already exists: 'C:/1MYPROG\\AutoName\\test_images\\Alejandra by Boss copy 2.jpg' -> 'C:/1MYPROG\\AutoName\\test_images\\Alejandra by Boss.jpg'
+2024-10-10 00:55:15,458 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 00:55:32,876 - ERROR - Error renaming images by character names: [WinError 183] Cannot create a file when that file already exists: 'C:/1MYPROG\\AutoName\\test_images\\Alejandra by Boss copy 2.jpg' -> 'C:/1MYPROG\\AutoName\\test_images\\Alejandra by Boss.jpg'
+2024-10-10 00:57:38,179 - INFO - Loaded authors from authors.txt
+2024-10-10 00:57:50,650 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 00:57:50,652 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Ross 1 by Ross.gif
+test_images by Ross 2 by Ross.jpg
+test_images by Ross 3 by Ross.jpg
+2024-10-10 01:05:09,660 - INFO - Loaded authors from authors.txt
+2024-10-10 01:05:30,989 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by folder name and Boss
+2024-10-10 01:05:32,634 - INFO - Renaming by folder name completed successfully.
+2024-10-10 01:05:39,089 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Boss
+2024-10-10 01:05:39,878 - INFO - Renaming completed successfully.
+2024-10-10 01:05:41,458 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 01:05:41,458 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 1 by Boss.jpg
+test_images by Boss 2 by Boss.jpg
+test_images by Boss 3 by Boss.jpg
+test_images by Boss 4 by Boss.jpg
+test_images by Boss 5 by Boss.gif
+test_images by Boss 6 by Boss.jpg
+test_images by Boss 7 by Boss.jpg
+2024-10-10 01:06:50,895 - INFO - Loaded authors from authors.txt
+2024-10-10 01:07:01,935 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 01:07:01,937 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 1 by Boss.jpg
+test_images by Boss 2 by Boss.jpg
+test_images by Boss 4 by Boss.jpg
+test_images by Boss 6 by Boss.jpg
+2024-10-10 01:07:21,675 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Boss
+2024-10-10 01:07:22,382 - INFO - Renaming completed successfully.
+2024-10-10 01:07:24,930 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Boss
+2024-10-10 01:07:25,667 - INFO - Renaming completed successfully.
+2024-10-10 01:07:28,913 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 01:07:28,915 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 1 by Boss by Boss by Boss.jpg
+test_images by Boss 2 by Boss by Boss by Boss.jpg
+test_images by Boss 4 by Boss by Boss by Boss.jpg
+test_images by Boss 6 by Boss by Boss by Boss.jpg
+2024-10-10 01:07:34,749 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by folder name and Boss
+2024-10-10 01:07:35,591 - INFO - Renaming by folder name completed successfully.
+2024-10-10 01:10:51,623 - INFO - Loaded authors from authors.txt
+2024-10-10 01:11:09,741 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Boss
+2024-10-10 01:11:23,416 - INFO - Renaming completed successfully.
+2024-10-10 01:11:29,768 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-10 01:11:29,769 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Boss
+2024-10-10 01:11:30,567 - INFO - Renaming completed successfully.
+2024-10-10 01:11:35,413 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 01:11:35,415 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss.jpg
+test_images by Boss 5 by Boss by Boss.jpg
+test_images by Boss 6 by Boss by Boss.jpg
+test_images by Boss 7 by Boss by Boss.jpg
+2024-10-10 01:16:57,031 - INFO - Loaded authors from authors.txt
+2024-10-10 01:17:01,336 - INFO - Loaded authors from authors.txt
+2024-10-10 01:17:05,464 - INFO - Loaded authors from authors.txt
+2024-10-10 01:17:18,724 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Ross
+2024-10-10 01:17:18,726 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss.jpg
+test_images by Boss 5 by Boss by Boss.jpg
+test_images by Boss 6 by Boss by Boss.jpg
+test_images by Boss 7 by Boss by Boss.jpg
+2024-10-10 01:17:44,727 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by folder name and Ross
+2024-10-10 01:17:45,432 - INFO - Renaming by folder name completed successfully.
+2024-10-10 01:17:47,998 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Ross
+2024-10-10 01:17:47,998 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Ross 1.jpg
+test_images by Ross 2.jpg
+test_images by Ross 3.gif
+test_images by Ross 4.jpg
+test_images by Ross 5.jpg
+test_images by Ross 6.jpg
+test_images by Ross 7.jpg
+2024-10-10 01:17:50,015 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Ross
+2024-10-10 01:17:50,719 - INFO - Renaming completed successfully.
+2024-10-10 01:17:52,430 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by folder name and Ross
+2024-10-10 01:17:53,156 - INFO - Renaming by folder name completed successfully.
+2024-10-10 01:22:49,989 - INFO - Loaded authors from authors.txt
+2024-10-10 01:23:07,421 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-10 01:23:07,423 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4.jpg
+test_images by Boss 5.jpg
+test_images by Boss 6.jpg
+test_images by Boss 7.jpg
+2024-10-10 01:29:25,605 - INFO - Loaded authors from authors.txt
+2024-10-10 01:30:25,116 - INFO - Loaded authors from authors.txt
+2024-10-10 01:32:54,261 - INFO - Loaded authors from authors.txt

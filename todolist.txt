@@ -1,0 +1,17 @@
+- Fix the numarable at the end, insted of (1) do just 1
+
+- maybe separate the code even more (creating) ( remanimg by name or author)
+
+- have ability to just have name of the authors( no chars)
+
+- check is "by [author]" present before renaming, because when regular renaming it is just appending the author name to the file name 
+
+-better UI
+  -improve to look like file explorer 
+  -make better status bar
+
+-make the char name same format and usage as author name or vise versa
+
+-implemet that thing from the previous tries where if files does not much, there is an option to add new Char name to the dictionry by selecting the name from new File name
+
+
