@@ -1,4 +1,4 @@
-- Fix the numarable at the end, insted of (1) do just 1
++ Fix the numarable at the end, insted of (1) do just 1
 
 - maybe separate the code even more (creating) ( remanimg by name or author)
 
@@ -14,4 +14,4 @@
 
 -implemet that thing from the previous tries where if files does not much, there is an option to add new Char name to the dictionry by selecting the name from new File name
 
-
+-some times when creating a new author the name of that author is the actual folder name ( so maybe a constructor from which can  select an author name - similar to the adding a new char name)

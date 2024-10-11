@@ -8,6 +8,8 @@ import logging
 def rename_images(folder_path, author_name, status_label):
     """
     Rename images in the specified folder by appending 'by {author_name}'.
+    Checks if 'by {author_name}' is already present to avoid duplication.
+    Handles duplicate filenames by appending a number at the end.
     """
     try:
         status_label.config(text="Renaming images...")
@@ -18,6 +20,8 @@ def rename_images(folder_path, author_name, status_label):
             f for f in os.listdir(folder_path)
             if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp'))
         ])
+
+        skipped_files = []
 
         for filename in files:
             old_file = os.path.join(folder_path, filename)
@@ -30,9 +34,35 @@ def rename_images(folder_path, author_name, status_label):
                 name_part = filename
                 ext_part = ''
 
-            new_name = f"{name_part} by {author_name}.{ext_part}"
+            # Check if 'by {author_name}' is already in the filename
+            author_marker = f"by {author_name}"
+            if author_marker.lower() in name_part.lower():
+                # Skip renaming this file
+                logging.info(f"Skipping '{filename}' as it already contains 'by {author_name}'")
+                skipped_files.append(filename)
+                continue
+
+            base_new_name = f"{name_part} by {author_name}"
+            new_name = f"{base_new_name}.{ext_part}"
             new_file = os.path.join(folder_path, new_name)
+
+            # Handle duplicate filenames
+            counter = 1
+            while os.path.exists(new_file):
+                # Append the counter without parentheses
+                new_name = f"{base_new_name} {counter}.{ext_part}"
+                new_file = os.path.join(folder_path, new_name)
+                counter += 1
+
+            # Rename the file
             os.rename(old_file, new_file)
+            logging.info(f"Renamed '{old_file}' to '{new_file}'")
+
+        # Provide feedback on skipped files
+        if skipped_files:
+            skipped_message = "The following files were skipped as they already contain the author name:\n" + "\n".join(skipped_files)
+            messagebox.showinfo("Skipped Files", skipped_message)
+            logging.info(skipped_message)
 
         messagebox.showinfo("Success", "Images renamed successfully!")
         status_label.config(text="Renaming completed.")
@@ -42,8 +72,6 @@ def rename_images(folder_path, author_name, status_label):
         status_label.config(text="An error occurred during renaming.")
         logging.error(f"Error renaming images: {e}")
 
-
-# file_operations.py
 
 def rename_images_by_folder_name(folder_path, author_name, status_label):
     """
@@ -115,15 +143,19 @@ def rename_images_by_character_name(folder_path, author_name, status_label, word
                         # Handle duplicate filenames
                         counter = 1
                         while os.path.exists(new_path):
-                            new_filename = f'{os.path.splitext(base_new_filename)[0]} ({counter}){extension}'
+                            # Modify here to append counter without parentheses
+                            name_without_ext = os.path.splitext(base_new_filename)[0]
+                            new_filename = f'{name_without_ext} {counter}{extension}'
                             new_path = os.path.join(root_dir, new_filename)
                             counter += 1
 
                         try:
                             os.rename(old_path, new_path)
+                            logging.info(f"Renamed '{old_path}' to '{new_path}'")
                             matched = True
                             break
                         except Exception as e:
+                            logging.error(f"Error renaming '{old_path}' to '{new_path}': {e}")
                             unmatched_files.append(f"{filename} (Error: {e})")
                             matched = True  # Consider it matched even if there's an error
                             break
