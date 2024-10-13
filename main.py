@@ -20,8 +20,6 @@ AUTHOR_FILE = config['DEFAULT'].get('AuthorFile', 'authors.txt')
 LOG_FILE = config['DEFAULT'].get('LogFile', 'app.log')
 
 
-
-
 if __name__ == "__main__":
     app = App()
     app.mainloop()

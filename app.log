@@ -195,3 +195,112 @@ Abigail by Ross 1.jpg
 Abigail by Ross.jpg
 Charlie by Ross.gif
 2024-10-11 00:37:23,122 - INFO - Renaming completed successfully.
+2024-10-11 14:43:48,584 - INFO - Loaded authors from authors.txt
+2024-10-11 14:43:54,369 - INFO - Double-clicked on directory: D:/
+2024-10-11 14:43:54,369 - INFO - Renaming images in D:/ by Boss
+2024-10-11 14:43:55,565 - INFO - Renaming completed successfully.
+2024-10-11 14:44:35,704 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-11 14:44:35,706 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Ross 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss.jpg'
+2024-10-11 14:44:35,706 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Ross.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss 1.jpg'
+2024-10-11 14:44:35,707 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Ross.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Boss.gif'
+2024-10-11 14:44:35,707 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-11 14:44:51,558 - INFO - Loaded authors from authors.txt
+2024-10-11 14:45:00,085 - INFO - Saved authors to authors.txt
+2024-10-11 14:45:00,085 - INFO - Added new author: Tross
+2024-10-11 14:45:00,085 - INFO - Saved last author: Tross
+2024-10-11 14:45:07,813 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Tross
+2024-10-11 14:45:07,813 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross.jpg'
+2024-10-11 14:45:07,814 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1.jpg'
+2024-10-11 14:45:07,814 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Boss.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Tross.gif'
+2024-10-11 14:45:07,815 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-11 14:45:31,350 - INFO - Loaded authors from authors.txt
+2024-10-11 14:45:31,365 - INFO - Loaded last author: Tross
+2024-10-11 15:15:57,474 - INFO - Loaded authors from authors.txt
+2024-10-11 15:16:12,421 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Tross
+2024-10-11 15:16:12,422 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 2.jpg'
+2024-10-11 15:16:12,423 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1.jpg'
+2024-10-11 15:16:12,423 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Tross.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Tross 1.gif'
+2024-10-11 15:16:12,423 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-11 15:16:17,874 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-11 15:16:17,874 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss.jpg'
+2024-10-11 15:16:17,875 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 2.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss 1.jpg'
+2024-10-11 15:16:17,875 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Tross 1.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Boss.gif'
+2024-10-11 15:16:17,876 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-11 15:16:37,153 - INFO - Loaded authors from authors.txt
+2024-10-11 15:21:34,992 - INFO - Loaded authors from authors.txt
+2024-10-11 15:21:43,243 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Ross
+2024-10-11 15:21:43,243 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Ross.jpg'
+2024-10-11 15:21:43,244 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Ross 1.jpg'
+2024-10-11 15:21:43,244 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Boss.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Ross.gif'
+2024-10-11 15:21:43,245 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-11 15:21:48,330 - INFO - Loaded authors from authors.txt
+2024-10-11 15:25:51,019 - INFO - Loaded authors from authors.txt
+2024-10-11 15:25:51,027 - INFO - Saved authors to authors.txt
+2024-10-11 15:25:51,027 - INFO - Loaded last author from config: YourAuthorName
+2024-10-11 15:27:56,660 - INFO - Loaded authors from authors.txt
+2024-10-11 15:27:56,670 - INFO - Loaded last author from config: YourAuthorName
+2024-10-11 15:28:05,557 - INFO - Double-clicked on directory: C:/
+2024-10-11 15:28:05,558 - INFO - Renaming images in C:/ by Boss
+2024-10-11 15:28:06,773 - INFO - Renaming completed successfully.
+2024-10-11 15:28:10,400 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Boss
+2024-10-11 15:28:10,400 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Ross 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss.jpg'
+2024-10-11 15:28:10,401 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Ross.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss 1.jpg'
+2024-10-11 15:28:10,401 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Ross.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Boss.gif'
+2024-10-11 15:28:10,402 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-12 01:53:56,171 - INFO - Loaded authors from authors.txt
+2024-10-12 01:53:56,180 - INFO - Loaded last author from config: DIDNOTSAVEORLOAD
+2024-10-12 01:54:06,164 - INFO - Double-clicked on directory: C:/2Scripts
+2024-10-12 01:54:06,164 - INFO - Saved last author to config: Tross
+2024-10-12 01:54:06,165 - INFO - Renaming images in C:/2Scripts by Tross
+2024-10-12 01:54:07,126 - INFO - Renaming completed successfully.
+2024-10-12 01:54:14,762 - INFO - Saved last author to config: Tross
+2024-10-12 01:54:14,762 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Tross
+2024-10-12 01:54:14,765 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross.jpg'
+2024-10-12 01:54:14,765 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1.jpg'
+2024-10-12 01:54:14,766 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Boss.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Tross.gif'
+2024-10-12 01:54:14,766 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-12 01:54:38,075 - INFO - Restarting application.
+2024-10-12 01:54:38,075 - INFO - Saved last author to config: Tross
+2024-10-12 01:54:38,206 - INFO - Loaded authors from authors.txt
+2024-10-12 01:54:38,213 - INFO - Loaded last author from config: Tross
+2024-10-12 01:54:41,120 - INFO - Exiting application.
+2024-10-12 01:54:41,121 - INFO - Saved last author to config: Tross
+2024-10-12 01:54:54,903 - INFO - Loaded authors from authors.txt
+2024-10-12 01:54:54,911 - INFO - Loaded last author from config: Tross
+2024-10-12 01:55:01,122 - INFO - Loaded authors from authors.txt
+2024-10-12 01:55:01,128 - INFO - Loaded last author from config: Tross

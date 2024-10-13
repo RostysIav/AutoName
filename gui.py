@@ -5,13 +5,13 @@ import sys
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import logging
-import configparser
-from file_operations import rename_images, rename_images_by_folder_name
+import configparser 
 from data_storage import load_authors, save_authors
 from file_operations import rename_images, rename_images_by_folder_name, rename_images_by_character_name
 from character_names import words_to_match
 from logging.handlers import QueueHandler
 import queue
+import threading
 
 
 # Read configuration
@@ -43,11 +43,14 @@ class App(tk.Tk):
         """Initialize the application."""
         super().__init__()
         self.title("Image Renamer")
-        self.geometry("1000x600")
+        self.geometry("1400x600")
 
         # Load authors
         self.authors = load_authors(AUTHOR_FILE)
-
+        self.author_combo['values'] = self.authors  # Ensure combobox values are set
+        self.author_combo.current(0)  # Set default author to first in list
+        self.author_combo.bind("<<ComboboxSelected>>", self.update_author)
+        
         # Create GUI components
         self.create_left_menu()
         self.create_right_menu()
@@ -55,6 +58,11 @@ class App(tk.Tk):
         self.create_status_bar()
         self.create_log_window()
         self.setup_logging()
+
+        # Load the last used author
+        self.load_last_author()
+        # Bind the window close event
+        self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def create_left_menu(self):
         """Create the left menu with Exit and Restart buttons."""
@@ -175,55 +183,97 @@ class App(tk.Tk):
         # Start polling the queue
         self.poll_log_queue()
 
-
-
-
-    def log_listener(self, record):
-        """Listener function to handle log records."""
-        msg = self.format_log_record(record)
-        # Use after to update the GUI safely from the main thread
-        self.after(0, self.append_log_message, msg)
-
     def append_log_message(self, msg):
         """Append a log message to the log text widget."""
-        self.log_text.configure(state='normal')
-        self.log_text.insert(tk.END, msg + '\n')
-        self.log_text.configure(state='disabled')
-        # Auto-scroll to the end
-        self.log_text.yview(tk.END)
+        try:
+            self.log_text.configure(state='normal')
+            self.log_text.insert(tk.END, msg + '\n')
+            self.log_text.configure(state='disabled')
+            # Auto-scroll to the end
+            self.log_text.yview(tk.END)
+        except Exception as e:
+            logging.error(f"Error appending log message: {e}")
 
-        
 
     def format_log_record(self, record):
         """Format the log record for display."""
         return self.gui_log_formatter.format(record)
 
-
-    def setup_logging(self):
-        """Set up logging to display log messages in the GUI."""
-        # Create a queue to hold log records
-        self.log_queue = queue.Queue()
-
-        # Create a handler that writes to the queue
-        queue_handler = QueueHandler(self.log_queue)
-        queue_handler.setLevel(logging.DEBUG)
-        root_logger = logging.getLogger()
-        root_logger.addHandler(queue_handler)
-
-        # Create a formatter for log messages in the GUI
-        self.gui_log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-        # Start polling the queue
-        self.poll_log_queue()
-
     def poll_log_queue(self):
         """Check for new log messages in the queue and display them."""
-        while not self.log_queue.empty():
-            record = self.log_queue.get()
-            msg = self.gui_log_formatter.format(record)
-            self.append_log_message(msg)
-        self.after(100, self.poll_log_queue)  # Schedule the next poll
+        if self.polling:
+            while not self.log_queue.empty():
+                record = self.log_queue.get()
+                msg = self.gui_log_formatter.format(record)
+                self.append_log_message(msg)
+            # Store the after ID
+            self.after_id = self.after(100, self.poll_log_queue)
+
         
+    def get_author_name(self):
+        """
+        Get the author name from the combo box or entry field.
+        Returns:
+            str: The selected or entered author name.
+        """
+        author_name = self.author_combo.get()
+        if author_name:
+            if author_name not in self.authors:
+                # Optionally, prompt the user to confirm adding the new author
+                response = messagebox.askyesno("Add Author", f"Author '{author_name}' not found. Would you like to add it?")
+                if response:
+                    self.authors.append(author_name)
+                    self.author_combo['values'] = self.authors
+                    save_authors(self.authors, AUTHOR_FILE)
+                    logging.info(f"Added new author: {author_name}")
+                    self.author_combo.set(author_name)
+                    self.save_last_author(author_name)
+                else:
+                    logging.info(f"Author '{author_name}' not added.")
+                    return None  # Return None if the user doesn't want to add the author
+            else:
+                self.save_last_author(author_name)
+        else:
+            logging.info("No author selected.")
+            return None
+        return author_name
+
+    def add_author(self):
+        """Add a new author to the list."""
+        author_name = self.author_entry.get()
+        if author_name:
+            if author_name not in self.authors:
+                self.authors.append(author_name)
+                self.author_combo['values'] = self.authors
+                save_authors(self.authors, AUTHOR_FILE)
+                logging.info(f"Added new author: {author_name}")
+            self.author_combo.set(author_name)  # Set the combo box to the new author
+            self.author_entry.delete(0, tk.END)
+            self.save_last_author(author_name)  # Save the last used author
+
+    def save_last_author(self, author_name):
+        """Save the last used author to the config file."""
+        try:
+            config['DEFAULT']['LastAuthor'] = author_name
+            with open('config.ini', 'w') as configfile:
+                config.write(configfile)
+            logging.info(f"Saved last author to config: {author_name}")
+        except Exception as e:
+            logging.error(f"Error saving last author to config: {e}")
+
+    def load_last_author(self):
+        """Load the last used author from the config file."""
+        try:
+            author_name = config['DEFAULT'].get('LastAuthor', '').strip()
+            if author_name:
+                if author_name not in self.authors:
+                    self.authors.append(author_name)
+                    self.author_combo['values'] = self.authors
+                    save_authors(self.authors, AUTHOR_FILE)
+                self.author_combo.set(author_name)
+                logging.info(f"Loaded last author from config: {author_name}")
+        except Exception as e:
+            logging.error(f"Error loading last author from config: {e}")
 
     def get_drives(self):
         """Get the list of drives on the system."""
@@ -312,32 +362,6 @@ class App(tk.Tk):
             else:
                 rename_images(folder_path, author_name, self.status_label)
 
-    def get_author_name(self):
-        """
-        Get the author name from the combo box or entry field.
-
-        Returns:
-            str: The selected or entered author name.
-        """
-        author_name = self.author_combo.get() or self.author_entry.get()
-        if author_name and author_name not in self.authors:
-            self.authors.append(author_name)
-            self.author_combo['values'] = self.authors
-            save_authors(self.authors, AUTHOR_FILE)
-            self.author_entry.delete(0, tk.END)
-            logging.info(f"Added new author: {author_name}")
-        return author_name
-
-    def add_author(self):
-        """Add a new author to the list."""
-        author_name = self.author_entry.get()
-        if author_name and author_name not in self.authors:
-            self.authors.append(author_name)
-            self.author_combo['values'] = self.authors
-            self.author_entry.delete(0, tk.END)
-            save_authors(self.authors, AUTHOR_FILE)
-            logging.info(f"Added new author: {author_name}")
-
     def load_path(self):
         """Load the path entered in the path entry."""
         path = self.path_entry.get()
@@ -368,13 +392,45 @@ class App(tk.Tk):
 
     def exit_app(self):
         """Exit the application."""
-        logging.info("Exiting application.")
+        logging.info("Exiting application via Exit button.")
+        # Save the current author to config
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
         self.destroy()
-
+      
     def restart_app(self):
         """Restart the application."""
         logging.info("Restarting application.")
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
         os.execl(sys.executable, sys.executable, *sys.argv)
+    
+    def on_closing(self):
+        """Handle the window close event."""
+        # Save the current author if selected
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+            logging.info(f"Application is closing via window manager. Last author saved: '{author_name}'")
+        else:
+            logging.info("No author selected upon exit. LastAuthor remains unchanged.")
+
+        # Stop the polling loop and cancel pending callbacks
+        self.polling = False
+        if hasattr(self, 'after_id'):
+            self.after_cancel(self.after_id)
+            logging.info("Polling loop callback canceled.")
+
+        logging.info("Application is closing.")
+        self.destroy()
+
+    
 
 class QueueHandler(logging.Handler):
     """Custom logging handler that uses a queue."""
