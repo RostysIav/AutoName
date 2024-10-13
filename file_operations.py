@@ -110,7 +110,7 @@ def rename_images_by_folder_name(folder_path, author_name, status_label):
         status_label.config(text="An error occurred during renaming by folder name.")
         logging.error(f"Error renaming images by folder name: {e}")
 
-def rename_images_by_character_name(folder_path, author_name, status_label, words_to_match):
+def rename_images_by_character_name(folder_path, author_name, status_label, character_names):
     """
     Rename images by matching character names and adding the author name.
 
@@ -118,7 +118,7 @@ def rename_images_by_character_name(folder_path, author_name, status_label, word
         folder_path (str): The path to the folder containing images.
         author_name (str): The author's name to append.
         status_label (tk.Label): The status label to update the status.
-        words_to_match (list): List of character names to match in filenames.
+        character_names (list): List of character names to match in filenames.
     """
     try:
         status_label.config(text="Renaming images by character names...")
@@ -129,7 +129,7 @@ def rename_images_by_character_name(folder_path, author_name, status_label, word
         for root_dir, dirs, files in os.walk(folder_path):
             for filename in files:
                 matched = False
-                for word in words_to_match:
+                for word in character_names:
                     if word.lower() in filename.lower():
                         matched_word = word  # Preserve original capitalization
                         extension = os.path.splitext(filename)[1]

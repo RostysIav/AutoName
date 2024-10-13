@@ -304,3 +304,42 @@ test_images by Boss 7 by Boss by Boss by Ross.jpg
 2024-10-12 01:54:54,911 - INFO - Loaded last author from config: Tross
 2024-10-12 01:55:01,122 - INFO - Loaded authors from authors.txt
 2024-10-12 01:55:01,128 - INFO - Loaded last author from config: Tross
+2024-10-12 21:49:27,671 - INFO - Data saved to data.json
+2024-10-12 21:49:27,672 - INFO - Added new author: Ross
+2024-10-12 21:49:27,672 - INFO - Saved last author to config: Ross
+2024-10-12 21:49:36,668 - INFO - Saved last author to config: Ross
+2024-10-12 21:49:36,668 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Ross
+2024-10-12 21:49:36,669 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1 by Ross.jpg'
+2024-10-12 21:49:36,670 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Tross by Ross.jpg'
+2024-10-12 21:49:36,670 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Tross.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Tross by Ross.gif'
+2024-10-12 21:49:36,670 - INFO - Skipping 'test_images by Boss 4 by Boss by Boss by Ross.jpg' as it already contains 'by Ross'
+2024-10-12 21:49:36,671 - INFO - Skipping 'test_images by Boss 5 by Boss by Boss by Ross.jpg' as it already contains 'by Ross'
+2024-10-12 21:49:36,671 - INFO - Skipping 'test_images by Boss 6 by Boss by Boss by Ross.jpg' as it already contains 'by Ross'
+2024-10-12 21:49:36,671 - INFO - Skipping 'test_images by Boss 7 by Boss by Boss by Ross.jpg' as it already contains 'by Ross'
+2024-10-12 21:49:38,669 - INFO - The following files were skipped as they already contain the author name:
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-12 21:49:39,973 - INFO - Renaming completed successfully.
+2024-10-12 21:50:15,944 - INFO - Saved last author to config: Ross
+2024-10-12 21:50:15,944 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Ross
+2024-10-12 21:50:15,945 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross 1 by Ross.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Ross.jpg'
+2024-10-12 21:50:15,945 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Tross by Ross.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Ross 1.jpg'
+2024-10-12 21:50:15,946 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Tross by Ross.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Ross.gif'
+2024-10-12 21:50:15,946 - INFO - Some files could not be renamed because no matching character names were found or an error occurred:
+
+test_images by Boss 4 by Boss by Boss by Ross.jpg
+test_images by Boss 5 by Boss by Boss by Ross.jpg
+test_images by Boss 6 by Boss by Boss by Ross.jpg
+test_images by Boss 7 by Boss by Boss by Ross.jpg
+2024-10-12 21:50:53,891 - INFO - Restarting application.
+2024-10-12 21:50:53,892 - INFO - Saved last author to config: Ross
+2024-10-12 21:50:54,059 - INFO - Loaded last author from config: Ross
+2024-10-12 21:50:55,248 - INFO - Exiting application via Exit button.
+2024-10-12 21:50:55,249 - INFO - Saved last author to config: Ross
+2024-10-12 21:50:58,167 - INFO - Loaded last author from config: Ross
+2024-10-12 21:51:01,999 - INFO - Saved last author to config: Ross
+2024-10-12 21:51:01,999 - INFO - Application is closing via window manager. Last author saved: 'Ross'
+2024-10-12 21:51:01,999 - INFO - Polling loop callback canceled.
+2024-10-12 21:51:01,999 - INFO - Application is closing.

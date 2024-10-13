@@ -5,20 +5,22 @@ import sys
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import logging
-import configparser 
-from data_storage import load_authors, save_authors
-from file_operations import rename_images, rename_images_by_folder_name, rename_images_by_character_name
-from character_names import words_to_match
+import configparser
+from file_operations import (
+    rename_images,
+    rename_images_by_folder_name,
+    rename_images_by_character_name
+)
+from data_storage import load_data, save_data
 from logging.handlers import QueueHandler
 import queue
-import threading
 
 
 # Read configuration
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-AUTHOR_FILE = config['DEFAULT'].get('AuthorFile', 'authors.txt')
+DATA_FILE = config['DEFAULT'].get('DataFile', 'data.json')
 LOG_FILE = config['DEFAULT'].get('LogFile', 'app.log')
 
 # Configure logging
@@ -45,12 +47,11 @@ class App(tk.Tk):
         self.title("Image Renamer")
         self.geometry("1400x600")
 
-        # Load authors
-        self.authors = load_authors(AUTHOR_FILE)
-        self.author_combo['values'] = self.authors  # Ensure combobox values are set
-        self.author_combo.current(0)  # Set default author to first in list
-        self.author_combo.bind("<<ComboboxSelected>>", self.update_author)
-        
+        # Load data from JSON file
+        self.data = load_data(DATA_FILE)
+        self.authors = self.data.get('authors', [])
+        self.character_names = self.data.get('character_names', [])
+
         # Create GUI components
         self.create_left_menu()
         self.create_right_menu()
@@ -61,6 +62,7 @@ class App(tk.Tk):
 
         # Load the last used author
         self.load_last_author()
+
         # Bind the window close event
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
@@ -90,7 +92,9 @@ class App(tk.Tk):
         self.author_entry = tk.Entry(self.right_frame)
         self.author_entry.pack(pady=5)
 
-        self.add_author_button = tk.Button(self.right_frame, text="Add Author", command=self.add_author)
+        self.add_author_button = tk.Button(
+            self.right_frame, text="Add Author", command=self.add_author
+        )
         self.add_author_button.pack(pady=5)
 
     def create_main_frame(self):
@@ -180,6 +184,8 @@ class App(tk.Tk):
         # Create a formatter for log messages in the GUI
         self.gui_log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
+        # Initialize the polling flag
+        self.polling = True    
         # Start polling the queue
         self.poll_log_queue()
 
@@ -208,25 +214,27 @@ class App(tk.Tk):
                 self.append_log_message(msg)
             # Store the after ID
             self.after_id = self.after(100, self.poll_log_queue)
-
-        
+   
     def get_author_name(self):
         """
-        Get the author name from the combo box or entry field.
+        Get the author name from the combo box.
         Returns:
-            str: The selected or entered author name.
+            str: The selected author name.
         """
         author_name = self.author_combo.get()
         if author_name:
             if author_name not in self.authors:
-                # Optionally, prompt the user to confirm adding the new author
-                response = messagebox.askyesno("Add Author", f"Author '{author_name}' not found. Would you like to add it?")
+                # Prompt the user to confirm adding the new author
+                response = messagebox.askyesno(
+                    "Add Author",
+                    f"Author '{author_name}' not found. Would you like to add it?"
+                )
                 if response:
                     self.authors.append(author_name)
                     self.author_combo['values'] = self.authors
-                    save_authors(self.authors, AUTHOR_FILE)
+                    self.data['authors'] = self.authors
+                    save_data(DATA_FILE, self.data)
                     logging.info(f"Added new author: {author_name}")
-                    self.author_combo.set(author_name)
                     self.save_last_author(author_name)
                 else:
                     logging.info(f"Author '{author_name}' not added.")
@@ -245,7 +253,8 @@ class App(tk.Tk):
             if author_name not in self.authors:
                 self.authors.append(author_name)
                 self.author_combo['values'] = self.authors
-                save_authors(self.authors, AUTHOR_FILE)
+                self.data['authors'] = self.authors  # Update the data dictionary
+                save_data(DATA_FILE, self.data)
                 logging.info(f"Added new author: {author_name}")
             self.author_combo.set(author_name)  # Set the combo box to the new author
             self.author_entry.delete(0, tk.END)
@@ -269,11 +278,13 @@ class App(tk.Tk):
                 if author_name not in self.authors:
                     self.authors.append(author_name)
                     self.author_combo['values'] = self.authors
-                    save_authors(self.authors, AUTHOR_FILE)
+                    self.data['authors'] = self.authors
+                    save_data(DATA_FILE, self.data)
                 self.author_combo.set(author_name)
                 logging.info(f"Loaded last author from config: {author_name}")
         except Exception as e:
             logging.error(f"Error loading last author from config: {e}")
+
 
     def get_drives(self):
         """Get the list of drives on the system."""
@@ -345,7 +356,9 @@ class App(tk.Tk):
         if os.path.isdir(abspath):
             author_name = self.get_author_name()
             if author_name:
-                rename_images_by_character_name(abspath, author_name, self.status_label, words_to_match)
+                rename_images_by_character_name(
+                    abspath, author_name, self.status_label, self.character_names
+                )
 
     def prompt_author_name_and_rename(self, folder_path, by_folder_name=False):
         """
