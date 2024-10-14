@@ -556,3 +556,142 @@ test_images by Boss 7 by Boss by Boss by Ross.jpg
 2024-10-14 01:00:00,875 - INFO - Application is closing via window manager. Last author saved: 'Author3'
 2024-10-14 01:00:00,875 - INFO - Polling loop callback canceled.
 2024-10-14 01:00:00,876 - INFO - Application is closing.
+2024-10-14 13:56:06,941 - INFO - Loaded last author from config: Author3
+2024-10-14 13:56:23,928 - INFO - Data saved to data.json
+2024-10-14 13:56:23,928 - INFO - Deleted author: Author3
+2024-10-14 13:56:27,975 - INFO - Data saved to data.json
+2024-10-14 13:56:27,976 - INFO - Deleted author: Author2
+2024-10-14 13:56:30,264 - INFO - Data saved to data.json
+2024-10-14 13:56:30,265 - INFO - Deleted author: Author1
+2024-10-14 13:56:33,188 - INFO - Data saved to data.json
+2024-10-14 13:56:33,188 - INFO - Deleted author: BossError
+2024-10-14 13:56:36,022 - INFO - Data saved to data.json
+2024-10-14 13:56:36,022 - INFO - Deleted author: Boss4
+2024-10-14 13:56:40,154 - INFO - Data saved to data.json
+2024-10-14 13:56:40,154 - INFO - Deleted author: Boss2
+2024-10-14 13:56:42,613 - INFO - Data saved to data.json
+2024-10-14 13:56:42,614 - INFO - Deleted author: Boss3
+2024-10-14 13:56:45,690 - INFO - Data saved to data.json
+2024-10-14 13:56:45,691 - INFO - Deleted author: Boss1
+2024-10-14 13:56:49,702 - INFO - Data saved to data.json
+2024-10-14 13:56:49,702 - INFO - Added new author: Boss
+2024-10-14 13:56:49,702 - INFO - Added new author: Boss
+2024-10-14 13:56:49,702 - INFO - Saved last author to config: Boss
+2024-10-14 13:57:06,227 - INFO - Saved last author to config: Boss
+2024-10-14 13:57:06,227 - INFO - Application is closing via window manager. Last author saved: 'Boss'
+2024-10-14 13:57:06,227 - INFO - Polling loop callback canceled.
+2024-10-14 13:57:06,227 - INFO - Application is closing.
+2024-10-14 13:59:00,888 - INFO - Loaded last author from config: Boss
+2024-10-14 13:59:15,200 - INFO - Saved last author to config: Boss
+2024-10-14 13:59:15,200 - INFO - Application is closing via window manager. Last author saved: 'Boss'
+2024-10-14 13:59:15,200 - INFO - Polling loop callback canceled.
+2024-10-14 13:59:15,200 - INFO - Application is closing.
+2024-10-14 14:00:00,552 - INFO - Loaded last author from config: Boss
+2024-10-14 14:00:04,544 - INFO - Data saved to data.json
+2024-10-14 14:00:04,544 - INFO - Deleted character name: imag
+2024-10-14 14:00:09,627 - INFO - Data saved to data.json
+2024-10-14 14:00:09,627 - INFO - Deleted character name: images
+2024-10-14 14:00:13,565 - INFO - Data saved to data.json
+2024-10-14 14:00:13,565 - INFO - Deleted character name: image
+2024-10-14 14:00:19,379 - INFO - Restarting application.
+2024-10-14 14:00:19,379 - INFO - Saved last author to config: Boss
+2024-10-14 14:00:19,539 - INFO - Loaded last author from config: Boss
+2024-10-14 14:00:48,922 - INFO - Saved last author to config: Boss
+2024-10-14 14:00:48,922 - INFO - Application is closing via window manager. Last author saved: 'Boss'
+2024-10-14 14:00:48,922 - INFO - Polling loop callback canceled.
+2024-10-14 14:00:48,922 - INFO - Application is closing.
+2024-10-14 14:06:56,713 - INFO - Loaded last author from config: Boss
+2024-10-14 14:07:06,718 - INFO - Data saved to data.json
+2024-10-14 14:07:06,718 - INFO - Added new author: NewAuthor
+2024-10-14 14:07:06,718 - INFO - Added new author: NewAuthor
+2024-10-14 14:07:06,719 - INFO - Saved last author to config: NewAuthor
+2024-10-14 14:07:10,856 - INFO - Data saved to data.json
+2024-10-14 14:07:10,856 - INFO - Deleted author: NewAuthor
+2024-10-14 14:07:16,865 - INFO - Saved last author to config: NewAuthor
+2024-10-14 14:07:16,865 - INFO - Application is closing via window manager. Last author saved: 'NewAuthor'
+2024-10-14 14:07:16,865 - INFO - Polling loop callback canceled.
+2024-10-14 14:07:16,865 - INFO - Application is closing.
+2024-10-14 14:07:50,015 - INFO - Data saved to data.json
+2024-10-14 14:07:50,015 - INFO - Loaded last author from config: NewAuthor
+2024-10-14 14:07:53,504 - INFO - Data saved to data.json
+2024-10-14 14:07:53,505 - INFO - Deleted author: NewAuthor
+2024-10-14 14:19:02,631 - INFO - Saved last author to config: Ross
+2024-10-14 14:19:02,631 - INFO - Application is closing via window manager. Last author saved: 'Ross'
+2024-10-14 14:19:02,632 - INFO - Polling loop callback canceled.
+2024-10-14 14:19:02,632 - INFO - Application is closing.
+2024-10-14 14:21:27,711 - INFO - Loaded last author from config: Ross
+2024-10-14 14:21:43,255 - INFO - Data saved to data.json
+2024-10-14 14:21:43,255 - INFO - Added new author: 1A
+2024-10-14 14:21:43,255 - INFO - Added new author: 1A
+2024-10-14 14:21:43,255 - INFO - Saved last author to config: 1A
+2024-10-14 14:21:45,864 - INFO - Data saved to data.json
+2024-10-14 14:21:45,864 - INFO - Deleted author: 1A
+2024-10-14 14:21:52,497 - INFO - Data saved to data.json
+2024-10-14 14:21:52,497 - INFO - Added new author: A1
+2024-10-14 14:21:52,497 - INFO - Added new author: A1
+2024-10-14 14:21:52,497 - INFO - Saved last author to config: A1
+2024-10-14 14:22:01,351 - INFO - Data saved to data.json
+2024-10-14 14:22:01,351 - INFO - Deleted author: A1
+2024-10-14 14:22:07,654 - INFO - Data saved to data.json
+2024-10-14 14:22:07,654 - INFO - Added new author: A2
+2024-10-14 14:22:07,654 - INFO - Added new author: A2
+2024-10-14 14:22:07,654 - INFO - Saved last author to config: A2
+2024-10-14 14:22:22,083 - INFO - Saved last author to config: A2
+2024-10-14 14:22:22,083 - INFO - Application is closing via window manager. Last author saved: 'A2'
+2024-10-14 14:22:22,083 - INFO - Polling loop callback canceled.
+2024-10-14 14:22:22,083 - INFO - Application is closing.
+2024-10-14 14:30:28,696 - INFO - Loaded last author from config: A2
+2024-10-14 14:30:35,058 - INFO - Saved last author to config: A2
+2024-10-14 14:30:35,059 - INFO - Application is closing via window manager. Last author saved: 'A2'
+2024-10-14 14:30:35,059 - INFO - Polling loop callback canceled.
+2024-10-14 14:30:35,059 - INFO - Application is closing.
+2024-10-14 14:32:04,789 - INFO - Loaded last author from config: A2
+2024-10-14 14:32:28,445 - INFO - Saved last author to config: A2
+2024-10-14 14:32:28,445 - INFO - Application is closing via window manager. Last author saved: 'A2'
+2024-10-14 14:32:28,445 - INFO - Polling loop callback canceled.
+2024-10-14 14:32:28,445 - INFO - Application is closing.
+2024-10-14 14:33:10,084 - INFO - Loaded last author from config: A2
+2024-10-14 14:33:13,079 - INFO - Saved last author to config: A2
+2024-10-14 14:33:13,079 - INFO - Application is closing via window manager. Last author saved: 'A2'
+2024-10-14 14:33:13,079 - INFO - Polling loop callback canceled.
+2024-10-14 14:33:13,079 - INFO - Application is closing.
+2024-10-14 14:33:44,536 - INFO - Loaded last author from config: A2
+2024-10-14 14:33:56,197 - INFO - Data saved to data.json
+2024-10-14 14:33:56,197 - INFO - Added new character name: 3A
+2024-10-14 14:33:56,198 - INFO - Added character name: 3A
+2024-10-14 14:34:07,199 - INFO - Data saved to data.json
+2024-10-14 14:34:07,199 - INFO - Deleted character name: 3A
+2024-10-14 14:34:08,776 - INFO - Data saved to data.json
+2024-10-14 14:34:08,776 - INFO - Restored character name: 3A
+2024-10-14 14:34:11,977 - INFO - Saved last author to config: A2
+2024-10-14 14:34:11,977 - INFO - Application is closing via window manager. Last author saved: 'A2'
+2024-10-14 14:34:11,977 - INFO - Polling loop callback canceled.
+2024-10-14 14:34:11,977 - INFO - Application is closing.
+2024-10-14 14:35:07,471 - INFO - Loaded last author from config: A2
+2024-10-14 14:35:13,449 - INFO - Data saved to data.json
+2024-10-14 14:35:13,449 - INFO - Deleted character name: 3A
+2024-10-14 14:35:20,673 - INFO - Data saved to data.json
+2024-10-14 14:35:20,673 - INFO - Deleted author: A2
+2024-10-14 14:35:24,235 - INFO - Data saved to data.json
+2024-10-14 14:35:24,235 - INFO - Restored author: A2
+2024-10-14 14:35:39,272 - INFO - Saved last author to config: A2
+2024-10-14 14:35:39,272 - INFO - Application is closing via window manager. Last author saved: 'A2'
+2024-10-14 14:35:39,272 - INFO - Polling loop callback canceled.
+2024-10-14 14:35:39,272 - INFO - Application is closing.
+2024-10-14 14:37:50,131 - INFO - Loaded last author from config: A2
+2024-10-14 14:38:02,292 - INFO - Data saved to data.json
+2024-10-14 14:38:02,292 - INFO - Deleted author: A2
+2024-10-14 14:38:13,464 - INFO - Data saved to data.json
+2024-10-14 14:38:13,464 - INFO - Added author: A3
+2024-10-14 14:38:15,798 - INFO - Restarting application.
+2024-10-14 14:38:15,800 - INFO - Saved last author to config: Ross
+2024-10-14 14:38:15,951 - INFO - Loaded last author from config: Ross
+2024-10-14 14:39:20,476 - INFO - Loaded last author from config: Ross
+2024-10-14 14:47:29,974 - INFO - Data saved to data.json
+2024-10-14 14:47:29,974 - INFO - Deleted author: A3
+2024-10-14 14:47:32,569 - INFO - Data saved to data.json
+2024-10-14 14:47:32,569 - INFO - Restored author: A3
+2024-10-14 14:47:36,003 - INFO - Saved last author to config: A3
+2024-10-14 14:47:36,004 - INFO - Application is closing via window manager. Last author saved: 'A3'
+2024-10-14 14:47:36,004 - INFO - Polling loop callback canceled.
+2024-10-14 14:47:36,004 - INFO - Application is closing.

@@ -4,17 +4,21 @@
 + check is "by [author]" present before renaming, because when regular renaming it is just appending the author name to the file name 
 +make the char name same format and usage as author name or vise versa
 +implemet that thing from the previous tries where if files does not much, there is an option to add new Char name to the dictionry by selecting the name from new File name
++Add Undo Functionality
++some times when creating a new author the name of that author is the actual folder name ( so maybe a constructor from which can  select an author name - similar to the adding a new char name)
+
 
 - maybe separate the code even more (creating) ( remanimg by name or author)
 
 - have ability to just have name of the authors( no chars)
+ 
+- delete author or Char name (maybe show a list to select from what to delete)
 
 -better UI
   -improve to look like file explorer 
   -make better status bar
 
 
--some times when creating a new author the name of that author is the actual folder name ( so maybe a constructor from which can  select an author name - similar to the adding a new char name)
 
 
 MORE CONVINIENT 
@@ -40,18 +44,8 @@ Implementation:
 
 Use Tkinter's ttk.Progressbar widget.
 Update the progress bar within your renaming functions based on the number of files processed.
-3. Add Undo Functionality
-Description: Implement an undo feature that allows users to revert the last renaming operation.
 
-Benefits:
 
-Increases user confidence when using the app.
-Provides a safety net against accidental renaming.
-Implementation:
-
-Before renaming, save the original filenames and paths.
-Provide an "Undo" button that restores files to their original names.
-Ensure the undo data is cleared or updated appropriately.
 4. Preview Changes Before Renaming
 Description: Show a preview of the proposed filename changes before actually renaming the files.
 

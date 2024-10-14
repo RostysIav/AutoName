@@ -7,7 +7,7 @@ from tkinter import filedialog, messagebox, ttk
 import logging
 import configparser
 from file_operations import rename_images, rename_images_by_folder_name, rename_images_by_character_name
-from data_storage import add_author, load_data, save_data
+from data_storage import load_data, save_data, add_author, delete_author, add_character_name, delete_character_name
 from logging.handlers import QueueHandler
 import queue
 
@@ -46,8 +46,6 @@ class App(tk.Tk):
         # Undo operations
         self.undo_stack = []  # Stack to keep track of undo operations
 
-
-
         # Load data from JSON file
         # Add DATA_FILE + LOG_FILE as an attribute
         self.DATA_FILE = DATA_FILE
@@ -71,6 +69,7 @@ class App(tk.Tk):
         # Bind the window close event
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
+
     def create_left_menu(self):
         """Create the left menu with Exit and Restart buttons."""
         self.left_frame = tk.Frame(self, width=200, bg='lightgrey')
@@ -83,6 +82,7 @@ class App(tk.Tk):
         self.restart_button.pack(pady=20)
 
     def create_right_menu(self):
+        # Author section
         """Create the right menu for author selection."""
         self.right_frame = tk.Frame(self, width=200, bg='lightgrey')
         self.right_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=5, pady=5)
@@ -101,6 +101,44 @@ class App(tk.Tk):
             self.right_frame, text="Add Author", command=self.add_author
         )
         self.add_author_button.pack(pady=5)
+
+        self.delete_author_button = tk.Button(
+            self.right_frame, text="Delete Author", command=self.delete_author
+        )
+        self.delete_author_button.pack(pady=5)
+
+        # Undo Delete Button
+        self.undo_delete_button = tk.Button(
+            self.right_frame, text="Undo Delete", command=self.undo_last_deletion
+        )
+        self.undo_delete_button.pack(pady=5)
+
+        # Character name section
+        self.character_name_label = tk.Label(self.right_frame, text="Character Name")
+        self.character_name_label.pack(pady=10)
+
+        self.character_name_combo = ttk.Combobox(self.right_frame, values=self.character_names)
+        self.character_name_combo.pack(pady=5)
+        self.character_name_combo.focus()
+
+        self.character_name_entry = tk.Entry(self.right_frame)
+        self.character_name_entry.pack(pady=5)
+
+        self.add_character_name_button = tk.Button(
+            self.right_frame, text="Add Character", command=self.add_character_name
+        )
+        self.add_character_name_button.pack(pady=5)
+
+        self.delete_character_name_button = tk.Button(
+            self.right_frame, text="Delete Character", command=self.delete_character_name
+        )
+        self.delete_character_name_button.pack(pady=5)
+
+        # Undo Delete Button
+        self.undo_delete_button = tk.Button(
+            self.right_frame, text="Undo Delete", command=self.undo_last_deletion
+        )
+        self.undo_delete_button.pack(pady=5)
 
     def create_main_frame(self):
         """Create the main frame containing the directory entry and tree view."""
@@ -177,18 +215,44 @@ class App(tk.Tk):
         else:
             self.undo_button.config(state=tk.DISABLED)
     
+    def undo_last_deletion(self):
+        """Undo the last deletion of an author or character name."""
+        if self.undo_stack:
+            last_action = self.undo_stack.pop()
+            action_type, name = last_action
+            if action_type == 'author':
+                self.authors.append(name)
+                self.authors = sorted(self.authors)
+                self.author_combo['values'] = self.authors
+                self.data['authors'] = self.authors
+                save_data(DATA_FILE, self.data)
+                logging.info(f"Restored author: {name}")
+                messagebox.showinfo("Undo Successful", f"Author '{name}' has been restored.")
+            elif action_type == 'character':
+                self.character_names.append(name)
+                self.character_names = sorted(self.character_names)
+                self.character_name_combo['values'] = self.character_names
+                self.data['character_names'] = self.character_names
+                save_data(DATA_FILE, self.data)
+                logging.info(f"Restored character name: {name}")
+                messagebox.showinfo("Undo Successful", f"Character '{name}' has been restored.")
+        else:
+            messagebox.showinfo("Nothing to Undo", "There is no deletion to undo.")
+
     def undo_last_action(self):
         """Undo the last renaming operation."""
         if self.undo_stack:
             last_operations = self.undo_stack.pop()
             errors = []
-            for new_file, original_file in reversed(last_operations):
-                try:
-                    os.rename(new_file, original_file)
-                    logging.info(f"Reverted '{new_file}' to '{original_file}'")
-                except Exception as e:
-                    errors.append(f"Error reverting '{new_file}': {e}")
-                    logging.error(f"Error reverting '{new_file}' to '{original_file}': {e}")
+            action_type, name = last_operations
+            if isinstance(last_operations, list):
+                for new_file, original_file in reversed(last_operations):
+                    try:
+                        os.rename(new_file, original_file)
+                        logging.info(f"Reverted '{new_file}' to '{original_file}'")
+                    except Exception as e:
+                        errors.append(f"Error reverting '{new_file}': {e}")
+                        logging.error(f"Error reverting '{new_file}' to '{original_file}': {e}")
             if errors:
                 messagebox.showerror("Undo Errors", "\n".join(errors), parent=self)
             else:
@@ -196,7 +260,6 @@ class App(tk.Tk):
             self.update_undo_button_state()
         else:
             messagebox.showinfo("No Action to Undo", "There is no action to undo.", parent=self)
-
 
     def toggle_log_window(self):
         """Toggle the visibility of the log window."""
@@ -257,20 +320,75 @@ class App(tk.Tk):
     def add_author(self):
         """Add a new author to the list."""
         author_name = self.author_entry.get().strip()
-        if author_name:
+        if author_name and author_name not in self.authors:
             success = add_author(author_name, DATA_FILE)
             if success:
                 self.authors.append(author_name)
+                self.authors = sorted(self.authors)
                 self.author_combo['values'] = self.authors
-                logging.info(f"Added new author: {author_name}")
+                logging.info(f"Added author: {author_name}")
+                messagebox.showinfo("Author Added", f"Author '{author_name}' has been added.")
             else:
-                logging.info(f"Author '{author_name}' already exists.")
-            self.author_combo.set(author_name)
-            self.author_entry.delete(0, tk.END)
-            self.save_last_author(author_name)
+                logging.error(f"Failed to add author: {author_name}")
+                messagebox.showerror("Error", f"Failed to add author '{author_name}'.")
         else:
-            logging.info("No author name entered.")
-            
+            messagebox.showerror("Error", "Please enter a valid author name to add.")
+
+    def add_character_name(self):
+        """Add a new character name to the list."""
+        character_name = self.character_name_entry.get().strip()
+        if character_name and character_name not in self.character_names:
+            success = add_character_name(character_name, DATA_FILE)
+            if success:
+                self.character_names.append(character_name)
+                self.character_names = sorted(self.character_names)
+                self.character_name_combo['values'] = self.character_names
+                logging.info(f"Added character name: {character_name}")
+                messagebox.showinfo("Character Added", f"Character '{character_name}' has been added.")
+            else:
+                logging.error(f"Failed to add character name: {character_name}")
+                messagebox.showerror("Error", f"Failed to add character name '{character_name}'.")
+        else:
+            messagebox.showerror("Error", "Please enter a valid character name to add.")
+
+    def delete_author(self):
+        """Delete the selected author from the list."""
+        author_name = self.author_combo.get().strip()
+        if author_name and author_name in self.authors:
+            success = delete_author(author_name, DATA_FILE)
+            if success:
+                self.undo_stack.append(('author', author_name))
+                self.authors.remove(author_name)
+                self.authors = sorted(self.authors)
+                self.author_combo['values'] = self.authors
+                self.author_combo.set('')
+                logging.info(f"Deleted author: {author_name}")
+                messagebox.showinfo("Author Deleted", f"Author '{author_name}' has been deleted.")
+            else:
+                logging.error(f"Failed to delete author: {author_name}")
+                messagebox.showerror("Error", f"Failed to delete author '{author_name}'.")
+        else:
+            messagebox.showerror("Error", "Please select a valid author to delete.")
+
+    def delete_character_name(self):
+        """Delete the selected character name from the list."""
+        character_name = self.character_name_combo.get().strip()
+        if character_name and character_name in self.character_names:
+            success = delete_character_name(character_name, DATA_FILE)
+            if success:
+                self.undo_stack.append(('character', character_name))
+                self.character_names.remove(character_name)
+                self.character_names = sorted(self.character_names)
+                self.character_name_combo['values'] = self.character_names
+                self.character_name_combo.set('')
+                logging.info(f"Deleted character name: {character_name}")
+                messagebox.showinfo("Character Name Deleted", f"Character '{character_name}' has been deleted.")
+            else:
+                logging.error(f"Failed to delete character name: {character_name}")
+                messagebox.showerror("Error", f"Failed to delete character name '{character_name}'.")
+        else:
+            messagebox.showerror("Error", "Please select a valid character name to delete.")
+
     def get_author_name(self):
         """
         Get the author name from the combo box.
@@ -302,6 +420,16 @@ class App(tk.Tk):
             return None
         return author_name
     
+    def save_last_author(self, author_name):
+        """Save the last used author to the config file."""
+        try:
+            config['DEFAULT']['LastAuthor'] = author_name
+            with open('config.ini', 'w') as configfile:
+                config.write(configfile)
+            logging.info(f"Saved last author to config: {author_name}")
+        except Exception as e:
+            logging.error(f"Error saving last author to config: {e}")    
+
     def load_last_author(self):
         """Load the last used author from the config file."""
         try:
@@ -317,16 +445,6 @@ class App(tk.Tk):
         except Exception as e:
             logging.error(f"Error loading last author from config: {e}")    
 
-    def save_last_author(self, author_name):
-        """Save the last used author to the config file."""
-        try:
-            config['DEFAULT']['LastAuthor'] = author_name
-            with open('config.ini', 'w') as configfile:
-                config.write(configfile)
-            logging.info(f"Saved last author to config: {author_name}")
-        except Exception as e:
-            logging.error(f"Error saving last author to config: {e}")
-            
     def get_drives(self):
         """Get the list of drives on the system."""
         drives = []

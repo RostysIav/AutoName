@@ -1,14 +1,8 @@
 {
     "authors": [
-        "Author1",
-        "Author2",
-        "Author3",
-        "Ross",
-        "Boss1",
-        "Boss2",
-        "Boss3",
-        "Boss4",
-        "BossError"
+        "A3",
+        "Boss",
+        "Ross"
     ],
     "character_names": [
         "2B",
@@ -261,9 +255,6 @@
         "Yuna",
         "Zarya",
         "Zelda",
-        "Zoe",
-        "images",
-        "image",
-        "imag"
+        "Zoe"
     ]
 }

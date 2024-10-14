@@ -59,33 +59,16 @@ def add_author(author_name, data_file):
     logging.info(f"Added new author: {author_name}")
     return True
 
-# def load_authors(data_file):
-#     """
-#     Load authors from the JSON data file.
-
-#     Args:
-#         data_file (str): The path to the JSON data file.
-
-#     Returns:
-#         list: A list of author names.
-#     """
-#     data = load_data(data_file)
-#     authors = data.get('authors', [])
-#     logging.info(f"Loaded authors from {data_file}")
-#     return authors
-
-# def save_authors(authors, data_file):
-#     """
-#     Save authors to the JSON data file.
-
-#     Args:
-#         authors (list): A list of author names.
-#         data_file (str): The path to the JSON data file.
-#     """
-#     data = load_data(data_file)
-#     data['authors'] = authors
-#     save_data(data_file, data)
-#     logging.info(f"Saved authors to {data_file}")
+def add_author(author_name, data_file):
+    """Add an author to the data file."""
+    data = load_data(data_file)
+    if 'authors' not in data:
+        data['authors'] = []
+    if author_name not in data['authors']:
+        data['authors'].append(author_name)
+        save_data(data_file, data)
+        return True
+    return False
 
 def add_character_name(character_name, data_file):
     data = load_data(data_file)
@@ -98,3 +81,22 @@ def add_character_name(character_name, data_file):
     save_data(data_file, data)
     logging.info(f"Added new character name: {character_name}")
     return True
+
+def delete_author(author_name, data_file):
+    """Delete an author from the data file."""
+    data = load_data(data_file)
+    if 'authors' in data and author_name in data['authors']:
+        data['authors'].remove(author_name)
+        save_data(data_file, data)
+        return True
+    return False
+
+def delete_character_name(character_name, data_file):
+    """Delete a character name from the data file."""
+    data = load_data(data_file)
+    if 'character_names' in data and character_name in data['character_names']:
+        data['character_names'].remove(character_name)
+        save_data(data_file, data)
+        return True
+    return False
+
