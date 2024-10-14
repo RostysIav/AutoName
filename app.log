@@ -444,3 +444,115 @@ test_images by Boss 7 by Boss by Boss by Ross.jpg
 2024-10-13 21:00:14,786 - INFO - Application is closing via window manager. Last author saved: 'Boss4'
 2024-10-13 21:00:14,786 - INFO - Polling loop callback canceled.
 2024-10-13 21:00:14,786 - INFO - Application is closing.
+2024-10-14 00:54:17,342 - INFO - Loaded last author from config: Boss4
+2024-10-14 00:54:31,656 - INFO - No author name entered.
+2024-10-14 00:54:34,018 - INFO - Data saved to data.json
+2024-10-14 00:54:34,018 - INFO - Added new author: BossError
+2024-10-14 00:54:34,018 - INFO - Added new author: BossError
+2024-10-14 00:54:34,018 - INFO - Saved last author to config: BossError
+2024-10-14 00:54:47,642 - INFO - Saved last author to config: BossError
+2024-10-14 00:54:47,642 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and BossError
+2024-10-14 00:54:47,643 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by BossError.jpg'
+2024-10-14 00:54:47,644 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by BossError 1.jpg'
+2024-10-14 00:54:47,644 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by BossError.gif'
+2024-10-14 00:54:47,645 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\imag by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by BossError.jpg'
+2024-10-14 00:54:47,645 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\image by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\image by BossError.jpg'
+2024-10-14 00:54:47,646 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError.jpg'
+2024-10-14 00:54:47,646 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 1.jpg'
+2024-10-14 00:54:47,647 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 2.jpg'
+2024-10-14 00:54:47,647 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 3.jpg'
+2024-10-14 00:54:47,647 - INFO - Renaming process completed.
+2024-10-14 00:55:00,080 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4.jpg'
+2024-10-14 00:55:00,082 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 3.jpg'
+2024-10-14 00:55:00,083 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 2.jpg'
+2024-10-14 00:55:00,083 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 1.jpg'
+2024-10-14 00:55:00,084 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\image by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\image by Boss4.jpg'
+2024-10-14 00:55:00,084 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\imag by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by Boss4.jpg'
+2024-10-14 00:55:00,085 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Charlie by BossError.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4.gif'
+2024-10-14 00:55:00,085 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by BossError 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4.jpg'
+2024-10-14 00:55:00,085 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1.jpg'
+2024-10-14 00:55:05,956 - INFO - Saved last author to config: BossError
+2024-10-14 00:55:05,957 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and BossError
+2024-10-14 00:55:05,957 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by BossError.jpg'
+2024-10-14 00:55:05,958 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by BossError 1.jpg'
+2024-10-14 00:55:05,958 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by BossError.gif'
+2024-10-14 00:55:05,959 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\imag by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by BossError.jpg'
+2024-10-14 00:55:05,959 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\image by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\image by BossError.jpg'
+2024-10-14 00:55:05,959 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError.jpg'
+2024-10-14 00:55:05,960 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 1.jpg'
+2024-10-14 00:55:05,960 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 2.jpg'
+2024-10-14 00:55:05,961 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 3.jpg'
+2024-10-14 00:55:05,961 - INFO - Renaming process completed.
+2024-10-14 00:55:08,222 - INFO - Saved last author to config: BossError
+2024-10-14 00:55:55,586 - INFO - Saved last author to config: Author3
+2024-10-14 00:55:55,586 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Author3
+2024-10-14 00:55:55,587 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by BossError 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Author3.jpg'
+2024-10-14 00:55:55,587 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Author3 1.jpg'
+2024-10-14 00:55:55,588 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by BossError.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Author3.gif'
+2024-10-14 00:55:55,588 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\imag by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by Author3.jpg'
+2024-10-14 00:55:55,589 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\image by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\image by Author3.jpg'
+2024-10-14 00:55:55,589 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by BossError 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3.jpg'
+2024-10-14 00:55:55,590 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by BossError 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3 1.jpg'
+2024-10-14 00:55:55,590 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by BossError 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3 2.jpg'
+2024-10-14 00:55:55,590 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3 3.jpg'
+2024-10-14 00:55:55,591 - INFO - Renaming process completed.
+2024-10-14 00:56:00,457 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError.jpg'
+2024-10-14 00:56:00,458 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 3.jpg'
+2024-10-14 00:56:00,459 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 2.jpg'
+2024-10-14 00:56:00,459 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by BossError 1.jpg'
+2024-10-14 00:56:00,460 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\image by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\image by BossError.jpg'
+2024-10-14 00:56:00,460 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\imag by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by BossError.jpg'
+2024-10-14 00:56:00,461 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Charlie by Author3.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by BossError.gif'
+2024-10-14 00:56:00,461 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by Author3 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by BossError.jpg'
+2024-10-14 00:56:00,461 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by BossError 1.jpg'
+2024-10-14 00:56:03,367 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4.jpg'
+2024-10-14 00:56:03,368 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 3.jpg'
+2024-10-14 00:56:03,368 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 2.jpg'
+2024-10-14 00:56:03,369 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 1.jpg'
+2024-10-14 00:56:03,369 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\image by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\image by Boss4.jpg'
+2024-10-14 00:56:03,369 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\imag by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by Boss4.jpg'
+2024-10-14 00:56:03,370 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Charlie by BossError.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4.gif'
+2024-10-14 00:56:03,370 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by BossError 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4.jpg'
+2024-10-14 00:56:03,370 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by BossError.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1.jpg'
+2024-10-14 00:56:22,027 - INFO - Saved last author to config: Author3
+2024-10-14 00:56:22,027 - INFO - Application is closing via window manager. Last author saved: 'Author3'
+2024-10-14 00:56:22,027 - INFO - Polling loop callback canceled.
+2024-10-14 00:56:22,027 - INFO - Application is closing.
+2024-10-14 00:59:27,369 - INFO - Loaded last author from config: Author3
+2024-10-14 00:59:36,082 - INFO - Saved last author to config: Author3
+2024-10-14 00:59:36,083 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by Author3
+2024-10-14 00:59:36,084 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1 by Author3.jpg'
+2024-10-14 00:59:36,084 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 by Author3.jpg'
+2024-10-14 00:59:36,084 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4 by Author3.gif'
+2024-10-14 00:59:36,085 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\imag by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by Boss4 by Author3.jpg'
+2024-10-14 00:59:36,085 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\image by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\image by Boss4 by Author3.jpg'
+2024-10-14 00:59:36,085 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 1 by Author3.jpg'
+2024-10-14 00:59:36,086 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 2 by Author3.jpg'
+2024-10-14 00:59:36,086 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 3 by Author3.jpg'
+2024-10-14 00:59:36,086 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 by Author3.jpg'
+2024-10-14 00:59:37,433 - INFO - Renaming completed successfully.
+2024-10-14 00:59:51,044 - INFO - Saved last author to config: Author3
+2024-10-14 00:59:51,044 - INFO - Renaming images in C:/1MYPROG\AutoName\test_images by character names and Author3
+2024-10-14 00:59:51,045 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Author3.jpg'
+2024-10-14 00:59:51,045 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Author3 1.jpg'
+2024-10-14 00:59:51,046 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4 by Author3.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Author3.gif'
+2024-10-14 00:59:51,046 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\imag by Boss4 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by Author3.jpg'
+2024-10-14 00:59:51,047 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\image by Boss4 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\image by Author3.jpg'
+2024-10-14 00:59:51,047 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 1 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3.jpg'
+2024-10-14 00:59:51,048 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 2 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3 1.jpg'
+2024-10-14 00:59:51,048 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 3 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3 2.jpg'
+2024-10-14 00:59:51,049 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\images by Boss4 by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Author3 3.jpg'
+2024-10-14 00:59:51,049 - INFO - Renaming process completed.
+2024-10-14 00:59:58,888 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3 3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 by Author3.jpg'
+2024-10-14 00:59:58,888 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3 2.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 3 by Author3.jpg'
+2024-10-14 00:59:58,889 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3 1.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 2 by Author3.jpg'
+2024-10-14 00:59:58,890 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\images by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\images by Boss4 1 by Author3.jpg'
+2024-10-14 00:59:58,890 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\image by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\image by Boss4 by Author3.jpg'
+2024-10-14 00:59:58,890 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\imag by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\imag by Boss4 by Author3.jpg'
+2024-10-14 00:59:58,891 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Charlie by Author3.gif' to 'C:/1MYPROG\AutoName\test_images\Charlie by Boss4 by Author3.gif'
+2024-10-14 00:59:58,891 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by Author3 1.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 by Author3.jpg'
+2024-10-14 00:59:58,892 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Abigail by Author3.jpg' to 'C:/1MYPROG\AutoName\test_images\Abigail by Boss4 1 by Author3.jpg'
+2024-10-14 01:00:00,875 - INFO - Saved last author to config: Author3
+2024-10-14 01:00:00,875 - INFO - Application is closing via window manager. Last author saved: 'Author3'
+2024-10-14 01:00:00,875 - INFO - Polling loop callback canceled.
+2024-10-14 01:00:00,876 - INFO - Application is closing.

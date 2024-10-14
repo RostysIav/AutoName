@@ -3,11 +3,12 @@ import os
 from tkinter import messagebox, simpledialog
 import logging
 
-def rename_images(folder_path, author_name, status_label):
+# At the top of file_operations.py
+undo_stack = []  # A global stack to keep track of rename operations
+
+def rename_images(folder_path, author_name, status_label, app):
     """
-    Rename images in the specified folder by appending 'by {author_name}'.
-    Checks if 'by {author_name}' is already present to avoid duplication.
-    Handles duplicate filenames by appending a number at the end.
+    Rename images and save the original filenames for undo functionality.
     """
     try:
         status_label.config(text="Renaming images...")
@@ -20,6 +21,7 @@ def rename_images(folder_path, author_name, status_label):
         ])
 
         skipped_files = []
+        rename_operations = []  # List to keep track of renames in this operation
 
         for filename in files:
             old_file = os.path.join(folder_path, filename)
@@ -47,33 +49,39 @@ def rename_images(folder_path, author_name, status_label):
             # Handle duplicate filenames
             counter = 1
             while os.path.exists(new_file):
-                # Append the counter without parentheses
                 new_name = f"{base_new_name} {counter}.{ext_part}"
                 new_file = os.path.join(folder_path, new_name)
                 counter += 1
 
-            # Rename the file
+            # Rename the file and save the operation
             os.rename(old_file, new_file)
             logging.info(f"Renamed '{old_file}' to '{new_file}'")
+            rename_operations.append((new_file, old_file))  # Save new and original paths
+
+        # Save the operations to the app's undo stack
+        if rename_operations:
+            app.undo_stack.append(rename_operations)
+            app.update_undo_button_state()  # Enable the undo button
 
         # Provide feedback on skipped files
         if skipped_files:
             skipped_message = "The following files were skipped as they already contain the author name:\n" + "\n".join(skipped_files)
-            messagebox.showinfo("Skipped Files", skipped_message)
+            messagebox.showinfo("Skipped Files", skipped_message, parent=app)
             logging.info(skipped_message)
 
-        messagebox.showinfo("Success", "Images renamed successfully!")
+        messagebox.showinfo("Success", "Images renamed successfully!", parent=app)
         status_label.config(text="Renaming completed.")
         logging.info("Renaming completed successfully.")
     except Exception as e:
-        messagebox.showerror("Error", f"An error occurred: {e}")
+        messagebox.showerror("Error", f"An error occurred: {e}", parent=app)
         status_label.config(text="An error occurred during renaming.")
         logging.error(f"Error renaming images: {e}")
 
 
-def rename_images_by_folder_name(folder_path, author_name, status_label):
+def rename_images_by_folder_name(folder_path, author_name, status_label, app):
     """
     Rename images by prefixing the folder name and appending the author name.
+    Records operations for undo functionality.
     """
     try:
         status_label.config(text="Renaming images by folder name...")
@@ -85,6 +93,8 @@ def rename_images_by_folder_name(folder_path, author_name, status_label):
             f for f in os.listdir(folder_path)
             if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp'))
         ])
+
+        rename_operations = []  # List to keep track of renames in this operation
 
         for count, filename in enumerate(files, start=1):
             old_file = os.path.join(folder_path, filename)
@@ -98,32 +108,36 @@ def rename_images_by_folder_name(folder_path, author_name, status_label):
 
             new_name = f"{folder_name} by {author_name} {count}.{ext_part}"
             new_file = os.path.join(folder_path, new_name)
-            os.rename(old_file, new_file)
 
-        messagebox.showinfo("Success", "Images renamed successfully!")
+            # Rename the file and save the operation
+            os.rename(old_file, new_file)
+            logging.info(f"Renamed '{old_file}' to '{new_file}'")
+            rename_operations.append((new_file, old_file))  # Save new and original paths
+
+        # Save the operations to the app's undo stack
+        if rename_operations:
+            app.undo_stack.append(rename_operations)
+            app.update_undo_button_state()  # Enable the undo button
+
+        messagebox.showinfo("Success", "Images renamed successfully!", parent=app)
         status_label.config(text="Renaming by folder name completed.")
         logging.info("Renaming by folder name completed successfully.")
     except Exception as e:
-        messagebox.showerror("Error", f"An error occurred: {e}")
+        messagebox.showerror("Error", f"An error occurred: {e}", parent=app)
         status_label.config(text="An error occurred during renaming by folder name.")
         logging.error(f"Error renaming images by folder name: {e}")
 
 
-def rename_images_by_character_name(folder_path, author_name, status_label, character_names, self):
+def rename_images_by_character_name(folder_path, author_name, status_label, character_names, app):
     """
     Rename images by matching character names and adding the author name.
-    If no character name is found, prompt the user to add a new character name.
-
-    Args:
-        folder_path (str): The path to the folder containing images.
-        author_name (str): The author's name to append.
-        status_label (tk.Label): The status label to update the status.
-        character_names (list): List of character names to match in filenames.
-        app (App): The main application instance.
+    Records operations for undo functionality.
     """
     try:
         status_label.config(text="Renaming images by character names...")
         logging.info(f"Renaming images in {folder_path} by character names and {author_name}")
+
+        rename_operations = []  # List to keep track of renames in this operation
 
         for root_dir, dirs, files in os.walk(folder_path):
             for filename in files:
@@ -150,6 +164,7 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                         try:
                             os.rename(old_path, new_path)
                             logging.info(f"Renamed '{old_path}' to '{new_path}'")
+                            rename_operations.append((new_path, old_path))  # Save new and original paths
                             matched = True
                             break  # Exit the character_names loop
                         except Exception as e:
@@ -162,7 +177,7 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                     response = messagebox.askyesno(
                         "Add Character Name",
                         f"No character name found in '{filename}'. Do you want to add a new character name?",
-                        parent=self  # Use 'app' here
+                        parent=app
                     )
                     if response:
                         # Suggest a default value from the filename
@@ -171,16 +186,16 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                             "New Character Name",
                             f"Enter the new character name for '{filename}':",
                             initialvalue=default_name,
-                            parent=self  # Use 'app' here
+                            parent=app
                         )
                         if new_character_name:
                             # Add the new character name to the list
                             character_names.append(new_character_name)
                             # Update the data file
-                            if hasattr(self, 'data'):
-                                self.data['character_names'] = character_names
+                            if hasattr(app, 'data'):
+                                app.data['character_names'] = character_names
                                 from data_storage import save_data
-                                save_data(self.DATA_FILE, self.data)
+                                save_data(app.DATA_FILE, app.data)
                                 logging.info(f"Added new character name: {new_character_name}")
                             else:
                                 logging.warning("Unable to save new character name to data file.")
@@ -206,6 +221,7 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                             try:
                                 os.rename(old_path, new_path)
                                 logging.info(f"Renamed '{old_path}' to '{new_path}'")
+                                rename_operations.append((new_path, old_path))  # Save new and original paths
                             except Exception as e:
                                 logging.error(f"Error renaming '{old_path}' to '{new_path}': {e}")
                         else:
@@ -215,10 +231,15 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                         logging.info(f"User declined to add a character name for '{filename}'. Skipping file.")
                         continue
 
+        # Save the operations to the app's undo stack
+        if rename_operations:
+            app.undo_stack.append(rename_operations)
+            app.update_undo_button_state()  # Enable the undo button
+
         logging.info("Renaming process completed.")
-        messagebox.showinfo('Renaming Complete', 'Renaming process completed.')
+        messagebox.showinfo('Renaming Complete', 'Renaming process completed.', parent=app)
         status_label.config(text="Renaming by character names completed.")
     except Exception as e:
-        messagebox.showerror("Error", f"An error occurred: {e}")
+        messagebox.showerror("Error", f"An error occurred: {e}", parent=app)
         status_label.config(text="An error occurred during renaming by character names.")
         logging.error(f"Error renaming images by character names: {e}")

@@ -43,11 +43,15 @@ class App(tk.Tk):
         self.title("Image Renamer")
         self.geometry("1400x600")
 
+        # Undo operations
+        self.undo_stack = []  # Stack to keep track of undo operations
+
+
+
+        # Load data from JSON file
         # Add DATA_FILE + LOG_FILE as an attribute
         self.DATA_FILE = DATA_FILE
         self.LOG_FILE = LOG_FILE
-
-        # Load data from JSON file
         self.data = load_data(DATA_FILE)
         self.authors = self.data.get('authors', [])
         self.character_names = self.data.get('character_names', [])
@@ -58,11 +62,11 @@ class App(tk.Tk):
         self.create_main_frame()
         self.create_status_bar()
         self.create_log_window()
+        self.create_undo_button() 
         self.setup_logging()
 
         # Load the last used author
         self.load_last_author()
-
 
         # Bind the window close event
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
@@ -159,6 +163,40 @@ class App(tk.Tk):
         self.log_scrollbar = tk.Scrollbar(self.log_frame, command=self.log_text.yview)
         self.log_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.log_text['yscrollcommand'] = self.log_scrollbar.set      
+
+    def create_undo_button(self):
+        """Create the Undo button and place it in the status bar or toolbar."""
+        self.undo_button = tk.Button(self.status_label, text="Undo", command=self.undo_last_action)
+        self.undo_button.pack(side=tk.RIGHT, padx=5)
+        self.update_undo_button_state()  # Set initial state
+
+    def update_undo_button_state(self):
+        """Enable or disable the Undo button based on the undo stack."""
+        if self.undo_stack:
+            self.undo_button.config(state=tk.NORMAL)
+        else:
+            self.undo_button.config(state=tk.DISABLED)
+    
+    def undo_last_action(self):
+        """Undo the last renaming operation."""
+        if self.undo_stack:
+            last_operations = self.undo_stack.pop()
+            errors = []
+            for new_file, original_file in reversed(last_operations):
+                try:
+                    os.rename(new_file, original_file)
+                    logging.info(f"Reverted '{new_file}' to '{original_file}'")
+                except Exception as e:
+                    errors.append(f"Error reverting '{new_file}': {e}")
+                    logging.error(f"Error reverting '{new_file}' to '{original_file}': {e}")
+            if errors:
+                messagebox.showerror("Undo Errors", "\n".join(errors), parent=self)
+            else:
+                messagebox.showinfo("Undo Successful", "Last operation has been undone.", parent=self)
+            self.update_undo_button_state()
+        else:
+            messagebox.showinfo("No Action to Undo", "There is no action to undo.", parent=self)
+
 
     def toggle_log_window(self):
         """Toggle the visibility of the log window."""
@@ -323,6 +361,21 @@ class App(tk.Tk):
             # Log the exception
             logging.error(f"Error accessing {abspath}: {e}")
 
+    def prompt_author_name_and_rename(self, folder_path, by_folder_name=False):
+        """
+        Prompt for the author name and perform the renaming.
+
+        Args:
+            folder_path (str): The path of the folder to rename images in.
+            by_folder_name (bool): Whether to rename images by folder name.
+        """
+        author_name = self.get_author_name()
+        if author_name:
+            if by_folder_name:
+                rename_images_by_folder_name(folder_path, author_name, self.status_label, self)
+            else:
+                rename_images(folder_path, author_name, self.status_label, self)  # Pass 'self' as 'app'
+
     def on_double_click(self, event):
         """Handle double-click event on a tree node."""
         item = self.tree.selection()[0]
@@ -350,7 +403,11 @@ class App(tk.Tk):
         item = self.tree.selection()[0]
         abspath = self.tree.set(item, "abspath")
         if os.path.isdir(abspath):
-            self.prompt_author_name_and_rename(abspath, by_folder_name=True)
+            author_name = self.get_author_name()
+            if author_name:
+                rename_images_by_folder_name(
+                    abspath, author_name, self.status_label, self  # Pass 'self' as 'app'
+                )
 
     def context_rename_images_by_character_name(self):
         """Context menu action to rename images by character names."""
@@ -362,22 +419,6 @@ class App(tk.Tk):
                 rename_images_by_character_name(
                     abspath, author_name, self.status_label, self.character_names, self  # Pass 'self' as 'app'
                 )
-
-
-    def prompt_author_name_and_rename(self, folder_path, by_folder_name=False):
-        """
-        Prompt for the author name and perform the renaming.
-
-        Args:
-            folder_path (str): The path of the folder to rename images in.
-            by_folder_name (bool): Whether to rename images by folder name.
-        """
-        author_name = self.get_author_name()
-        if author_name:
-            if by_folder_name:
-                rename_images_by_folder_name(folder_path, author_name, self.status_label)
-            else:
-                rename_images(folder_path, author_name, self.status_label)
 
     def load_path(self):
         """Load the path entered in the path entry."""
@@ -444,10 +485,11 @@ class App(tk.Tk):
             self.after_cancel(self.after_id)
             logging.info("Polling loop callback canceled.")
 
+        self.undo_stack.clear()  # Clear undo data
+
         logging.info("Application is closing.")
         self.destroy()
 
-    
 
 class QueueHandler(logging.Handler):
     """Custom logging handler that uses a queue."""
