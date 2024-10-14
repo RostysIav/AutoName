@@ -6,7 +6,8 @@
 +implemet that thing from the previous tries where if files does not much, there is an option to add new Char name to the dictionry by selecting the name from new File name
 +Add Undo Functionality
 +some times when creating a new author the name of that author is the actual folder name ( so maybe a constructor from which can  select an author name - similar to the adding a new char name)
-
++Enable users to add, remove, or edit character names within the application.
++Enable users to add, remove, or edit Authors within the application.
 
 - maybe separate the code even more (creating) ( remanimg by name or author)
 
@@ -17,9 +18,6 @@
 -better UI
   -improve to look like file explorer 
   -make better status bar
-
-
-
 
 MORE CONVINIENT 
 1. Implement Drag-and-Drop Functionality
@@ -58,19 +56,7 @@ Implementation:
 Generate a list of old and new filenames.
 Display this list in a scrollable widget, such as a ttk.Treeview.
 Include options to select/deselect files to rename.
-5. Allow Custom Character Names List Editing
-Description: Enable users to add, remove, or edit character names within the application.
 
-Benefits:
-
-Provides flexibility to manage the character names list.
-Accommodates user-specific needs without modifying the source code.
-Implementation:
-
-Add a section in the GUI to manage the character names list.
-Use a listbox or similar widget to display the current names.
-Provide buttons for adding, editing, and deleting names.
-Save the updated list to a file, such as character_names.txt.
 6. Implement Multi-language Support
 Description: Allow the application to support multiple languages.
 
@@ -83,6 +69,7 @@ Implementation:
 Use localization libraries like gettext.
 Create language files containing translations of all strings.
 Provide an option in the settings to select the desired language.
+
 7. Enhance Logging and Error Reporting
 Description: Improve the logging system to provide more detailed information and better error handling.
 
@@ -95,6 +82,7 @@ Implementation:
 Include different log levels (INFO, WARNING, ERROR, DEBUG).
 Allow users to view logs for specific operations.
 Implement a system to send error reports or feedback.
+
 8. Add Keyboard Shortcuts
 Description: Implement keyboard shortcuts for common actions like renaming, adding authors, or opening directories.
 
@@ -106,6 +94,7 @@ Implementation:
 
 Bind keyboard events using Tkinter's bind method.
 Document the shortcuts in a help section or tooltip.
+
 9. Improve the User Interface Design
 Description: Refine the UI for a more modern and intuitive look.
 
@@ -118,6 +107,7 @@ Implementation:
 Use Tkinter themes (ttk.Style) to modernize widgets.
 Organize elements logically, possibly with tabs or a sidebar.
 Include icons and images where appropriate.
+
 10. Add Batch Operations and Scheduling
 Description: Allow users to set up batch operations or schedule renaming tasks.
 
@@ -129,6 +119,7 @@ Implementation:
 
 Provide options to save renaming configurations.
 Use scheduling libraries like sched or APScheduler to run tasks at specified times.
+
 11. Integrate with Online Databases
 Description: Fetch character names or author information from online sources.
 
