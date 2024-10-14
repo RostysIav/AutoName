@@ -3,7 +3,11 @@
         "Author1",
         "Author2",
         "Author3",
-        "Ross"
+        "Ross",
+        "Boss1",
+        "Boss2",
+        "Boss3",
+        "Boss4"
     ],
     "character_names": [
         "2B",
@@ -256,6 +260,9 @@
         "Yuna",
         "Zarya",
         "Zelda",
-        "Zoe"
+        "Zoe",
+        "images",
+        "image",
+        "imag"
     ]
 }

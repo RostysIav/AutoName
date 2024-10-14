@@ -1,9 +1,7 @@
 # file_operations.py
 import os
-from tkinter import messagebox
+from tkinter import messagebox, simpledialog
 import logging
-
-# file_operations.py
 
 def rename_images(folder_path, author_name, status_label):
     """
@@ -110,21 +108,22 @@ def rename_images_by_folder_name(folder_path, author_name, status_label):
         status_label.config(text="An error occurred during renaming by folder name.")
         logging.error(f"Error renaming images by folder name: {e}")
 
-def rename_images_by_character_name(folder_path, author_name, status_label, character_names):
+
+def rename_images_by_character_name(folder_path, author_name, status_label, character_names, self):
     """
     Rename images by matching character names and adding the author name.
+    If no character name is found, prompt the user to add a new character name.
 
     Args:
         folder_path (str): The path to the folder containing images.
         author_name (str): The author's name to append.
         status_label (tk.Label): The status label to update the status.
         character_names (list): List of character names to match in filenames.
+        app (App): The main application instance.
     """
     try:
         status_label.config(text="Renaming images by character names...")
         logging.info(f"Renaming images in {folder_path} by character names and {author_name}")
-
-        unmatched_files = []
 
         for root_dir, dirs, files in os.walk(folder_path):
             for filename in files:
@@ -143,7 +142,6 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                         # Handle duplicate filenames
                         counter = 1
                         while os.path.exists(new_path):
-                            # Modify here to append counter without parentheses
                             name_without_ext = os.path.splitext(base_new_filename)[0]
                             new_filename = f'{name_without_ext} {counter}{extension}'
                             new_path = os.path.join(root_dir, new_filename)
@@ -153,25 +151,72 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                             os.rename(old_path, new_path)
                             logging.info(f"Renamed '{old_path}' to '{new_path}'")
                             matched = True
-                            break
+                            break  # Exit the character_names loop
                         except Exception as e:
                             logging.error(f"Error renaming '{old_path}' to '{new_path}': {e}")
-                            unmatched_files.append(f"{filename} (Error: {e})")
                             matched = True  # Consider it matched even if there's an error
                             break
+
                 if not matched:
-                    # If no match is found, add the file to unmatched_files
-                    relative_path = os.path.relpath(os.path.join(root_dir, filename), folder_path)
-                    unmatched_files.append(relative_path)
+                    # Use 'app' as the parent for dialogs
+                    response = messagebox.askyesno(
+                        "Add Character Name",
+                        f"No character name found in '{filename}'. Do you want to add a new character name?",
+                        parent=self  # Use 'app' here
+                    )
+                    if response:
+                        # Suggest a default value from the filename
+                        default_name = os.path.splitext(filename)[0].strip()
+                        new_character_name = simpledialog.askstring(
+                            "New Character Name",
+                            f"Enter the new character name for '{filename}':",
+                            initialvalue=default_name,
+                            parent=self  # Use 'app' here
+                        )
+                        if new_character_name:
+                            # Add the new character name to the list
+                            character_names.append(new_character_name)
+                            # Update the data file
+                            if hasattr(self, 'data'):
+                                self.data['character_names'] = character_names
+                                from data_storage import save_data
+                                save_data(self.DATA_FILE, self.data)
+                                logging.info(f"Added new character name: {new_character_name}")
+                            else:
+                                logging.warning("Unable to save new character name to data file.")
 
-        if unmatched_files:
-            message = 'Some files could not be renamed because no matching character names were found or an error occurred:\n\n' + '\n'.join(unmatched_files)
-            logging.info(message)
-            messagebox.showinfo('Renaming Complete with Unmatched Files', message)
-        else:
-            logging.info("All files were renamed successfully.")
-            messagebox.showinfo('Renaming Complete', 'All files were renamed successfully.')
+                            # Proceed to rename the file with the new character name
+                            matched_word = new_character_name
+                            extension = os.path.splitext(filename)[1]
+                            author_part = f' by {author_name}' if author_name else ''
+                            base_new_filename = f'{matched_word}{author_part}{extension}'
 
+                            old_path = os.path.join(root_dir, filename)
+                            new_filename = base_new_filename
+                            new_path = os.path.join(root_dir, new_filename)
+
+                            # Handle duplicate filenames
+                            counter = 1
+                            while os.path.exists(new_path):
+                                name_without_ext = os.path.splitext(base_new_filename)[0]
+                                new_filename = f'{name_without_ext} {counter}{extension}'
+                                new_path = os.path.join(root_dir, new_filename)
+                                counter += 1
+
+                            try:
+                                os.rename(old_path, new_path)
+                                logging.info(f"Renamed '{old_path}' to '{new_path}'")
+                            except Exception as e:
+                                logging.error(f"Error renaming '{old_path}' to '{new_path}': {e}")
+                        else:
+                            logging.info(f"No character name provided for '{filename}'. Skipping file.")
+                            continue
+                    else:
+                        logging.info(f"User declined to add a character name for '{filename}'. Skipping file.")
+                        continue
+
+        logging.info("Renaming process completed.")
+        messagebox.showinfo('Renaming Complete', 'Renaming process completed.')
         status_label.config(text="Renaming by character names completed.")
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")

@@ -6,12 +6,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import logging
 import configparser
-from file_operations import (
-    rename_images,
-    rename_images_by_folder_name,
-    rename_images_by_character_name
-)
-from data_storage import load_data, save_data
+from file_operations import rename_images, rename_images_by_folder_name, rename_images_by_character_name
+from data_storage import add_author, load_data, save_data
 from logging.handlers import QueueHandler
 import queue
 
@@ -47,6 +43,10 @@ class App(tk.Tk):
         self.title("Image Renamer")
         self.geometry("1400x600")
 
+        # Add DATA_FILE + LOG_FILE as an attribute
+        self.DATA_FILE = DATA_FILE
+        self.LOG_FILE = LOG_FILE
+
         # Load data from JSON file
         self.data = load_data(DATA_FILE)
         self.authors = self.data.get('authors', [])
@@ -62,6 +62,7 @@ class App(tk.Tk):
 
         # Load the last used author
         self.load_last_author()
+
 
         # Bind the window close event
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
@@ -215,6 +216,23 @@ class App(tk.Tk):
             # Store the after ID
             self.after_id = self.after(100, self.poll_log_queue)
    
+    def add_author(self):
+        """Add a new author to the list."""
+        author_name = self.author_entry.get().strip()
+        if author_name:
+            success = add_author(author_name, DATA_FILE)
+            if success:
+                self.authors.append(author_name)
+                self.author_combo['values'] = self.authors
+                logging.info(f"Added new author: {author_name}")
+            else:
+                logging.info(f"Author '{author_name}' already exists.")
+            self.author_combo.set(author_name)
+            self.author_entry.delete(0, tk.END)
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author name entered.")
+            
     def get_author_name(self):
         """
         Get the author name from the combo box.
@@ -245,31 +263,7 @@ class App(tk.Tk):
             logging.info("No author selected.")
             return None
         return author_name
-
-    def add_author(self):
-        """Add a new author to the list."""
-        author_name = self.author_entry.get()
-        if author_name:
-            if author_name not in self.authors:
-                self.authors.append(author_name)
-                self.author_combo['values'] = self.authors
-                self.data['authors'] = self.authors  # Update the data dictionary
-                save_data(DATA_FILE, self.data)
-                logging.info(f"Added new author: {author_name}")
-            self.author_combo.set(author_name)  # Set the combo box to the new author
-            self.author_entry.delete(0, tk.END)
-            self.save_last_author(author_name)  # Save the last used author
-
-    def save_last_author(self, author_name):
-        """Save the last used author to the config file."""
-        try:
-            config['DEFAULT']['LastAuthor'] = author_name
-            with open('config.ini', 'w') as configfile:
-                config.write(configfile)
-            logging.info(f"Saved last author to config: {author_name}")
-        except Exception as e:
-            logging.error(f"Error saving last author to config: {e}")
-
+    
     def load_last_author(self):
         """Load the last used author from the config file."""
         try:
@@ -283,9 +277,18 @@ class App(tk.Tk):
                 self.author_combo.set(author_name)
                 logging.info(f"Loaded last author from config: {author_name}")
         except Exception as e:
-            logging.error(f"Error loading last author from config: {e}")
+            logging.error(f"Error loading last author from config: {e}")    
 
-
+    def save_last_author(self, author_name):
+        """Save the last used author to the config file."""
+        try:
+            config['DEFAULT']['LastAuthor'] = author_name
+            with open('config.ini', 'w') as configfile:
+                config.write(configfile)
+            logging.info(f"Saved last author to config: {author_name}")
+        except Exception as e:
+            logging.error(f"Error saving last author to config: {e}")
+            
     def get_drives(self):
         """Get the list of drives on the system."""
         drives = []
@@ -357,8 +360,9 @@ class App(tk.Tk):
             author_name = self.get_author_name()
             if author_name:
                 rename_images_by_character_name(
-                    abspath, author_name, self.status_label, self.character_names
+                    abspath, author_name, self.status_label, self.character_names, self  # Pass 'self' as 'app'
                 )
+
 
     def prompt_author_name_and_rename(self, folder_path, by_folder_name=False):
         """
