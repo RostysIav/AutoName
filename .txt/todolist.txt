@@ -120,17 +120,6 @@ Implementation:
 Provide options to save renaming configurations.
 Use scheduling libraries like sched or APScheduler to run tasks at specified times.
 
-11. Integrate with Online Databases
-Description: Fetch character names or author information from online sources.
-
-Benefits:
-
-Keeps the character names list up to date.
-Reduces manual entry for users.
-Implementation:
-
-Use APIs from relevant databases (ensure compliance with their terms of service).
-Implement a synchronization feature to update lists.
 12. Provide a Detailed Help and Documentation Section
 Description: Include comprehensive help within the app to guide users.
 
@@ -153,6 +142,7 @@ Implementation:
 
 Add options in the GUI to select file extensions.
 Modify the file filtering logic accordingly.
+
 14. Add Option to Copy or Move Files Instead of Renaming
 Description: Provide the ability to copy or move files to a new directory with the new names.
 
@@ -164,6 +154,7 @@ Implementation:
 
 Include options to select the operation mode (rename, copy, move).
 Use shutil.copy or shutil.move for file operations.
+
 15. Implement Thumbnail Previews
 Description: Show thumbnail previews of images within the application.
 
@@ -175,6 +166,7 @@ Implementation:
 
 Use the PIL (Pillow) library to load and display thumbnails.
 Add a preview pane that updates based on user selection.
+
 16. Allow Renaming Based on Metadata
 Description: Rename files based on metadata such as creation date, modification date, or EXIF data.
 

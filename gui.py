@@ -10,6 +10,8 @@ from file_operations import rename_images, rename_images_by_folder_name, rename_
 from data_storage import load_data, save_data, add_author, delete_author, add_character_name, delete_character_name
 from logging.handlers import QueueHandler
 import queue
+from PIL import Image, ImageTk 
+import shutil 
 
 
 # Read configuration
@@ -68,6 +70,9 @@ class App(tk.Tk):
 
         # Bind the window close event
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+        self.operation_mode = tk.StringVar(value="Rename")  # Default operation mode
+        self.create_operation_mode_selector()
 
 
     def create_left_menu(self):
@@ -179,6 +184,9 @@ class App(tk.Tk):
         self.context_menu.add_command(label="Rename Images by Folder Name", command=self.context_rename_images_by_folder_name)
         self.context_menu.add_command(label="Rename Images by Character Name", command=self.context_rename_images_by_character_name)
 
+        self.tree.bind("<<TreeviewSelect>>", self.on_tree_select)   
+
+
     def create_status_bar(self):
         """Create the status bar at the bottom of the application."""
         self.status_label = tk.Label(self, text="Status: Ready", anchor='w', bg='lightgrey')
@@ -200,7 +208,41 @@ class App(tk.Tk):
         # Scrollbar for the log text widget
         self.log_scrollbar = tk.Scrollbar(self.log_frame, command=self.log_text.yview)
         self.log_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        self.log_text['yscrollcommand'] = self.log_scrollbar.set      
+        self.log_text['yscrollcommand'] = self.log_scrollbar.set    
+
+    def create_preview_pane(self):
+        """Create a pane to display image thumbnails."""
+        self.preview_frame = tk.Frame(self.main_frame, width=200, bg='white')
+        self.preview_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=5, pady=5)
+
+        self.preview_label = tk.Label(self.preview_frame, text="Preview")
+        self.preview_label.pack()
+
+        self.image_label = tk.Label(self.preview_frame)
+        self.image_label.pack(pady=10)  
+
+    def create_operation_mode_selector(self):
+        """Create operation mode selector (Rename, Copy, Move)."""
+        self.operation_frame = tk.Frame(self.right_frame)
+        self.operation_frame.pack(pady=10)
+
+        self.operation_label = tk.Label(self.operation_frame, text="Operation Mode:")
+        self.operation_label.pack(side=tk.LEFT)
+
+        self.rename_radio = tk.Radiobutton(
+            self.operation_frame, text="Rename", variable=self.operation_mode, value="Rename"
+        )
+        self.rename_radio.pack(side=tk.LEFT)
+
+        self.copy_radio = tk.Radiobutton(
+            self.operation_frame, text="Copy", variable=self.operation_mode, value="Copy"
+        )
+        self.copy_radio.pack(side=tk.LEFT)
+
+        self.move_radio = tk.Radiobutton(
+            self.operation_frame, text="Move", variable=self.operation_mode, value="Move"
+        )
+        self.move_radio.pack(side=tk.LEFT)
 
     def create_undo_button(self):
         """Create the Undo button and place it in the status bar or toolbar."""
@@ -240,19 +282,29 @@ class App(tk.Tk):
             messagebox.showinfo("Nothing to Undo", "There is no deletion to undo.")
 
     def undo_last_action(self):
-        """Undo the last renaming operation."""
+        """Undo the last renaming, copying, or moving operation."""
         if self.undo_stack:
-            last_operations = self.undo_stack.pop()
+            last_operation = self.undo_stack.pop()
+            operation_mode, operations = last_operation
             errors = []
-            action_type, name = last_operations
-            if isinstance(last_operations, list):
-                for new_file, original_file in reversed(last_operations):
-                    try:
+
+            for new_file, original_file in reversed(operations):
+                try:
+                    if operation_mode == "Rename":
                         os.rename(new_file, original_file)
                         logging.info(f"Reverted '{new_file}' to '{original_file}'")
-                    except Exception as e:
-                        errors.append(f"Error reverting '{new_file}': {e}")
-                        logging.error(f"Error reverting '{new_file}' to '{original_file}': {e}")
+                    elif operation_mode == "Copy":
+                        os.remove(new_file)
+                        logging.info(f"Removed copied file '{new_file}'")
+                    elif operation_mode == "Move":
+                        shutil.move(new_file, original_file)
+                        logging.info(f"Moved '{new_file}' back to '{original_file}'")
+                    else:
+                        logging.error(f"Unknown operation mode: {operation_mode}")
+                except Exception as e:
+                    errors.append(f"Error undoing '{new_file}': {e}")
+                    logging.error(f"Error undoing '{new_file}': {e}")
+
             if errors:
                 messagebox.showerror("Undo Errors", "\n".join(errors), parent=self)
             else:
@@ -260,6 +312,30 @@ class App(tk.Tk):
             self.update_undo_button_state()
         else:
             messagebox.showinfo("No Action to Undo", "There is no action to undo.", parent=self)
+
+    def on_tree_select(self, event):
+        """Handle the event when a tree item is selected."""
+        item = self.tree.selection()[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isfile(abspath):
+            self.show_image_preview(abspath)
+        else:
+            # Clear the preview if a directory is selected
+            self.image_label.config(image='')
+            self.image_label.image = None
+
+    def show_image_preview(self, image_path):
+        """Display a thumbnail of the selected image."""
+        try:
+            img = Image.open(image_path)
+            img.thumbnail((200, 200))  # Adjust the size as needed
+            photo = ImageTk.PhotoImage(img)
+            self.image_label.config(image=photo)
+            self.image_label.image = photo  # Keep a reference to prevent garbage collection
+        except Exception as e:
+            logging.error(f"Error loading image '{image_path}': {e}")
+            self.image_label.config(image='')
+            self.image_label.image = None
 
     def toggle_log_window(self):
         """Toggle the visibility of the log window."""
@@ -475,24 +551,35 @@ class App(tk.Tk):
                 child_path = os.path.join(abspath, p)
                 if os.path.isdir(child_path):
                     self.insert_node(node, p, child_path)
+                elif child_path.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+                    # Insert image files into the tree
+                    self.insert_node(node, p, child_path)
         except (PermissionError, FileNotFoundError, OSError) as e:
-            # Log the exception
             logging.error(f"Error accessing {abspath}: {e}")
 
     def prompt_author_name_and_rename(self, folder_path, by_folder_name=False):
         """
-        Prompt for the author name and perform the renaming.
-
-        Args:
-            folder_path (str): The path of the folder to rename images in.
-            by_folder_name (bool): Whether to rename images by folder name.
+        Prompt for the author name and perform the renaming or copying/moving.
         """
         author_name = self.get_author_name()
         if author_name:
+            operation_mode = self.operation_mode.get()
+            destination_folder = None
+
+            if operation_mode in ["Copy", "Move"]:
+                destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                if not destination_folder:
+                    messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                    return
+
             if by_folder_name:
-                rename_images_by_folder_name(folder_path, author_name, self.status_label, self)
+                rename_images_by_folder_name(
+                    folder_path, author_name, self.status_label, self, operation_mode, destination_folder
+                )
             else:
-                rename_images(folder_path, author_name, self.status_label, self)  # Pass 'self' as 'app'
+                rename_images(
+                    folder_path, author_name, self.status_label, self, operation_mode, destination_folder
+                )
 
     def on_double_click(self, event):
         """Handle double-click event on a tree node."""
@@ -534,8 +621,17 @@ class App(tk.Tk):
         if os.path.isdir(abspath):
             author_name = self.get_author_name()
             if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
                 rename_images_by_character_name(
-                    abspath, author_name, self.status_label, self.character_names, self  # Pass 'self' as 'app'
+                    abspath, author_name, self.status_label, self.character_names, self, operation_mode, destination_folder
                 )
 
     def load_path(self):
