@@ -15,6 +15,8 @@
  
 - delete author or Char name (maybe show a list to select from what to delete)
 
+- when renameing unsure proper order of picutre, because they sccater
+
 -better UI
   -improve to look like file explorer 
   -make better status bar

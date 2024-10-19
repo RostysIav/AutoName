@@ -695,3 +695,620 @@ test_images by Boss 7 by Boss by Boss by Ross.jpg
 2024-10-14 14:47:36,004 - INFO - Application is closing via window manager. Last author saved: 'A3'
 2024-10-14 14:47:36,004 - INFO - Polling loop callback canceled.
 2024-10-14 14:47:36,004 - INFO - Application is closing.
+2024-10-17 20:58:10,183 - INFO - Loaded last author from config: A3
+2024-10-17 20:58:25,318 - INFO - Double-clicked on directory: C:/
+2024-10-17 20:58:25,318 - INFO - Saved last author to config: A3
+2024-10-17 20:58:25,319 - INFO - Rename images in C:/ by A3
+2024-10-17 20:58:26,693 - INFO - Rename completed successfully.
+2024-10-17 20:58:31,994 - INFO - Saved last author to config: A3
+2024-10-17 20:58:31,994 - INFO - Application is closing via window manager. Last author saved: 'A3'
+2024-10-17 20:58:31,994 - INFO - Polling loop callback canceled.
+2024-10-17 20:58:31,994 - INFO - Application is closing.
+2024-10-17 21:21:47,307 - INFO - Loaded last author from config: A3
+2024-10-17 22:23:10,546 - INFO - Loaded last author from config: A3
+2024-10-17 22:23:12,099 - INFO - Double-clicked on directory: C:/
+2024-10-17 22:23:12,100 - INFO - Saved last author to config: A3
+2024-10-17 22:23:12,100 - INFO - Rename images in C:/ by A3
+2024-10-17 22:23:14,674 - INFO - Rename completed successfully.
+2024-10-17 22:55:51,308 - ERROR - Error accessing C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png: [WinError 267] The directory name is invalid: 'C:/1MYPROG\\AutoName\\test_images\\2B Screenshot 2024-02-15 111725.png'
+2024-10-17 22:55:51,329 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:55:51,330 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:55:51,330 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:55:51,330 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:55:51,330 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:55:51,330 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:55:51,380 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:55:52,146 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:55:52,146 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:55:52,146 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:55:52,146 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:55:52,147 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:55:52,147 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:55:52,157 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:55:52,491 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:55:52,492 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:55:52,492 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:55:52,492 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:55:52,492 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:55:52,492 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:55:52,503 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:55:53,144 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:55:53,144 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:55:53,145 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:55:53,145 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:55:53,145 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:55:53,145 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:55:53,155 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:55:54,805 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:55:54,805 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:55:54,805 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:55:54,805 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:55:54,805 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:55:54,806 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:55:54,816 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:55:57,479 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:55:57,479 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:55:57,479 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:55:57,479 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:55:57,479 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:55:57,479 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:55:57,489 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:00,168 - INFO - Saved last author to config: A3
+2024-10-17 22:56:00,168 - INFO - Rename images in C:/1MYPROG\AutoName\test_images by character names and A3
+2024-10-17 22:56:00,169 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png' to 'C:/1MYPROG\AutoName\test_images\2B by A3.png'
+2024-10-17 22:56:00,170 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp' to 'C:/1MYPROG\AutoName\test_images\Ada by A3.webp'
+2024-10-17 22:56:00,170 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\Ivy.webp' to 'C:/1MYPROG\AutoName\test_images\Ivy by A3.webp'
+2024-10-17 22:56:00,170 - INFO - Rename process completed.
+2024-10-17 22:56:09,975 - ERROR - Error accessing C:/1MYPROG\AutoName\test_images\2B by A3.png: [WinError 267] The directory name is invalid: 'C:/1MYPROG\\AutoName\\test_images\\2B by A3.png'
+2024-10-17 22:56:09,975 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:09,975 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:09,975 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:09,975 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:09,975 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:09,975 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:09,984 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:11,639 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-17 22:56:11,640 - INFO - Saved last author to config: A3
+2024-10-17 22:56:11,640 - INFO - Rename images in C:/1MYPROG\AutoName\test_images by A3
+2024-10-17 22:56:11,640 - INFO - Skipping '2B by A3.png' as it already contains 'by A3'
+2024-10-17 22:56:13,016 - INFO - The following files were skipped as they already contain the author name:
+2B by A3.png
+2024-10-17 22:56:13,974 - INFO - Rename completed successfully.
+2024-10-17 22:56:24,082 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:24,082 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:24,082 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:24,082 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:24,082 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:24,082 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:24,093 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:24,570 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:24,570 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:24,570 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:24,570 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:24,570 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:24,570 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:24,580 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:26,069 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:26,069 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:26,069 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:26,069 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:26,069 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:26,069 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:26,080 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:26,695 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:26,695 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:26,695 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:26,695 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:26,695 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:26,695 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:26,705 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:27,255 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:27,255 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:27,255 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:27,255 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:27,255 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:27,255 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:27,265 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:28,515 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:28,515 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:28,516 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:28,516 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:28,516 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:28,516 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:28,525 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:30,412 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:30,412 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:30,414 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:30,414 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:30,414 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:30,414 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:30,424 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:31,041 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:31,041 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:31,041 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:31,041 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:31,041 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:31,041 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:31,051 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:31,652 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-17 22:56:31,652 - DEBUG - STREAM b'sRGB' 41 1
+2024-10-17 22:56:31,652 - DEBUG - STREAM b'gAMA' 54 4
+2024-10-17 22:56:31,652 - DEBUG - STREAM b'pHYs' 70 9
+2024-10-17 22:56:31,652 - DEBUG - STREAM b'iTXt' 91 99
+2024-10-17 22:56:31,652 - DEBUG - STREAM b'IDAT' 202 47222
+2024-10-17 22:56:31,662 - ERROR - Error loading image 'C:/1MYPROG\AutoName\test_images\2B by A3.png': '_tkinter.tkapp' object has no attribute 'image_label'
+2024-10-17 22:56:38,512 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Ivy by A3.webp' to 'C:/1MYPROG\AutoName\test_images\Ivy.webp'
+2024-10-17 22:56:38,514 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\Ada by A3.webp' to 'C:/1MYPROG\AutoName\test_images\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp'
+2024-10-17 22:56:38,514 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\2B by A3.png' to 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png'
+2024-10-17 22:56:53,986 - INFO - Saved last author to config: A3
+2024-10-17 22:56:53,986 - INFO - Application is closing via window manager. Last author saved: 'A3'
+2024-10-17 22:56:53,986 - INFO - Polling loop callback canceled.
+2024-10-17 22:56:53,986 - INFO - Application is closing.
+2024-10-17 23:16:19,936 - INFO - Loaded last author from config: A3
+2024-10-17 23:16:31,190 - ERROR - Error accessing C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png: [WinError 267] The directory name is invalid: 'C:/1MYPROG\\AutoName\\test_images\\2B Screenshot 2024-02-15 111725.png'
+2024-10-17 23:48:32,004 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-17 23:48:32,005 - INFO - Saved last author to config: A3
+2024-10-17 23:48:32,005 - INFO - Rename images in C:/1MYPROG\AutoName\test_images by A3
+2024-10-17 23:48:32,018 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png' to 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725 by A3.png'
+2024-10-17 23:48:33,122 - INFO - Rename completed successfully.
+2024-10-17 23:48:51,203 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-17 23:48:51,203 - INFO - Saved last author to config: A3
+2024-10-17 23:48:59,245 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images
+2024-10-17 23:48:59,245 - INFO - Saved last author to config: A3
+2024-10-17 23:49:03,600 - INFO - Move images in C:/1MYPROG\AutoName\test_images by A3
+2024-10-17 23:49:03,600 - INFO - Skipping '2B Screenshot 2024-02-15 111725 by A3.png' as it already contains 'by A3'
+2024-10-17 23:49:08,389 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by A3.png
+2024-10-17 23:49:09,491 - INFO - Move completed successfully.
+2024-10-17 23:49:30,836 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725 by A3.png' to 'C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png'
+2024-10-17 23:49:34,487 - INFO - Saved last author to config: A3
+2024-10-17 23:49:34,488 - INFO - Application is closing via window manager. Last author saved: 'A3'
+2024-10-17 23:49:34,488 - INFO - Polling loop callback canceled.
+2024-10-17 23:49:34,488 - INFO - Application is closing.
+2024-10-18 19:58:56,900 - INFO - Loaded last author from config: A3
+2024-10-18 19:59:04,490 - INFO - Double-clicked on directory: C:/
+2024-10-18 19:59:04,491 - INFO - Saved last author to config: A3
+2024-10-18 19:59:04,491 - INFO - Rename images in C:/ by A3
+2024-10-18 19:59:05,830 - INFO - Rename completed successfully.
+2024-10-18 20:00:06,833 - INFO - Saved last author to config: A3
+2024-10-18 20:00:08,650 - INFO - Rename completed successfully.
+2024-10-18 20:00:13,480 - INFO - Saved last author to config: A3
+2024-10-18 20:00:13,694 - INFO - Rename process completed.
+2024-10-18 20:00:31,631 - INFO - Saved last author to config: A3
+2024-10-18 20:00:31,633 - INFO - Skipping 'A2 by A3 1.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 10.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 11.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 12.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 2.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 3.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 4.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 5.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 6.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 7.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 8.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3 9.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'A2 by A3.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 1.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 10.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 11.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 12.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 13.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 14.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 15.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 16.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 17.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 18.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 19.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 2.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 20.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 21.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 22.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 23.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 24.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 25.png' as it already contains 'by A3'
+2024-10-18 20:00:31,634 - INFO - Skipping 'Claire by A3 26.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 27.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 28.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 29.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 3.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 30.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 31.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 32.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 33.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 34.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 35.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 36.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 37.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 38.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 39.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 4.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 40.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 41.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 5.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 6.png' as it already contains 'by A3'
+2024-10-18 20:00:31,635 - INFO - Skipping 'Claire by A3 7.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Claire by A3 8.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Claire by A3 9.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Claire by A3.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 1.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 10.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 11.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 12.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 13.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 14.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 15.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 16.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 17.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 18.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 19.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 2.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 20.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 21.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 22.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 23.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 24.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 25.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 26.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 27.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 3.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 4.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 5.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 6.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 7.png' as it already contains 'by A3'
+2024-10-18 20:00:31,636 - INFO - Skipping 'Jill by A3 8.png' as it already contains 'by A3'
+2024-10-18 20:00:31,637 - INFO - Skipping 'Jill by A3 9.png' as it already contains 'by A3'
+2024-10-18 20:00:31,637 - INFO - Skipping 'Jill by A3.png' as it already contains 'by A3'
+2024-10-18 20:00:37,195 - INFO - The following files were skipped as they already contain the author name:
+A2 by A3 1.png
+A2 by A3 10.png
+A2 by A3 11.png
+A2 by A3 12.png
+A2 by A3 2.png
+A2 by A3 3.png
+A2 by A3 4.png
+A2 by A3 5.png
+A2 by A3 6.png
+A2 by A3 7.png
+A2 by A3 8.png
+A2 by A3 9.png
+A2 by A3.png
+Claire by A3 1.png
+Claire by A3 10.png
+Claire by A3 11.png
+Claire by A3 12.png
+Claire by A3 13.png
+Claire by A3 14.png
+Claire by A3 15.png
+Claire by A3 16.png
+Claire by A3 17.png
+Claire by A3 18.png
+Claire by A3 19.png
+Claire by A3 2.png
+Claire by A3 20.png
+Claire by A3 21.png
+Claire by A3 22.png
+Claire by A3 23.png
+Claire by A3 24.png
+Claire by A3 25.png
+Claire by A3 26.png
+Claire by A3 27.png
+Claire by A3 28.png
+Claire by A3 29.png
+Claire by A3 3.png
+Claire by A3 30.png
+Claire by A3 31.png
+Claire by A3 32.png
+Claire by A3 33.png
+Claire by A3 34.png
+Claire by A3 35.png
+Claire by A3 36.png
+Claire by A3 37.png
+Claire by A3 38.png
+Claire by A3 39.png
+Claire by A3 4.png
+Claire by A3 40.png
+Claire by A3 41.png
+Claire by A3 5.png
+Claire by A3 6.png
+Claire by A3 7.png
+Claire by A3 8.png
+Claire by A3 9.png
+Claire by A3.png
+Jill by A3 1.png
+Jill by A3 10.png
+Jill by A3 11.png
+Jill by A3 12.png
+Jill by A3 13.png
+Jill by A3 14.png
+Jill by A3 15.png
+Jill by A3 16.png
+Jill by A3 17.png
+Jill by A3 18.png
+Jill by A3 19.png
+Jill by A3 2.png
+Jill by A3 20.png
+Jill by A3 21.png
+Jill by A3 22.png
+Jill by A3 23.png
+Jill by A3 24.png
+Jill by A3 25.png
+Jill by A3 26.png
+Jill by A3 27.png
+Jill by A3 3.png
+Jill by A3 4.png
+Jill by A3 5.png
+Jill by A3 6.png
+Jill by A3 7.png
+Jill by A3 8.png
+Jill by A3 9.png
+Jill by A3.png
+2024-10-18 20:00:38,268 - INFO - Rename completed successfully.
+2024-10-18 20:00:41,080 - INFO - Saved last author to config: A3
+2024-10-18 20:00:41,297 - INFO - Rename process completed.
+2024-10-18 20:00:45,055 - INFO - Saved last author to config: A3
+2024-10-18 20:00:54,945 - INFO - Data saved to data.json
+2024-10-18 20:00:54,946 - INFO - Added new character name: Blackcat
+2024-10-18 20:00:58,885 - INFO - Data saved to data.json
+2024-10-18 20:00:58,885 - INFO - Added new character name: Farah
+2024-10-18 20:01:01,928 - INFO - Data saved to data.json
+2024-10-18 20:01:01,928 - INFO - Added new character name: Loba
+2024-10-18 20:01:05,135 - INFO - Data saved to data.json
+2024-10-18 20:01:05,135 - INFO - Added new character name: PowerGirl
+2024-10-18 20:01:08,178 - INFO - Data saved to data.json
+2024-10-18 20:01:08,179 - INFO - Added new character name: Rey
+2024-10-18 20:01:08,292 - INFO - Rename process completed.
+2024-10-18 20:01:45,276 - INFO - Saved last author to config: A3
+2024-10-18 20:01:48,503 - INFO - Data saved to data.json
+2024-10-18 20:01:48,503 - INFO - Added new character name: ela
+2024-10-18 20:01:51,691 - INFO - Data saved to data.json
+2024-10-18 20:01:51,691 - INFO - Added new character name: mama
+2024-10-18 20:01:53,806 - INFO - Data saved to data.json
+2024-10-18 20:01:53,806 - INFO - Added new character name: mara
+2024-10-18 20:01:56,424 - INFO - Data saved to data.json
+2024-10-18 20:01:56,424 - INFO - Added new character name: shadowheart
+2024-10-18 20:01:58,389 - INFO - Data saved to data.json
+2024-10-18 20:01:58,390 - INFO - Added new character name: skarlet
+2024-10-18 20:01:58,460 - INFO - Rename process completed.
+2024-10-18 20:02:04,445 - INFO - Saved last author to config: A3
+2024-10-18 20:02:05,614 - INFO - Rename completed successfully.
+2024-10-18 20:02:06,785 - INFO - Saved last author to config: A3
+2024-10-18 20:02:10,277 - INFO - Data saved to data.json
+2024-10-18 20:02:10,277 - INFO - Added new character name: COMM
+2024-10-18 20:02:13,674 - INFO - Data saved to data.json
+2024-10-18 20:02:13,674 - INFO - Added new character name: Lera
+2024-10-18 20:02:16,104 - INFO - Data saved to data.json
+2024-10-18 20:02:16,104 - INFO - Added new character name: Milf
+2024-10-18 20:02:18,909 - INFO - Data saved to data.json
+2024-10-18 20:02:18,909 - INFO - Added new character name: Nicole
+2024-10-18 20:02:20,746 - INFO - Data saved to data.json
+2024-10-18 20:02:20,747 - INFO - Added new character name: xeno
+2024-10-18 20:02:22,134 - INFO - User declined to add a character name for 'Valeria-03v4-6-urban_ninja-naked.png'. Skipping file.
+2024-10-18 20:02:23,062 - INFO - User declined to add a character name for 'Valeria-03v4-6-urban_ninja.png'. Skipping file.
+2024-10-18 20:02:24,504 - INFO - User declined to add a character name for 'iq-14-bg.png'. Skipping file.
+2024-10-18 20:02:24,886 - INFO - User declined to add a character name for 'iq-14-tac-bg.PNG'. Skipping file.
+2024-10-18 20:02:25,081 - INFO - User declined to add a character name for 'iq-8-bg.png'. Skipping file.
+2024-10-18 20:02:25,239 - INFO - User declined to add a character name for 'iq-9-bg.png'. Skipping file.
+2024-10-18 21:01:10,123 - INFO - Data saved to data.json
+2024-10-18 21:01:10,123 - INFO - Added new character name: iq
+2024-10-18 21:01:13,167 - INFO - Data saved to data.json
+2024-10-18 21:01:13,167 - INFO - Added new character name: shani
+2024-10-18 21:01:16,685 - INFO - Data saved to data.json
+2024-10-18 21:01:16,686 - INFO - Added new character name: valeria
+2024-10-18 21:01:19,272 - INFO - Data saved to data.json
+2024-10-18 21:01:19,272 - INFO - Added new character name: zofia
+2024-10-18 21:01:24,463 - INFO - No character name provided for 'ambushed01-edited.png'. Skipping file.
+2024-10-18 21:01:26,599 - INFO - User declined to add a character name for 'D-C-01.png'. Skipping file.
+2024-10-18 21:01:27,317 - INFO - User declined to add a character name for 'D-x-A-01.png'. Skipping file.
+2024-10-18 21:01:27,844 - INFO - User declined to add a character name for 'D-x-A-02.png'. Skipping file.
+2024-10-18 21:01:28,773 - INFO - User declined to add a character name for 'J-001-.png'. Skipping file.
+2024-10-18 21:01:30,581 - INFO - User declined to add a character name for 'kidman-behind1.png'. Skipping file.
+2024-10-18 21:01:31,166 - INFO - User declined to add a character name for 'kidman-behind2.png'. Skipping file.
+2024-10-18 21:01:31,878 - INFO - User declined to add a character name for 'kidman-cowgirl-01-4k.png'. Skipping file.
+2024-10-18 21:01:32,343 - INFO - User declined to add a character name for 'kidman-doggy.png'. Skipping file.
+2024-10-18 21:01:32,868 - INFO - User declined to add a character name for 'kidman-m-4k.png'. Skipping file.
+2024-10-18 21:01:33,408 - INFO - User declined to add a character name for 'kidman-riding-mold1.png'. Skipping file.
+2024-10-18 21:01:33,904 - INFO - User declined to add a character name for 'kidman-riding-mold2.png'. Skipping file.
+2024-10-18 21:01:34,887 - INFO - User declined to add a character name for 'kidman-s-4k.png'. Skipping file.
+2024-10-18 21:01:35,457 - INFO - User declined to add a character name for 'kidman-surrounded1.png'. Skipping file.
+2024-10-18 21:01:36,212 - INFO - User declined to add a character name for 'kidman-x-mold4.png'. Skipping file.
+2024-10-18 21:01:36,760 - INFO - User declined to add a character name for 'kidman-x-monster4.png'. Skipping file.
+2024-10-18 21:01:37,352 - INFO - User declined to add a character name for 'kidman-x-nekkers.png'. Skipping file.
+2024-10-18 21:01:38,028 - INFO - User declined to add a character name for 'kokora-sitting.png'. Skipping file.
+2024-10-18 21:01:38,592 - INFO - User declined to add a character name for 'kokoro-ambushed.png'. Skipping file.
+2024-10-18 21:01:39,108 - INFO - User declined to add a character name for 'kokoro-ambushed01.png'. Skipping file.
+2024-10-18 21:01:39,821 - INFO - User declined to add a character name for 'kokoro-missionary.png'. Skipping file.
+2024-10-18 21:01:40,256 - INFO - User declined to add a character name for 'kokoro-x-facehugger.png'. Skipping file.
+2024-10-18 21:01:44,374 - INFO - Data saved to data.json
+2024-10-18 21:01:44,374 - INFO - Added new character name: lady
+2024-10-18 21:01:45,993 - INFO - User declined to add a character name for 'poster5-edited.png'. Skipping file.
+2024-10-18 21:01:46,068 - INFO - Rename process completed.
+2024-10-18 21:01:48,299 - INFO - Saved last author to config: A3
+2024-10-18 21:01:48,299 - INFO - Application is closing via window manager. Last author saved: 'A3'
+2024-10-18 21:01:48,299 - INFO - Polling loop callback canceled.
+2024-10-18 21:01:48,299 - INFO - Application is closing.
+2024-10-19 12:19:35,544 - INFO - Loaded last author from config: A3
+2024-10-19 12:20:12,453 - INFO - Data saved to data.json
+2024-10-19 12:20:12,454 - INFO - Deleted author: A3
+2024-10-19 12:20:20,243 - INFO - Data saved to data.json
+2024-10-19 12:20:20,243 - INFO - Added author: Athazel
+2024-10-19 12:20:37,319 - INFO - No author selected.
+2024-10-19 12:20:43,395 - INFO - No author selected.
+2024-10-19 12:20:51,638 - INFO - Saved last author to config: Athazel
+2024-10-19 12:20:52,505 - INFO - Rename process completed.
+2024-10-19 12:22:03,275 - INFO - Saved last author to config: Athazel
+2024-10-19 12:22:03,275 - INFO - Application is closing via window manager. Last author saved: 'Athazel'
+2024-10-19 12:22:03,275 - INFO - Polling loop callback canceled.
+2024-10-19 12:22:03,275 - INFO - Application is closing.
+2024-10-19 12:27:49,793 - INFO - Creating preview pane.
+2024-10-19 12:27:49,793 - INFO - image_label has been successfully created.
+2024-10-19 12:27:49,793 - INFO - image_label exists after initialization.
+2024-10-19 12:27:49,793 - INFO - Loaded last author from config: Athazel
+2024-10-19 12:27:59,965 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images - Copy
+2024-10-19 12:27:59,967 - INFO - Saved last author to config: Athazel
+2024-10-19 12:27:59,967 - INFO - Rename images in C:/1MYPROG\AutoName\test_images - Copy by Athazel
+2024-10-19 12:27:59,968 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725.png' to 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png'
+2024-10-19 12:28:00,952 - INFO - Rename completed successfully.
+2024-10-19 12:28:01,683 - ERROR - Error accessing C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png: [WinError 267] The directory name is invalid: 'C:/1MYPROG\\AutoName\\test_images - Copy\\2B Screenshot 2024-02-15 111725 by Athazel.png'
+2024-10-19 12:32:41,559 - INFO - Creating preview pane.
+2024-10-19 12:32:41,560 - INFO - image_label has been successfully created.
+2024-10-19 12:32:41,560 - INFO - image_label exists after initialization.
+2024-10-19 12:32:41,560 - INFO - Loaded last author from config: Athazel
+2024-10-19 12:32:51,123 - ERROR - Error accessing C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png: [WinError 267] The directory name is invalid: 'C:/1MYPROG\\AutoName\\test_images - Copy\\2B Screenshot 2024-02-15 111725 by Athazel.png'
+2024-10-19 12:33:05,920 - INFO - Saved last author to config: Athazel
+2024-10-19 12:33:05,920 - INFO - Application is closing via window manager. Last author saved: 'Athazel'
+2024-10-19 12:33:05,920 - INFO - Polling loop callback canceled.
+2024-10-19 12:33:05,920 - INFO - Application is closing.
+2024-10-19 12:39:39,482 - INFO - Creating preview pane.
+2024-10-19 12:39:39,482 - INFO - image_label has been successfully created.
+2024-10-19 12:39:39,482 - INFO - image_label exists after initialization.
+2024-10-19 12:39:39,482 - INFO - Loaded last author from config: Athazel
+2024-10-19 12:39:45,939 - ERROR - Error accessing C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png: [WinError 267] The directory name is invalid: 'C:/1MYPROG\\AutoName\\test_images - Copy\\2B Screenshot 2024-02-15 111725 by Athazel.png'
+2024-10-19 12:39:49,592 - INFO - Saved last author to config: Athazel
+2024-10-19 12:39:49,592 - INFO - Rename images in C:/1MYPROG\AutoName\test_images - Copy by folder name and Athazel
+2024-10-19 12:39:49,593 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png' to 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 1.png'
+2024-10-19 12:39:50,582 - INFO - Rename by folder name completed successfully.
+2024-10-19 12:39:53,263 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images - Copy
+2024-10-19 12:39:53,263 - INFO - Saved last author to config: Athazel
+2024-10-19 12:39:53,264 - INFO - Rename images in C:/1MYPROG\AutoName\test_images - Copy by Athazel
+2024-10-19 12:39:53,264 - INFO - Skipping 'test_images - Copy by Athazel 1.png' as it already contains 'by Athazel'
+2024-10-19 12:39:54,436 - INFO - The following files were skipped as they already contain the author name:
+test_images - Copy by Athazel 1.png
+2024-10-19 12:39:55,282 - INFO - Rename completed successfully.
+2024-10-19 12:40:02,968 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 1.png' to 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png'
+2024-10-19 12:40:06,079 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images - Copy
+2024-10-19 12:40:06,079 - INFO - Saved last author to config: Athazel
+2024-10-19 12:40:06,080 - INFO - Rename images in C:/1MYPROG\AutoName\test_images - Copy by Athazel
+2024-10-19 12:40:06,080 - INFO - Skipping '2B Screenshot 2024-02-15 111725 by Athazel.png' as it already contains 'by Athazel'
+2024-10-19 12:40:07,087 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by Athazel.png
+2024-10-19 12:40:07,927 - INFO - Rename completed successfully.
+2024-10-19 12:40:25,999 - INFO - Saved last author to config: Athazel
+2024-10-19 12:40:26,000 - INFO - Application is closing via window manager. Last author saved: 'Athazel'
+2024-10-19 12:40:26,000 - INFO - Polling loop callback canceled.
+2024-10-19 12:40:26,000 - INFO - Application is closing.
+2024-10-19 12:48:13,958 - INFO - Creating preview pane.
+2024-10-19 12:48:13,958 - INFO - image_label has been successfully created.
+2024-10-19 12:48:13,958 - INFO - image_label exists after initialization.
+2024-10-19 12:48:13,958 - INFO - Loaded last author from config: Athazel
+2024-10-19 12:48:28,803 - INFO - Saved last author to config: Athazel
+2024-10-19 12:48:28,803 - INFO - Application is closing via window manager. Last author saved: 'Athazel'
+2024-10-19 12:48:28,803 - INFO - Polling loop callback canceled.
+2024-10-19 12:48:28,803 - INFO - Application is closing.
+2024-10-19 14:01:47,737 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-19 14:01:47,737 - DEBUG - STREAM b'sBIT' 41 4
+2024-10-19 14:01:47,737 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-10-19 14:01:47,737 - DEBUG - STREAM b'pHYs' 57 9
+2024-10-19 14:01:47,737 - DEBUG - STREAM b'tEXt' 78 25
+2024-10-19 14:01:47,737 - DEBUG - STREAM b'IDAT' 115 7552
+2024-10-19 14:01:47,769 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\folder_icon.png'
+2024-10-19 14:01:47,773 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-19 14:01:47,773 - DEBUG - STREAM b'sBIT' 41 4
+2024-10-19 14:01:47,774 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-10-19 14:01:47,774 - DEBUG - STREAM b'pHYs' 57 9
+2024-10-19 14:01:47,774 - DEBUG - STREAM b'tEXt' 78 25
+2024-10-19 14:01:47,774 - DEBUG - STREAM b'IDAT' 115 8192
+2024-10-19 14:01:47,778 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\file_icon.png'
+2024-10-19 14:01:47,786 - INFO - Creating preview pane.
+2024-10-19 14:01:47,786 - INFO - image_label has been successfully created.
+2024-10-19 14:01:47,786 - INFO - image_label has been successfully created.
+2024-10-19 14:01:47,786 - INFO - Loaded last author from config: Athazel
+2024-10-19 14:01:54,104 - INFO - Double-clicked on directory: C:/
+2024-10-19 14:01:54,104 - INFO - Saved last author to config: Athazel
+2024-10-19 14:01:54,107 - ERROR - Error during rename 'C:/.GamingRoot' to 'C:/.GamingRoot by Athazel': [WinError 5] Access is denied: 'C:/.GamingRoot' -> 'C:/.GamingRoot by Athazel'
+2024-10-19 14:01:54,107 - ERROR - Error during rename 'C:/DumpStack.log.tmp' to 'C:/DumpStack.log by Athazel.tmp': [WinError 32] The process cannot access the file because it is being used by another process: 'C:/DumpStack.log.tmp' -> 'C:/DumpStack.log by Athazel.tmp'
+2024-10-19 14:01:54,107 - ERROR - Error during rename 'C:/appverifUI.dll' to 'C:/appverifUI by Athazel.dll': [WinError 5] Access is denied: 'C:/appverifUI.dll' -> 'C:/appverifUI by Athazel.dll'
+2024-10-19 14:01:54,107 - ERROR - Error during rename 'C:/hiberfil.sys' to 'C:/hiberfil by Athazel.sys': [WinError 32] The process cannot access the file because it is being used by another process: 'C:/hiberfil.sys' -> 'C:/hiberfil by Athazel.sys'
+2024-10-19 14:01:54,107 - ERROR - Error during rename 'C:/pagefile.sys' to 'C:/pagefile by Athazel.sys': [WinError 32] The process cannot access the file because it is being used by another process: 'C:/pagefile.sys' -> 'C:/pagefile by Athazel.sys'
+2024-10-19 14:01:54,107 - ERROR - Error during rename 'C:/swapfile.sys' to 'C:/swapfile by Athazel.sys': [WinError 32] The process cannot access the file because it is being used by another process: 'C:/swapfile.sys' -> 'C:/swapfile by Athazel.sys'
+2024-10-19 14:01:54,107 - ERROR - Error during rename 'C:/vfcompat.dll' to 'C:/vfcompat by Athazel.dll': [WinError 5] Access is denied: 'C:/vfcompat.dll' -> 'C:/vfcompat by Athazel.dll'
+2024-10-19 14:03:08,935 - WARNING - Rename Images action invoked on a non-directory item: C:/1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png
+2024-10-19 14:03:22,398 - WARNING - Rename Images action invoked on a non-directory item: C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp
+2024-10-19 14:03:28,641 - WARNING - Rename Images by Character Name action invoked on a non-directory item: C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp
+2024-10-19 14:03:29,689 - INFO - Saved last author to config: Athazel
+2024-10-19 14:03:29,690 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png' to 'C:/1MYPROG\AutoName\test_images - Copy\2B by Athazel.png'
+2024-10-19 14:03:29,691 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada by Athazel.webp'
+2024-10-19 14:03:29,691 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp'
+2024-10-19 14:03:34,395 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp'
+2024-10-19 14:03:34,396 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ada by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp'
+2024-10-19 14:03:34,396 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\2B by Athazel.png' to 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png'
+2024-10-19 14:03:39,314 - WARNING - Rename Images by Character Name action invoked on a non-directory item: C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp
+2024-10-19 14:04:08,521 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-19 14:04:08,521 - DEBUG - STREAM b'sBIT' 41 4
+2024-10-19 14:04:08,521 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-10-19 14:04:08,521 - DEBUG - STREAM b'pHYs' 57 9
+2024-10-19 14:04:08,522 - DEBUG - STREAM b'tEXt' 78 25
+2024-10-19 14:04:08,522 - DEBUG - STREAM b'IDAT' 115 7552
+2024-10-19 14:04:08,529 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\folder_icon.png'
+2024-10-19 14:04:08,530 - DEBUG - STREAM b'IHDR' 16 13
+2024-10-19 14:04:08,530 - DEBUG - STREAM b'sBIT' 41 4
+2024-10-19 14:04:08,530 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-10-19 14:04:08,530 - DEBUG - STREAM b'pHYs' 57 9
+2024-10-19 14:04:08,530 - DEBUG - STREAM b'tEXt' 78 25
+2024-10-19 14:04:08,530 - DEBUG - STREAM b'IDAT' 115 8192
+2024-10-19 14:04:08,534 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\file_icon.png'
+2024-10-19 14:04:08,540 - INFO - Creating preview pane.
+2024-10-19 14:04:08,540 - INFO - image_label has been successfully created.
+2024-10-19 14:04:08,541 - INFO - image_label has been successfully created.
+2024-10-19 14:04:08,541 - INFO - Loaded last author from config: Athazel
+2024-10-19 14:04:29,800 - INFO - Saved last author to config: Athazel
+2024-10-19 14:04:29,801 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png' to 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 1.png'
+2024-10-19 14:04:29,802 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 2.webp'
+2024-10-19 14:04:29,802 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 3.webp'
+2024-10-19 14:04:35,048 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 3.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp'
+2024-10-19 14:04:35,049 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 2.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp'
+2024-10-19 14:04:35,049 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\test_images - Copy by Athazel 1.png' to 'C:/1MYPROG\AutoName\test_images - Copy\2B Screenshot 2024-02-15 111725 by Athazel.png'
+2024-10-19 14:04:37,982 - INFO - Initiating rename operation on directory: C:/1MYPROG\AutoName\test_images - Copy
+2024-10-19 14:04:37,983 - INFO - Saved last author to config: Athazel
+2024-10-19 14:04:37,984 - INFO - Skipping '2B Screenshot 2024-02-15 111725 by Athazel.png' as it already contains 'by Athazel'
+2024-10-19 14:04:37,984 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh by Athazel.webp'
+2024-10-19 14:04:37,984 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp'
+2024-10-19 14:04:37,990 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by Athazel.png
+2024-10-19 14:04:49,599 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by Athazel.png
+2024-10-19 14:04:55,725 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp'
+2024-10-19 14:04:55,726 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp'
+2024-10-19 14:05:01,555 - INFO - Initiating rename operation on directory: C:/1MYPROG\AutoName\test_images - Copy
+2024-10-19 14:05:01,555 - INFO - Saved last author to config: Athazel
+2024-10-19 14:05:01,556 - INFO - Skipping '2B Screenshot 2024-02-15 111725 by Athazel.png' as it already contains 'by Athazel'
+2024-10-19 14:05:01,556 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh by Athazel.webp'
+2024-10-19 14:05:01,557 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp'
+2024-10-19 14:05:01,563 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by Athazel.png
+2024-10-19 14:05:02,282 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by Athazel.png
+2024-10-19 14:05:04,943 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp'
+2024-10-19 14:05:04,943 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp'
+2024-10-19 14:05:07,780 - INFO - Initiating rename operation on directory: C:/1MYPROG\AutoName\test_images - Copy
+2024-10-19 14:05:07,781 - INFO - Saved last author to config: Athazel
+2024-10-19 14:05:07,781 - INFO - Skipping '2B Screenshot 2024-02-15 111725 by Athazel.png' as it already contains 'by Athazel'
+2024-10-19 14:05:07,782 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh by Athazel.webp'
+2024-10-19 14:05:07,782 - INFO - Renamed 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp'
+2024-10-19 14:05:07,787 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by Athazel.png
+2024-10-19 14:05:08,717 - INFO - The following files were skipped as they already contain the author name:
+2B Screenshot 2024-02-15 111725 by Athazel.png
+2024-10-19 14:05:23,726 - WARNING - Rename Images action invoked on a non-directory item: C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp
+2024-10-19 14:05:26,707 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ivy by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ivy.webp'
+2024-10-19 14:05:26,707 - INFO - Reverted 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh by Athazel.webp' to 'C:/1MYPROG\AutoName\test_images - Copy\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp'
+2024-10-19 14:05:34,218 - INFO - Saved last author to config: Athazel
+2024-10-19 14:05:51,956 - INFO - Saved last author to config: Athazel
+2024-10-19 14:06:50,922 - INFO - Saved last author to config: Athazel
+2024-10-19 14:06:56,835 - INFO - Double-clicked on directory: C:/1MYPROG\AutoName\test_images - Copy
+2024-10-19 14:06:56,837 - INFO - Saved last author to config: Athazel
+2024-10-19 14:07:27,520 - INFO - Data saved to data.json
+2024-10-19 14:07:27,520 - INFO - Deleted author: Ross
+2024-10-19 14:07:27,520 - INFO - Deleted author: Ross
+2024-10-19 14:07:30,353 - INFO - Data saved to data.json
+2024-10-19 14:07:30,353 - INFO - Deleted author: Boss
+2024-10-19 14:07:30,353 - INFO - Deleted author: Boss
+2024-10-19 14:08:51,697 - INFO - No author selected.
+2024-10-19 14:09:13,218 - INFO - Data saved to data.json
+2024-10-19 14:09:13,218 - INFO - Added new author: Jangunn
+2024-10-19 14:09:13,218 - INFO - Added author: Jangunn
+2024-10-19 14:09:16,520 - INFO - No author selected.
+2024-10-19 14:09:22,320 - INFO - Saved last author to config: Jangunn
+2024-10-19 14:09:26,917 - INFO - Saved last author to config: Jangunn
+2024-10-19 14:09:28,522 - INFO - Saved last author to config: Jangunn
+2024-10-19 14:09:54,236 - INFO - Exiting application via Exit button.
+2024-10-19 14:09:54,236 - INFO - Saved last author to config: Jangunn

@@ -3,16 +3,20 @@
 import os
 import sys
 import tkinter as tk
-from tkinter import filedialog, messagebox, ttk
+from tkinter import filedialog, messagebox, ttk, simpledialog
 import logging
 import configparser
 from file_operations import rename_images, rename_images_by_folder_name, rename_images_by_character_name
 from data_storage import load_data, save_data, add_author, delete_author, add_character_name, delete_character_name
 from logging.handlers import QueueHandler
 import queue
-from PIL import Image, ImageTk 
+from PIL import Image, ImageTk, UnidentifiedImageError
 import shutil 
+import threading
 
+SUPPORTED_IMAGE_EXTENSIONS = (
+    '.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tiff', '.webp', '.ico', '.svg', '.heic'
+)
 
 # Read configuration
 config = configparser.ConfigParser()
@@ -49,7 +53,6 @@ class App(tk.Tk):
         self.undo_stack = []  # Stack to keep track of undo operations
 
         # Load data from JSON file
-        # Add DATA_FILE + LOG_FILE as an attribute
         self.DATA_FILE = DATA_FILE
         self.LOG_FILE = LOG_FILE
         self.data = load_data(DATA_FILE)
@@ -59,11 +62,26 @@ class App(tk.Tk):
         # Create GUI components
         self.create_left_menu()
         self.create_right_menu()
+        
+        # **Load icons BEFORE creating the main frame**
+        self.load_icons()
+        
         self.create_main_frame()
         self.create_status_bar()
         self.create_log_window()
+        self.create_preview_pane()  # Ensure this is called after create_main_frame
         self.create_undo_button() 
         self.setup_logging()
+
+        # Initialize a queue for progress updates
+        self.progress_queue = queue.Queue()
+        self.after(100, self.process_progress_queue)
+
+        # Confirm image_label existence
+        if hasattr(self, 'image_label'):
+            logging.info("image_label has been successfully created.")
+        else:
+            logging.error("Failed to create image_label.")
 
         # Load the last used author
         self.load_last_author()
@@ -74,6 +92,27 @@ class App(tk.Tk):
         self.operation_mode = tk.StringVar(value="Rename")  # Default operation mode
         self.create_operation_mode_selector()
 
+    def load_icons(self):
+        """Load folder and file icons for the tree view."""
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        folder_icon_path = os.path.join(script_dir, "folder_icon.png")
+        file_icon_path = os.path.join(script_dir, "file_icon.png")
+        
+        try:
+            folder_img = Image.open(folder_icon_path).resize((16, 16), Image.ANTIALIAS)
+            self.folder_icon = ImageTk.PhotoImage(folder_img)
+            logging.info(f"Loaded folder icon from '{folder_icon_path}'")
+        except Exception as e:
+            logging.error(f"Failed to load folder icon from '{folder_icon_path}': {e}")
+            self.folder_icon = None  # Fallback to default icon or no icon
+
+        try:
+            file_img = Image.open(file_icon_path).resize((16, 16), Image.ANTIALIAS)
+            self.file_icon = ImageTk.PhotoImage(file_img)
+            logging.info(f"Loaded file icon from '{file_icon_path}'")
+        except Exception as e:
+            logging.error(f"Failed to load file icon from '{file_icon_path}': {e}")
+            self.file_icon = None  # Fallback to default icon or no icon
 
     def create_left_menu(self):
         """Create the left menu with Exit and Restart buttons."""
@@ -87,11 +126,11 @@ class App(tk.Tk):
         self.restart_button.pack(pady=20)
 
     def create_right_menu(self):
-        # Author section
-        """Create the right menu for author selection."""
+        """Create the right menu for author and character name management."""
         self.right_frame = tk.Frame(self, width=200, bg='lightgrey')
         self.right_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=5, pady=5)
 
+        # Author section
         self.author_label = tk.Label(self.right_frame, text="Author Name")
         self.author_label.pack(pady=10)
 
@@ -112,11 +151,11 @@ class App(tk.Tk):
         )
         self.delete_author_button.pack(pady=5)
 
-        # Undo Delete Button
-        self.undo_delete_button = tk.Button(
-            self.right_frame, text="Undo Delete", command=self.undo_last_deletion
+        # Undo Delete Button for Authors
+        self.undo_delete_author_button = tk.Button(
+            self.right_frame, text="Undo Delete Author", command=self.undo_last_deletion
         )
-        self.undo_delete_button.pack(pady=5)
+        self.undo_delete_author_button.pack(pady=5)
 
         # Character name section
         self.character_name_label = tk.Label(self.right_frame, text="Character Name")
@@ -139,14 +178,14 @@ class App(tk.Tk):
         )
         self.delete_character_name_button.pack(pady=5)
 
-        # Undo Delete Button
-        self.undo_delete_button = tk.Button(
-            self.right_frame, text="Undo Delete", command=self.undo_last_deletion
+        # Undo Delete Button for Characters
+        self.undo_delete_character_button = tk.Button(
+            self.right_frame, text="Undo Delete Character", command=self.undo_last_deletion
         )
-        self.undo_delete_button.pack(pady=5)
+        self.undo_delete_character_button.pack(pady=5)
 
     def create_main_frame(self):
-        """Create the main frame containing the directory entry and tree view."""
+        """Create the main frame containing the directory entry, search bar, and tree view."""
         self.main_frame = tk.Frame(self)
         self.main_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=10, pady=10)
 
@@ -159,6 +198,19 @@ class App(tk.Tk):
 
         self.go_button = tk.Button(self.entry_frame, text="Go", command=self.load_path)
         self.go_button.pack(side=tk.LEFT, padx=5)
+
+        # Search frame
+        self.search_frame = tk.Frame(self.main_frame)
+        self.search_frame.pack(fill=tk.X, pady=5)
+
+        self.search_label = tk.Label(self.search_frame, text="Search:")
+        self.search_label.pack(side=tk.LEFT, padx=5)
+
+        self.search_entry = tk.Entry(self.search_frame, width=30)
+        self.search_entry.pack(side=tk.LEFT, padx=5)
+
+        self.search_button = tk.Button(self.search_frame, text="Go", command=self.search_tree)
+        self.search_button.pack(side=tk.LEFT, padx=5)
 
         # Tree view frame
         self.tree_frame = tk.Frame(self.main_frame)
@@ -184,13 +236,16 @@ class App(tk.Tk):
         self.context_menu.add_command(label="Rename Images by Folder Name", command=self.context_rename_images_by_folder_name)
         self.context_menu.add_command(label="Rename Images by Character Name", command=self.context_rename_images_by_character_name)
 
-        self.tree.bind("<<TreeviewSelect>>", self.on_tree_select)   
-
-
     def create_status_bar(self):
         """Create the status bar at the bottom of the application."""
-        self.status_label = tk.Label(self, text="Status: Ready", anchor='w', bg='lightgrey')
-        self.status_label.pack(side=tk.BOTTOM, fill=tk.X)
+        self.status_frame = tk.Frame(self, bg='lightgrey')
+        self.status_frame.pack(side=tk.BOTTOM, fill=tk.X)
+
+        self.status_label = tk.Label(self.status_frame, text="Status: Ready", anchor='w', bg='lightgrey')
+        self.status_label.pack(side=tk.LEFT, padx=5)
+
+        self.progress = ttk.Progressbar(self.status_frame, orient='horizontal', length=200, mode='determinate')
+        self.progress.pack(side=tk.RIGHT, padx=5)
 
     def create_log_window(self):
         """Create a collapsible frame for displaying logs."""
@@ -212,14 +267,21 @@ class App(tk.Tk):
 
     def create_preview_pane(self):
         """Create a pane to display image thumbnails."""
+        logging.info("Creating preview pane.")
         self.preview_frame = tk.Frame(self.main_frame, width=200, bg='white')
         self.preview_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=5, pady=5)
 
         self.preview_label = tk.Label(self.preview_frame, text="Preview")
         self.preview_label.pack()
 
-        self.image_label = tk.Label(self.preview_frame)
-        self.image_label.pack(pady=10)  
+        self.image_label = tk.Label(self.preview_frame, text="No file selected.")
+        self.image_label.pack(pady=10)
+        
+        # Confirm initialization
+        if hasattr(self, 'image_label'):
+            logging.info("image_label has been successfully created.")
+        else:
+            logging.error("Failed to create image_label.")
 
     def create_operation_mode_selector(self):
         """Create operation mode selector (Rename, Copy, Move)."""
@@ -245,8 +307,8 @@ class App(tk.Tk):
         self.move_radio.pack(side=tk.LEFT)
 
     def create_undo_button(self):
-        """Create the Undo button and place it in the status bar or toolbar."""
-        self.undo_button = tk.Button(self.status_label, text="Undo", command=self.undo_last_action)
+        """Create the Undo button and place it in the status bar."""
+        self.undo_button = tk.Button(self.status_frame, text="Undo", command=self.undo_last_action)
         self.undo_button.pack(side=tk.RIGHT, padx=5)
         self.update_undo_button_state()  # Set initial state
 
@@ -267,7 +329,7 @@ class App(tk.Tk):
                 self.authors = sorted(self.authors)
                 self.author_combo['values'] = self.authors
                 self.data['authors'] = self.authors
-                save_data(DATA_FILE, self.data)
+                save_data(self.DATA_FILE, self.data)
                 logging.info(f"Restored author: {name}")
                 messagebox.showinfo("Undo Successful", f"Author '{name}' has been restored.")
             elif action_type == 'character':
@@ -275,7 +337,7 @@ class App(tk.Tk):
                 self.character_names = sorted(self.character_names)
                 self.character_name_combo['values'] = self.character_names
                 self.data['character_names'] = self.character_names
-                save_data(DATA_FILE, self.data)
+                save_data(self.DATA_FILE, self.data)
                 logging.info(f"Restored character name: {name}")
                 messagebox.showinfo("Undo Successful", f"Character '{name}' has been restored.")
         else:
@@ -291,14 +353,17 @@ class App(tk.Tk):
             for new_file, original_file in reversed(operations):
                 try:
                     if operation_mode == "Rename":
-                        os.rename(new_file, original_file)
-                        logging.info(f"Reverted '{new_file}' to '{original_file}'")
+                        if original_file and os.path.exists(new_file):
+                            os.rename(new_file, original_file)
+                            logging.info(f"Reverted '{new_file}' to '{original_file}'")
                     elif operation_mode == "Copy":
-                        os.remove(new_file)
-                        logging.info(f"Removed copied file '{new_file}'")
+                        if os.path.exists(new_file):
+                            os.remove(new_file)
+                            logging.info(f"Removed copied file '{new_file}'")
                     elif operation_mode == "Move":
-                        shutil.move(new_file, original_file)
-                        logging.info(f"Moved '{new_file}' back to '{original_file}'")
+                        if original_file and os.path.exists(new_file):
+                            shutil.move(new_file, original_file)
+                            logging.info(f"Moved '{new_file}' back to '{original_file}'")
                     else:
                         logging.error(f"Unknown operation mode: {operation_mode}")
                 except Exception as e:
@@ -315,26 +380,41 @@ class App(tk.Tk):
 
     def on_tree_select(self, event):
         """Handle the event when a tree item is selected."""
-        item = self.tree.selection()[0]
-        abspath = self.tree.set(item, "abspath")
-        if os.path.isfile(abspath):
-            self.show_image_preview(abspath)
-        else:
-            # Clear the preview if a directory is selected
-            self.image_label.config(image='')
+        try:
+            selected_item = self.tree.selection()[0]
+            abspath = self.tree.set(selected_item, "abspath")
+            if os.path.isfile(abspath):
+                self.show_image_preview(abspath)
+            else:
+                # Clear the preview if a directory is selected
+                self.image_label.config(image='', text="No file selected.")
+                self.image_label.image = None
+        except IndexError:
+            # No item selected
+            self.image_label.config(image='', text="No file selected.")
             self.image_label.image = None
 
     def show_image_preview(self, image_path):
-        """Display a thumbnail of the selected image."""
+        """Display a thumbnail of the selected image or indicate non-image files."""
+        if not image_path.lower().endswith(SUPPORTED_IMAGE_EXTENSIONS):
+            # Clear any existing image and show a message
+            self.image_label.config(image='', text="No preview available for this file.")
+            self.image_label.image = None
+            return
+
         try:
             img = Image.open(image_path)
             img.thumbnail((200, 200))  # Adjust the size as needed
             photo = ImageTk.PhotoImage(img)
-            self.image_label.config(image=photo)
+            self.image_label.config(image=photo, text="")
             self.image_label.image = photo  # Keep a reference to prevent garbage collection
+        except UnidentifiedImageError:
+            logging.warning(f"Unsupported image format: {image_path}")
+            self.image_label.config(image='', text="Cannot preview this image format.")
+            self.image_label.image = None
         except Exception as e:
             logging.error(f"Error loading image '{image_path}': {e}")
-            self.image_label.config(image='')
+            self.image_label.config(image='', text="Error loading image.")
             self.image_label.image = None
 
     def toggle_log_window(self):
@@ -378,7 +458,6 @@ class App(tk.Tk):
         except Exception as e:
             logging.error(f"Error appending log message: {e}")
 
-
     def format_log_record(self, record):
         """Format the log record for display."""
         return self.gui_log_formatter.format(record)
@@ -392,12 +471,12 @@ class App(tk.Tk):
                 self.append_log_message(msg)
             # Store the after ID
             self.after_id = self.after(100, self.poll_log_queue)
-   
+
     def add_author(self):
         """Add a new author to the list."""
         author_name = self.author_entry.get().strip()
         if author_name and author_name not in self.authors:
-            success = add_author(author_name, DATA_FILE)
+            success = add_author(author_name, self.DATA_FILE)
             if success:
                 self.authors.append(author_name)
                 self.authors = sorted(self.authors)
@@ -414,7 +493,7 @@ class App(tk.Tk):
         """Add a new character name to the list."""
         character_name = self.character_name_entry.get().strip()
         if character_name and character_name not in self.character_names:
-            success = add_character_name(character_name, DATA_FILE)
+            success = add_character_name(character_name, self.DATA_FILE)
             if success:
                 self.character_names.append(character_name)
                 self.character_names = sorted(self.character_names)
@@ -431,7 +510,7 @@ class App(tk.Tk):
         """Delete the selected author from the list."""
         author_name = self.author_combo.get().strip()
         if author_name and author_name in self.authors:
-            success = delete_author(author_name, DATA_FILE)
+            success = delete_author(author_name, self.DATA_FILE)
             if success:
                 self.undo_stack.append(('author', author_name))
                 self.authors.remove(author_name)
@@ -450,7 +529,7 @@ class App(tk.Tk):
         """Delete the selected character name from the list."""
         character_name = self.character_name_combo.get().strip()
         if character_name and character_name in self.character_names:
-            success = delete_character_name(character_name, DATA_FILE)
+            success = delete_character_name(character_name, self.DATA_FILE)
             if success:
                 self.undo_stack.append(('character', character_name))
                 self.character_names.remove(character_name)
@@ -483,7 +562,7 @@ class App(tk.Tk):
                     self.authors.append(author_name)
                     self.author_combo['values'] = self.authors
                     self.data['authors'] = self.authors
-                    save_data(DATA_FILE, self.data)
+                    save_data(self.DATA_FILE, self.data)
                     logging.info(f"Added new author: {author_name}")
                     self.save_last_author(author_name)
                 else:
@@ -495,7 +574,7 @@ class App(tk.Tk):
             logging.info("No author selected.")
             return None
         return author_name
-    
+
     def save_last_author(self, author_name):
         """Save the last used author to the config file."""
         try:
@@ -515,7 +594,7 @@ class App(tk.Tk):
                     self.authors.append(author_name)
                     self.author_combo['values'] = self.authors
                     self.data['authors'] = self.authors
-                    save_data(DATA_FILE, self.data)
+                    save_data(self.DATA_FILE, self.data)
                 self.author_combo.set(author_name)
                 logging.info(f"Loaded last author from config: {author_name}")
         except Exception as e:
@@ -532,30 +611,38 @@ class App(tk.Tk):
         return drives
 
     def insert_node(self, parent, text, abspath):
-        """Insert a node into the tree view."""
-        node = self.tree.insert(parent, 'end', text=text, open=False)
-        self.tree.set(node, "abspath", abspath)
-        # Insert a dummy child to make the node expandable
-        self.tree.insert(node, 'end')
+        """Insert a node into the tree view with appropriate icon."""
+        if os.path.isdir(abspath):
+            icon = self.folder_icon if self.folder_icon else ""
+            node = self.tree.insert(parent, 'end', text=text, open=False, image=icon)
+            self.tree.set(node, "abspath", abspath)
+            self.tree.insert(node, 'end')  # Insert dummy child
+        else:
+            icon = self.file_icon if self.file_icon else ""
+            node = self.tree.insert(parent, 'end', text=text, open=False, image=icon)
+            self.tree.set(node, "abspath", abspath)
 
     def on_open_node(self, event):
         """Handle the event when a node is opened."""
         node = self.tree.focus()
         abspath = self.tree.set(node, "abspath")
 
-        # Remove the dummy node if present
-        self.tree.delete(*self.tree.get_children(node))
+        # Check if the node has a dummy child
+        children = self.tree.get_children(node)
+        if len(children) == 1:
+            child_abspath = self.tree.set(children[0], "abspath")
+            if not child_abspath:  # Dummy child has empty abspath
+                # Remove dummy child
+                self.tree.delete(children[0])
 
-        try:
-            for p in sorted(os.listdir(abspath)):
-                child_path = os.path.join(abspath, p)
-                if os.path.isdir(child_path):
-                    self.insert_node(node, p, child_path)
-                elif child_path.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
-                    # Insert image files into the tree
-                    self.insert_node(node, p, child_path)
-        except (PermissionError, FileNotFoundError, OSError) as e:
-            logging.error(f"Error accessing {abspath}: {e}")
+                # Populate with actual children
+                try:
+                    for p in sorted(os.listdir(abspath)):
+                        child_path = os.path.join(abspath, p)
+                        if os.path.isdir(child_path) or os.path.isfile(child_path):
+                            self.insert_node(node, p, child_path)
+                except (PermissionError, FileNotFoundError, OSError) as e:
+                    logging.error(f"Error accessing {abspath}: {e}")
 
     def prompt_author_name_and_rename(self, folder_path, by_folder_name=False):
         """
@@ -573,21 +660,78 @@ class App(tk.Tk):
                     return
 
             if by_folder_name:
-                rename_images_by_folder_name(
-                    folder_path, author_name, self.status_label, self, operation_mode, destination_folder
-                )
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_folder_name, args=(folder_path, author_name, operation_mode, destination_folder))
+                thread.start()
             else:
-                rename_images(
-                    folder_path, author_name, self.status_label, self, operation_mode, destination_folder
-                )
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images, args=(folder_path, author_name, operation_mode, destination_folder))
+                thread.start()
+
+    def run_rename_images(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images operation in a separate thread."""
+        rename_images(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_folder_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_folder_name operation in a separate thread."""
+        rename_images_by_folder_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_character_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_character_name operation in a separate thread."""
+        rename_images_by_character_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self.character_names,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def update_progress(self, status, data=None):
+        """Callback function to update progress."""
+        if status == "start":
+            total = data
+            self.progress_queue.put(("start", total))
+        elif status == "update":
+            increment = data
+            self.progress_queue.put(("update", increment))
+        elif status == "skipped":
+            skipped_message = data
+            self.progress_queue.put(("skipped", skipped_message))
+        elif status == "done":
+            self.progress_queue.put(("done",))
+        elif status == "error":
+            error_message = data
+            self.progress_queue.put(("error", error_message))
 
     def on_double_click(self, event):
         """Handle double-click event on a tree node."""
-        item = self.tree.selection()[0]
-        abspath = self.tree.set(item, "abspath")
-        if os.path.isdir(abspath):
-            logging.info(f"Double-clicked on directory: {abspath}")
-            self.prompt_author_name_and_rename(abspath)
+        try:
+            item = self.tree.selection()[0]
+            abspath = self.tree.set(item, "abspath")
+            if os.path.isdir(abspath):
+                logging.info(f"Double-clicked on directory: {abspath}")
+                self.prompt_author_name_and_rename(abspath)
+        except IndexError:
+            logging.warning("Double-click event triggered without any selection.")
 
     def show_context_menu(self, event):
         """Show the context menu on right-click."""
@@ -598,25 +742,32 @@ class App(tk.Tk):
 
     def context_rename_images(self):
         """Context menu action to rename images."""
-        item = self.tree.selection()[0]
+        selected_items = self.tree.selection()
+        
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images.")
+            logging.warning("Rename Images action invoked without any selection.")
+            return
+        
+        item = selected_items[0]
         abspath = self.tree.set(item, "abspath")
+        
         if os.path.isdir(abspath):
+            logging.info(f"Initiating rename operation on directory: {abspath}")
             self.prompt_author_name_and_rename(abspath)
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images action invoked on a non-directory item: {abspath}")
 
     def context_rename_images_by_folder_name(self):
         """Context menu action to rename images by folder name."""
-        item = self.tree.selection()[0]
-        abspath = self.tree.set(item, "abspath")
-        if os.path.isdir(abspath):
-            author_name = self.get_author_name()
-            if author_name:
-                rename_images_by_folder_name(
-                    abspath, author_name, self.status_label, self  # Pass 'self' as 'app'
-                )
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by folder name.")
+            logging.warning("Rename Images by Folder Name action invoked without any selection.")
+            return
 
-    def context_rename_images_by_character_name(self):
-        """Context menu action to rename images by character names."""
-        item = self.tree.selection()[0]
+        item = selected_items[0]
         abspath = self.tree.set(item, "abspath")
         if os.path.isdir(abspath):
             author_name = self.get_author_name()
@@ -630,16 +781,52 @@ class App(tk.Tk):
                         messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
                         return
 
-                rename_images_by_character_name(
-                    abspath, author_name, self.status_label, self.character_names, self, operation_mode, destination_folder
-                )
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_folder_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Folder Name action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_character_name(self):
+        """Context menu action to rename images by character names."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by character names.")
+            logging.warning("Rename Images by Character Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_character_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Character Name action invoked on a non-directory item: {abspath}")
 
     def load_path(self):
         """Load the path entered in the path entry."""
         path = self.path_entry.get()
         if os.path.isdir(path):
             self.tree.delete(*self.tree.get_children())
-            self.insert_node('', os.path.basename(path), path)
+            base_name = os.path.basename(path.rstrip(os.sep))
+            if not base_name:
+                # For root directories like 'C:/', os.path.basename may return empty
+                base_name = path
+            self.insert_node('', base_name, path)
             self.populate_tree('', path)
             self.status_label.config(text=f"Loaded path: {path}")
             logging.info(f"Loaded path: {path}")
@@ -649,15 +836,14 @@ class App(tk.Tk):
             logging.error(f"Invalid directory path entered: {path}")
 
     def populate_tree(self, parent, path):
-        """Populate the tree view with directories."""
+        """Populate the tree view with directories and all files."""
         try:
             for p in sorted(os.listdir(path)):
                 abspath = os.path.join(path, p)
                 if os.path.isdir(abspath):
-                    node = self.tree.insert(parent, 'end', text=p, open=False)
-                    self.tree.set(node, "abspath", abspath)
-                    # Insert a dummy child to make the node expandable
-                    self.tree.insert(node, 'end')
+                    self.insert_node(parent, p, abspath)
+                else:
+                    self.insert_node(parent, p, abspath)
         except (PermissionError, FileNotFoundError, OSError) as e:
             # Log the exception
             logging.error(f"Error accessing {path}: {e}")
@@ -704,6 +890,1422 @@ class App(tk.Tk):
         logging.info("Application is closing.")
         self.destroy()
 
+    def search_tree(self):
+        """Search for a file or directory in the tree view."""
+        query = self.search_entry.get().strip().lower()
+        if not query:
+            messagebox.showwarning("Empty Search", "Please enter a search query.")
+            return
+
+        # Collapse all nodes first
+        for node in self.tree.get_children():
+            self.tree.item(node, open=False)
+            self.collapse_all_children(node)
+
+        # Search and highlight matching nodes
+        matching_nodes = self.find_matching_nodes('', query)
+        if matching_nodes:
+            for node in matching_nodes:
+                # Open parent nodes
+                self.open_parent_nodes(node)
+                # Select and focus the node
+                self.tree.selection_set(node)
+                self.tree.focus(node)
+                self.tree.see(node)
+        else:
+            messagebox.showinfo("No Results", f"No files or directories match '{query}'.")
+
+    def collapse_all_children(self, node):
+        """Recursively collapse all children of a node."""
+        for child in self.tree.get_children(node):
+            self.tree.item(child, open=False)
+            self.collapse_all_children(child)
+
+    def find_matching_nodes(self, parent, query):
+        """Recursively find all nodes that match the query."""
+        matches = []
+        for child in self.tree.get_children(parent):
+            node_text = self.tree.item(child, 'text').lower()
+            if query in node_text:
+                matches.append(child)
+            # Recursively search in children
+            matches.extend(self.find_matching_nodes(child, query))
+        return matches
+
+    def open_parent_nodes(self, node):
+        """Open all parent nodes of a given node."""
+        parent = self.tree.parent(node)
+        if parent:
+            self.tree.item(parent, open=True)
+            self.open_parent_nodes(parent)
+
+    def process_progress_queue(self):
+        """Process progress updates from the queue."""
+        try:
+            while True:
+                message = self.progress_queue.get_nowait()
+                if message[0] == "start":
+                    total = message[1]
+                    self.progress['maximum'] = total
+                    self.progress['value'] = 0
+                    self.progress.start(10)  # Start indeterminate progress
+                    self.status_label.config(text="Operation started...")
+                elif message[0] == "update":
+                    increment = message[1]
+                    self.progress['value'] += increment
+                    self.status_label.config(text=f"Processing... ({self.progress['value']}/{self.progress['maximum']})")
+                elif message[0] == "skipped":
+                    skipped_message = message[1]
+                    messagebox.showinfo("Skipped Files", skipped_message)
+                    logging.info(skipped_message)
+                elif message[0] == "done":
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation completed.")
+                    messagebox.showinfo("Success", "Operation completed successfully.")
+                elif message[0] == "error":
+                    error_message = message[1]
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation encountered errors.")
+                    messagebox.showerror("Error", error_message)
+        except queue.Empty:
+            pass
+        finally:
+            self.after(100, self.process_progress_queue)
+
+    def toggle_log_window(self):
+        """Toggle the visibility of the log window."""
+        if self.log_frame_visible:
+            self.log_frame.pack_forget()
+            self.toggle_log_button.config(text="Show Logs")
+            self.log_frame_visible = False
+        else:
+            self.log_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+            self.toggle_log_button.config(text="Hide Logs")
+            self.log_frame_visible = True   
+
+    def run_rename_images(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images operation in a separate thread."""
+        rename_images(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_folder_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_folder_name operation in a separate thread."""
+        rename_images_by_folder_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_character_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_character_name operation in a separate thread."""
+        rename_images_by_character_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self.character_names,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def update_progress(self, status, data=None):
+        """Callback function to update progress."""
+        if status == "start":
+            total = data
+            self.progress_queue.put(("start", total))
+        elif status == "update":
+            increment = data
+            self.progress_queue.put(("update", increment))
+        elif status == "skipped":
+            skipped_message = data
+            self.progress_queue.put(("skipped", skipped_message))
+        elif status == "done":
+            self.progress_queue.put(("done",))
+        elif status == "error":
+            error_message = data
+            self.progress_queue.put(("error", error_message))
+
+    def on_double_click(self, event):
+        """Handle double-click event on a tree node."""
+        try:
+            item = self.tree.selection()[0]
+            abspath = self.tree.set(item, "abspath")
+            if os.path.isdir(abspath):
+                logging.info(f"Double-clicked on directory: {abspath}")
+                self.prompt_author_name_and_rename(abspath)
+        except IndexError:
+            logging.warning("Double-click event triggered without any selection.")
+
+    def show_context_menu(self, event):
+        """Show the context menu on right-click."""
+        item = self.tree.identify_row(event.y)
+        if item:
+            self.tree.selection_set(item)
+            self.context_menu.post(event.x_root, event.y_root)
+
+    def context_rename_images(self):
+        """Context menu action to rename images."""
+        selected_items = self.tree.selection()
+        
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images.")
+            logging.warning("Rename Images action invoked without any selection.")
+            return
+        
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        
+        if os.path.isdir(abspath):
+            logging.info(f"Initiating rename operation on directory: {abspath}")
+            self.prompt_author_name_and_rename(abspath)
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_folder_name(self):
+        """Context menu action to rename images by folder name."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by folder name.")
+            logging.warning("Rename Images by Folder Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_folder_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Folder Name action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_character_name(self):
+        """Context menu action to rename images by character names."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by character names.")
+            logging.warning("Rename Images by Character Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_character_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Character Name action invoked on a non-directory item: {abspath}")
+
+    def load_path(self):
+        """Load the path entered in the path entry."""
+        path = self.path_entry.get()
+        if os.path.isdir(path):
+            self.tree.delete(*self.tree.get_children())
+            base_name = os.path.basename(path.rstrip(os.sep))
+            if not base_name:
+                # For root directories like 'C:/', os.path.basename may return empty
+                base_name = path
+            self.insert_node('', base_name, path)
+            self.populate_tree('', path)
+            self.status_label.config(text=f"Loaded path: {path}")
+            logging.info(f"Loaded path: {path}")
+        else:
+            messagebox.showerror("Error", "Invalid directory path")
+            self.status_label.config(text="Invalid directory path")
+            logging.error(f"Invalid directory path entered: {path}")
+
+    def populate_tree(self, parent, path):
+        """Populate the tree view with directories and all files."""
+        try:
+            for p in sorted(os.listdir(path)):
+                abspath = os.path.join(path, p)
+                if os.path.isdir(abspath):
+                    self.insert_node(parent, p, abspath)
+                else:
+                    self.insert_node(parent, p, abspath)
+        except (PermissionError, FileNotFoundError, OSError) as e:
+            # Log the exception
+            logging.error(f"Error accessing {path}: {e}")
+
+    def exit_app(self):
+        """Exit the application."""
+        logging.info("Exiting application via Exit button.")
+        # Save the current author to config
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        self.destroy()
+      
+    def restart_app(self):
+        """Restart the application."""
+        logging.info("Restarting application.")
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        os.execl(sys.executable, sys.executable, *sys.argv)
+    
+    def on_closing(self):
+        """Handle the window close event."""
+        # Save the current author if selected
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+            logging.info(f"Application is closing via window manager. Last author saved: '{author_name}'")
+        else:
+            logging.info("No author selected upon exit. LastAuthor remains unchanged.")
+
+        # Stop the polling loop and cancel pending callbacks
+        self.polling = False
+        if hasattr(self, 'after_id'):
+            self.after_cancel(self.after_id)
+            logging.info("Polling loop callback canceled.")
+
+        self.undo_stack.clear()  # Clear undo data
+
+        logging.info("Application is closing.")
+        self.destroy()
+
+    def search_tree(self):
+        """Search for a file or directory in the tree view."""
+        query = self.search_entry.get().strip().lower()
+        if not query:
+            messagebox.showwarning("Empty Search", "Please enter a search query.")
+            return
+
+        # Collapse all nodes first
+        for node in self.tree.get_children():
+            self.tree.item(node, open=False)
+            self.collapse_all_children(node)
+
+        # Search and highlight matching nodes
+        matching_nodes = self.find_matching_nodes('', query)
+        if matching_nodes:
+            for node in matching_nodes:
+                # Open parent nodes
+                self.open_parent_nodes(node)
+                # Select and focus the node
+                self.tree.selection_set(node)
+                self.tree.focus(node)
+                self.tree.see(node)
+        else:
+            messagebox.showinfo("No Results", f"No files or directories match '{query}'.")
+
+    def collapse_all_children(self, node):
+        """Recursively collapse all children of a node."""
+        for child in self.tree.get_children(node):
+            self.tree.item(child, open=False)
+            self.collapse_all_children(child)
+
+    def find_matching_nodes(self, parent, query):
+        """Recursively find all nodes that match the query."""
+        matches = []
+        for child in self.tree.get_children(parent):
+            node_text = self.tree.item(child, 'text').lower()
+            if query in node_text:
+                matches.append(child)
+            # Recursively search in children
+            matches.extend(self.find_matching_nodes(child, query))
+        return matches
+
+    def open_parent_nodes(self, node):
+        """Open all parent nodes of a given node."""
+        parent = self.tree.parent(node)
+        if parent:
+            self.tree.item(parent, open=True)
+            self.open_parent_nodes(parent)
+
+    def process_progress_queue(self):
+        """Process progress updates from the queue."""
+        try:
+            while True:
+                message = self.progress_queue.get_nowait()
+                if message[0] == "start":
+                    total = message[1]
+                    self.progress['maximum'] = total
+                    self.progress['value'] = 0
+                    self.progress.start(10)  # Start indeterminate progress
+                    self.status_label.config(text="Operation started...")
+                elif message[0] == "update":
+                    increment = message[1]
+                    self.progress['value'] += increment
+                    self.status_label.config(text=f"Processing... ({self.progress['value']}/{self.progress['maximum']})")
+                elif message[0] == "skipped":
+                    skipped_message = message[1]
+                    messagebox.showinfo("Skipped Files", skipped_message)
+                    logging.info(skipped_message)
+                elif message[0] == "done":
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation completed.")
+                    messagebox.showinfo("Success", "Operation completed successfully.")
+                elif message[0] == "error":
+                    error_message = message[1]
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation encountered errors.")
+                    messagebox.showerror("Error", error_message)
+        except queue.Empty:
+            pass
+        finally:
+            self.after(100, self.process_progress_queue)
+
+    def toggle_log_window(self):
+        """Toggle the visibility of the log window."""
+        if self.log_frame_visible:
+            self.log_frame.pack_forget()
+            self.toggle_log_button.config(text="Show Logs")
+            self.log_frame_visible = False
+        else:
+            self.log_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+            self.toggle_log_button.config(text="Hide Logs")
+            self.log_frame_visible = True   
+
+    def run_rename_images(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images operation in a separate thread."""
+        rename_images(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_folder_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_folder_name operation in a separate thread."""
+        rename_images_by_folder_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_character_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_character_name operation in a separate thread."""
+        rename_images_by_character_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self.character_names,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def update_progress(self, status, data=None):
+        """Callback function to update progress."""
+        if status == "start":
+            total = data
+            self.progress_queue.put(("start", total))
+        elif status == "update":
+            increment = data
+            self.progress_queue.put(("update", increment))
+        elif status == "skipped":
+            skipped_message = data
+            self.progress_queue.put(("skipped", skipped_message))
+        elif status == "done":
+            self.progress_queue.put(("done",))
+        elif status == "error":
+            error_message = data
+            self.progress_queue.put(("error", error_message))
+
+    def on_double_click(self, event):
+        """Handle double-click event on a tree node."""
+        try:
+            item = self.tree.selection()[0]
+            abspath = self.tree.set(item, "abspath")
+            if os.path.isdir(abspath):
+                logging.info(f"Double-clicked on directory: {abspath}")
+                self.prompt_author_name_and_rename(abspath)
+        except IndexError:
+            logging.warning("Double-click event triggered without any selection.")
+
+    def show_context_menu(self, event):
+        """Show the context menu on right-click."""
+        item = self.tree.identify_row(event.y)
+        if item:
+            self.tree.selection_set(item)
+            self.context_menu.post(event.x_root, event.y_root)
+
+    def context_rename_images(self):
+        """Context menu action to rename images."""
+        selected_items = self.tree.selection()
+        
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images.")
+            logging.warning("Rename Images action invoked without any selection.")
+            return
+        
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        
+        if os.path.isdir(abspath):
+            logging.info(f"Initiating rename operation on directory: {abspath}")
+            self.prompt_author_name_and_rename(abspath)
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_folder_name(self):
+        """Context menu action to rename images by folder name."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by folder name.")
+            logging.warning("Rename Images by Folder Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_folder_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Folder Name action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_character_name(self):
+        """Context menu action to rename images by character names."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by character names.")
+            logging.warning("Rename Images by Character Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_character_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Character Name action invoked on a non-directory item: {abspath}")
+
+    def load_path(self):
+        """Load the path entered in the path entry."""
+        path = self.path_entry.get()
+        if os.path.isdir(path):
+            self.tree.delete(*self.tree.get_children())
+            base_name = os.path.basename(path.rstrip(os.sep))
+            if not base_name:
+                # For root directories like 'C:/', os.path.basename may return empty
+                base_name = path
+            self.insert_node('', base_name, path)
+            self.populate_tree('', path)
+            self.status_label.config(text=f"Loaded path: {path}")
+            logging.info(f"Loaded path: {path}")
+        else:
+            messagebox.showerror("Error", "Invalid directory path")
+            self.status_label.config(text="Invalid directory path")
+            logging.error(f"Invalid directory path entered: {path}")
+
+    def populate_tree(self, parent, path):
+        """Populate the tree view with directories and all files."""
+        try:
+            for p in sorted(os.listdir(path)):
+                abspath = os.path.join(path, p)
+                if os.path.isdir(abspath):
+                    self.insert_node(parent, p, abspath)
+                else:
+                    self.insert_node(parent, p, abspath)
+        except (PermissionError, FileNotFoundError, OSError) as e:
+            # Log the exception
+            logging.error(f"Error accessing {path}: {e}")
+
+    def exit_app(self):
+        """Exit the application."""
+        logging.info("Exiting application via Exit button.")
+        # Save the current author to config
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        self.destroy()
+      
+    def restart_app(self):
+        """Restart the application."""
+        logging.info("Restarting application.")
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        os.execl(sys.executable, sys.executable, *sys.argv)
+    
+    def on_closing(self):
+        """Handle the window close event."""
+        # Save the current author if selected
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+            logging.info(f"Application is closing via window manager. Last author saved: '{author_name}'")
+        else:
+            logging.info("No author selected upon exit. LastAuthor remains unchanged.")
+
+        # Stop the polling loop and cancel pending callbacks
+        self.polling = False
+        if hasattr(self, 'after_id'):
+            self.after_cancel(self.after_id)
+            logging.info("Polling loop callback canceled.")
+
+        self.undo_stack.clear()  # Clear undo data
+
+        logging.info("Application is closing.")
+        self.destroy()
+
+    def search_tree(self):
+        """Search for a file or directory in the tree view."""
+        query = self.search_entry.get().strip().lower()
+        if not query:
+            messagebox.showwarning("Empty Search", "Please enter a search query.")
+            return
+
+        # Collapse all nodes first
+        for node in self.tree.get_children():
+            self.tree.item(node, open=False)
+            self.collapse_all_children(node)
+
+        # Search and highlight matching nodes
+        matching_nodes = self.find_matching_nodes('', query)
+        if matching_nodes:
+            for node in matching_nodes:
+                # Open parent nodes
+                self.open_parent_nodes(node)
+                # Select and focus the node
+                self.tree.selection_set(node)
+                self.tree.focus(node)
+                self.tree.see(node)
+        else:
+            messagebox.showinfo("No Results", f"No files or directories match '{query}'.")
+
+    def collapse_all_children(self, node):
+        """Recursively collapse all children of a node."""
+        for child in self.tree.get_children(node):
+            self.tree.item(child, open=False)
+            self.collapse_all_children(child)
+
+    def find_matching_nodes(self, parent, query):
+        """Recursively find all nodes that match the query."""
+        matches = []
+        for child in self.tree.get_children(parent):
+            node_text = self.tree.item(child, 'text').lower()
+            if query in node_text:
+                matches.append(child)
+            # Recursively search in children
+            matches.extend(self.find_matching_nodes(child, query))
+        return matches
+
+    def open_parent_nodes(self, node):
+        """Open all parent nodes of a given node."""
+        parent = self.tree.parent(node)
+        if parent:
+            self.tree.item(parent, open=True)
+            self.open_parent_nodes(parent)
+
+    def process_progress_queue(self):
+        """Process progress updates from the queue."""
+        try:
+            while True:
+                message = self.progress_queue.get_nowait()
+                if message[0] == "start":
+                    total = message[1]
+                    self.progress['maximum'] = total
+                    self.progress['value'] = 0
+                    self.progress.start(10)  # Start indeterminate progress
+                    self.status_label.config(text="Operation started...")
+                elif message[0] == "update":
+                    increment = message[1]
+                    self.progress['value'] += increment
+                    self.status_label.config(text=f"Processing... ({self.progress['value']}/{self.progress['maximum']})")
+                elif message[0] == "skipped":
+                    skipped_message = message[1]
+                    messagebox.showinfo("Skipped Files", skipped_message)
+                    logging.info(skipped_message)
+                elif message[0] == "done":
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation completed.")
+                    messagebox.showinfo("Success", "Operation completed successfully.")
+                elif message[0] == "error":
+                    error_message = message[1]
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation encountered errors.")
+                    messagebox.showerror("Error", error_message)
+        except queue.Empty:
+            pass
+        finally:
+            self.after(100, self.process_progress_queue)
+
+    def toggle_log_window(self):
+        """Toggle the visibility of the log window."""
+        if self.log_frame_visible:
+            self.log_frame.pack_forget()
+            self.toggle_log_button.config(text="Show Logs")
+            self.log_frame_visible = False
+        else:
+            self.log_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+            self.toggle_log_button.config(text="Hide Logs")
+            self.log_frame_visible = True   
+
+    def run_rename_images(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images operation in a separate thread."""
+        rename_images(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_folder_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_folder_name operation in a separate thread."""
+        rename_images_by_folder_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_character_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_character_name operation in a separate thread."""
+        rename_images_by_character_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self.character_names,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def update_progress(self, status, data=None):
+        """Callback function to update progress."""
+        if status == "start":
+            total = data
+            self.progress_queue.put(("start", total))
+        elif status == "update":
+            increment = data
+            self.progress_queue.put(("update", increment))
+        elif status == "skipped":
+            skipped_message = data
+            self.progress_queue.put(("skipped", skipped_message))
+        elif status == "done":
+            self.progress_queue.put(("done",))
+        elif status == "error":
+            error_message = data
+            self.progress_queue.put(("error", error_message))
+
+    def on_double_click(self, event):
+        """Handle double-click event on a tree node."""
+        try:
+            item = self.tree.selection()[0]
+            abspath = self.tree.set(item, "abspath")
+            if os.path.isdir(abspath):
+                logging.info(f"Double-clicked on directory: {abspath}")
+                self.prompt_author_name_and_rename(abspath)
+        except IndexError:
+            logging.warning("Double-click event triggered without any selection.")
+
+    def show_context_menu(self, event):
+        """Show the context menu on right-click."""
+        item = self.tree.identify_row(event.y)
+        if item:
+            self.tree.selection_set(item)
+            self.context_menu.post(event.x_root, event.y_root)
+
+    def context_rename_images(self):
+        """Context menu action to rename images."""
+        selected_items = self.tree.selection()
+        
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images.")
+            logging.warning("Rename Images action invoked without any selection.")
+            return
+        
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        
+        if os.path.isdir(abspath):
+            logging.info(f"Initiating rename operation on directory: {abspath}")
+            self.prompt_author_name_and_rename(abspath)
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_folder_name(self):
+        """Context menu action to rename images by folder name."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by folder name.")
+            logging.warning("Rename Images by Folder Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_folder_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Folder Name action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_character_name(self):
+        """Context menu action to rename images by character names."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by character names.")
+            logging.warning("Rename Images by Character Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_character_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Character Name action invoked on a non-directory item: {abspath}")
+
+    def load_path(self):
+        """Load the path entered in the path entry."""
+        path = self.path_entry.get()
+        if os.path.isdir(path):
+            self.tree.delete(*self.tree.get_children())
+            base_name = os.path.basename(path.rstrip(os.sep))
+            if not base_name:
+                # For root directories like 'C:/', os.path.basename may return empty
+                base_name = path
+            self.insert_node('', base_name, path)
+            self.populate_tree('', path)
+            self.status_label.config(text=f"Loaded path: {path}")
+            logging.info(f"Loaded path: {path}")
+        else:
+            messagebox.showerror("Error", "Invalid directory path")
+            self.status_label.config(text="Invalid directory path")
+            logging.error(f"Invalid directory path entered: {path}")
+
+    def populate_tree(self, parent, path):
+        """Populate the tree view with directories and all files."""
+        try:
+            for p in sorted(os.listdir(path)):
+                abspath = os.path.join(path, p)
+                if os.path.isdir(abspath):
+                    self.insert_node(parent, p, abspath)
+                else:
+                    self.insert_node(parent, p, abspath)
+        except (PermissionError, FileNotFoundError, OSError) as e:
+            # Log the exception
+            logging.error(f"Error accessing {path}: {e}")
+
+    def exit_app(self):
+        """Exit the application."""
+        logging.info("Exiting application via Exit button.")
+        # Save the current author to config
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        self.destroy()
+      
+    def restart_app(self):
+        """Restart the application."""
+        logging.info("Restarting application.")
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        os.execl(sys.executable, sys.executable, *sys.argv)
+    
+    def on_closing(self):
+        """Handle the window close event."""
+        # Save the current author if selected
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+            logging.info(f"Application is closing via window manager. Last author saved: '{author_name}'")
+        else:
+            logging.info("No author selected upon exit. LastAuthor remains unchanged.")
+
+        # Stop the polling loop and cancel pending callbacks
+        self.polling = False
+        if hasattr(self, 'after_id'):
+            self.after_cancel(self.after_id)
+            logging.info("Polling loop callback canceled.")
+
+        self.undo_stack.clear()  # Clear undo data
+
+        logging.info("Application is closing.")
+        self.destroy()
+
+    def search_tree(self):
+        """Search for a file or directory in the tree view."""
+        query = self.search_entry.get().strip().lower()
+        if not query:
+            messagebox.showwarning("Empty Search", "Please enter a search query.")
+            return
+
+        # Collapse all nodes first
+        for node in self.tree.get_children():
+            self.tree.item(node, open=False)
+            self.collapse_all_children(node)
+
+        # Search and highlight matching nodes
+        matching_nodes = self.find_matching_nodes('', query)
+        if matching_nodes:
+            for node in matching_nodes:
+                # Open parent nodes
+                self.open_parent_nodes(node)
+                # Select and focus the node
+                self.tree.selection_set(node)
+                self.tree.focus(node)
+                self.tree.see(node)
+        else:
+            messagebox.showinfo("No Results", f"No files or directories match '{query}'.")
+
+    def collapse_all_children(self, node):
+        """Recursively collapse all children of a node."""
+        for child in self.tree.get_children(node):
+            self.tree.item(child, open=False)
+            self.collapse_all_children(child)
+
+    def find_matching_nodes(self, parent, query):
+        """Recursively find all nodes that match the query."""
+        matches = []
+        for child in self.tree.get_children(parent):
+            node_text = self.tree.item(child, 'text').lower()
+            if query in node_text:
+                matches.append(child)
+            # Recursively search in children
+            matches.extend(self.find_matching_nodes(child, query))
+        return matches
+
+    def open_parent_nodes(self, node):
+        """Open all parent nodes of a given node."""
+        parent = self.tree.parent(node)
+        if parent:
+            self.tree.item(parent, open=True)
+            self.open_parent_nodes(parent)
+
+    def process_progress_queue(self):
+        """Process progress updates from the queue."""
+        try:
+            while True:
+                message = self.progress_queue.get_nowait()
+                if message[0] == "start":
+                    total = message[1]
+                    self.progress['maximum'] = total
+                    self.progress['value'] = 0
+                    self.progress.start(10)  # Start indeterminate progress
+                    self.status_label.config(text="Operation started...")
+                elif message[0] == "update":
+                    increment = message[1]
+                    self.progress['value'] += increment
+                    self.status_label.config(text=f"Processing... ({self.progress['value']}/{self.progress['maximum']})")
+                elif message[0] == "skipped":
+                    skipped_message = message[1]
+                    messagebox.showinfo("Skipped Files", skipped_message)
+                    logging.info(skipped_message)
+                elif message[0] == "done":
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation completed.")
+                    messagebox.showinfo("Success", "Operation completed successfully.")
+                elif message[0] == "error":
+                    error_message = message[1]
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation encountered errors.")
+                    messagebox.showerror("Error", error_message)
+        except queue.Empty:
+            pass
+        finally:
+            self.after(100, self.process_progress_queue)
+
+    def toggle_log_window(self):
+        """Toggle the visibility of the log window."""
+        if self.log_frame_visible:
+            self.log_frame.pack_forget()
+            self.toggle_log_button.config(text="Show Logs")
+            self.log_frame_visible = False
+        else:
+            self.log_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+            self.toggle_log_button.config(text="Hide Logs")
+            self.log_frame_visible = True   
+
+    def run_rename_images(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images operation in a separate thread."""
+        rename_images(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_folder_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_folder_name operation in a separate thread."""
+        rename_images_by_folder_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_character_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_character_name operation in a separate thread."""
+        rename_images_by_character_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self.character_names,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def update_progress(self, status, data=None):
+        """Callback function to update progress."""
+        if status == "start":
+            total = data
+            self.progress_queue.put(("start", total))
+        elif status == "update":
+            increment = data
+            self.progress_queue.put(("update", increment))
+        elif status == "skipped":
+            skipped_message = data
+            self.progress_queue.put(("skipped", skipped_message))
+        elif status == "done":
+            self.progress_queue.put(("done",))
+        elif status == "error":
+            error_message = data
+            self.progress_queue.put(("error", error_message))
+
+    def on_double_click(self, event):
+        """Handle double-click event on a tree node."""
+        try:
+            item = self.tree.selection()[0]
+            abspath = self.tree.set(item, "abspath")
+            if os.path.isdir(abspath):
+                logging.info(f"Double-clicked on directory: {abspath}")
+                self.prompt_author_name_and_rename(abspath)
+        except IndexError:
+            logging.warning("Double-click event triggered without any selection.")
+
+    def show_context_menu(self, event):
+        """Show the context menu on right-click."""
+        item = self.tree.identify_row(event.y)
+        if item:
+            self.tree.selection_set(item)
+            self.context_menu.post(event.x_root, event.y_root)
+
+    def context_rename_images(self):
+        """Context menu action to rename images."""
+        selected_items = self.tree.selection()
+        
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images.")
+            logging.warning("Rename Images action invoked without any selection.")
+            return
+        
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        
+        if os.path.isdir(abspath):
+            logging.info(f"Initiating rename operation on directory: {abspath}")
+            self.prompt_author_name_and_rename(abspath)
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_folder_name(self):
+        """Context menu action to rename images by folder name."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by folder name.")
+            logging.warning("Rename Images by Folder Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_folder_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Folder Name action invoked on a non-directory item: {abspath}")
+
+    def context_rename_images_by_character_name(self):
+        """Context menu action to rename images by character names."""
+        selected_items = self.tree.selection()
+        if not selected_items:
+            messagebox.showwarning("No Selection", "Please select a directory to rename images by character names.")
+            logging.warning("Rename Images by Character Name action invoked without any selection.")
+            return
+
+        item = selected_items[0]
+        abspath = self.tree.set(item, "abspath")
+        if os.path.isdir(abspath):
+            author_name = self.get_author_name()
+            if author_name:
+                operation_mode = self.operation_mode.get()
+                destination_folder = None
+
+                if operation_mode in ["Copy", "Move"]:
+                    destination_folder = filedialog.askdirectory(title="Select Destination Folder", parent=self)
+                    if not destination_folder:
+                        messagebox.showwarning("No Destination Selected", "Operation canceled. No destination folder selected.", parent=self)
+                        return
+
+                # Start file operation in a new thread
+                thread = threading.Thread(target=self.run_rename_images_by_character_name, args=(abspath, author_name, operation_mode, destination_folder))
+                thread.start()
+        else:
+            messagebox.showwarning("Invalid Selection", "Selected item is not a directory.")
+            logging.warning(f"Rename Images by Character Name action invoked on a non-directory item: {abspath}")
+
+    def load_path(self):
+        """Load the path entered in the path entry."""
+        path = self.path_entry.get()
+        if os.path.isdir(path):
+            self.tree.delete(*self.tree.get_children())
+            base_name = os.path.basename(path.rstrip(os.sep))
+            if not base_name:
+                # For root directories like 'C:/', os.path.basename may return empty
+                base_name = path
+            self.insert_node('', base_name, path)
+            self.populate_tree('', path)
+            self.status_label.config(text=f"Loaded path: {path}")
+            logging.info(f"Loaded path: {path}")
+        else:
+            messagebox.showerror("Error", "Invalid directory path")
+            self.status_label.config(text="Invalid directory path")
+            logging.error(f"Invalid directory path entered: {path}")
+
+    def populate_tree(self, parent, path):
+        """Populate the tree view with directories and all files."""
+        try:
+            for p in sorted(os.listdir(path)):
+                abspath = os.path.join(path, p)
+                if os.path.isdir(abspath):
+                    self.insert_node(parent, p, abspath)
+                else:
+                    self.insert_node(parent, p, abspath)
+        except (PermissionError, FileNotFoundError, OSError) as e:
+            # Log the exception
+            logging.error(f"Error accessing {path}: {e}")
+
+    def exit_app(self):
+        """Exit the application."""
+        logging.info("Exiting application via Exit button.")
+        # Save the current author to config
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        self.destroy()
+      
+    def restart_app(self):
+        """Restart the application."""
+        logging.info("Restarting application.")
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+        else:
+            logging.info("No author selected to save.")
+        os.execl(sys.executable, sys.executable, *sys.argv)
+    
+    def on_closing(self):
+        """Handle the window close event."""
+        # Save the current author if selected
+        author_name = self.author_combo.get()
+        if author_name:
+            self.save_last_author(author_name)
+            logging.info(f"Application is closing via window manager. Last author saved: '{author_name}'")
+        else:
+            logging.info("No author selected upon exit. LastAuthor remains unchanged.")
+
+        # Stop the polling loop and cancel pending callbacks
+        self.polling = False
+        if hasattr(self, 'after_id'):
+            self.after_cancel(self.after_id)
+            logging.info("Polling loop callback canceled.")
+
+        self.undo_stack.clear()  # Clear undo data
+
+        logging.info("Application is closing.")
+        self.destroy()
+
+    def search_tree(self):
+        """Search for a file or directory in the tree view."""
+        query = self.search_entry.get().strip().lower()
+        if not query:
+            messagebox.showwarning("Empty Search", "Please enter a search query.")
+            return
+
+        # Collapse all nodes first
+        for node in self.tree.get_children():
+            self.tree.item(node, open=False)
+            self.collapse_all_children(node)
+
+        # Search and highlight matching nodes
+        matching_nodes = self.find_matching_nodes('', query)
+        if matching_nodes:
+            for node in matching_nodes:
+                # Open parent nodes
+                self.open_parent_nodes(node)
+                # Select and focus the node
+                self.tree.selection_set(node)
+                self.tree.focus(node)
+                self.tree.see(node)
+        else:
+            messagebox.showinfo("No Results", f"No files or directories match '{query}'.")
+
+    def collapse_all_children(self, node):
+        """Recursively collapse all children of a node."""
+        for child in self.tree.get_children(node):
+            self.tree.item(child, open=False)
+            self.collapse_all_children(child)
+
+    def find_matching_nodes(self, parent, query):
+        """Recursively find all nodes that match the query."""
+        matches = []
+        for child in self.tree.get_children(parent):
+            node_text = self.tree.item(child, 'text').lower()
+            if query in node_text:
+                matches.append(child)
+            # Recursively search in children
+            matches.extend(self.find_matching_nodes(child, query))
+        return matches
+
+    def open_parent_nodes(self, node):
+        """Open all parent nodes of a given node."""
+        parent = self.tree.parent(node)
+        if parent:
+            self.tree.item(parent, open=True)
+            self.open_parent_nodes(parent)
+
+    def process_progress_queue(self):
+        """Process progress updates from the queue."""
+        try:
+            while True:
+                message = self.progress_queue.get_nowait()
+                if message[0] == "start":
+                    total = message[1]
+                    self.progress['maximum'] = total
+                    self.progress['value'] = 0
+                    self.progress.start(10)  # Start indeterminate progress
+                    self.status_label.config(text="Operation started...")
+                elif message[0] == "update":
+                    increment = message[1]
+                    self.progress['value'] += increment
+                    self.status_label.config(text=f"Processing... ({self.progress['value']}/{self.progress['maximum']})")
+                elif message[0] == "skipped":
+                    skipped_message = message[1]
+                    messagebox.showinfo("Skipped Files", skipped_message)
+                    logging.info(skipped_message)
+                elif message[0] == "done":
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation completed.")
+                    messagebox.showinfo("Success", "Operation completed successfully.")
+                elif message[0] == "error":
+                    error_message = message[1]
+                    self.progress.stop()
+                    self.progress['value'] = 0
+                    self.status_label.config(text="Operation encountered errors.")
+                    messagebox.showerror("Error", error_message)
+        except queue.Empty:
+            pass
+        finally:
+            self.after(100, self.process_progress_queue)
+
+    def toggle_log_window(self):
+        """Toggle the visibility of the log window."""
+        if self.log_frame_visible:
+            self.log_frame.pack_forget()
+            self.toggle_log_button.config(text="Show Logs")
+            self.log_frame_visible = False
+        else:
+            self.log_frame.pack(side=tk.BOTTOM, fill=tk.BOTH)
+            self.toggle_log_button.config(text="Hide Logs")
+            self.log_frame_visible = True   
+
+    def run_rename_images(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images operation in a separate thread."""
+        rename_images(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_folder_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_folder_name operation in a separate thread."""
+        rename_images_by_folder_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def run_rename_images_by_character_name(self, folder_path, author_name, operation_mode, destination_folder):
+        """Run the rename_images_by_character_name operation in a separate thread."""
+        rename_images_by_character_name(
+            folder_path,
+            author_name,
+            self.status_label,
+            self.character_names,
+            self,
+            operation_mode,
+            destination_folder,
+            progress_callback=self.update_progress
+        )
+
+    def update_progress(self, status, data=None):
+        """Callback function to update progress."""
+        if status == "start":
+            total = data
+            self.progress_queue.put(("start", total))
+        elif status == "update":
+            increment = data
+            self.progress_queue.put(("update", increment))
+        elif status == "skipped":
+            skipped_message = data
+            self.progress_queue.put(("skipped", skipped_message))
+        elif status == "done":
+            self.progress_queue.put(("done",))
+        elif status == "error":
+            error_message = data
+            self.progress_queue.put(("error", error_message))
 
 class QueueHandler(logging.Handler):
     """Custom logging handler that uses a queue."""
@@ -714,3 +2316,7 @@ class QueueHandler(logging.Handler):
 
     def emit(self, record):
         self.log_queue.put(record)
+
+if __name__ == "__main__":
+    app = App()
+    app.mainloop()
