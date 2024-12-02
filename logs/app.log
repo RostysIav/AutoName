@@ -1312,3 +1312,1132 @@ test_images - Copy by Athazel 1.png
 2024-10-19 14:09:28,522 - INFO - Saved last author to config: Jangunn
 2024-10-19 14:09:54,236 - INFO - Exiting application via Exit button.
 2024-10-19 14:09:54,236 - INFO - Saved last author to config: Jangunn
+2024-11-11 17:46:20,146 - DEBUG - STREAM b'IHDR' 16 13
+2024-11-11 17:46:20,147 - DEBUG - STREAM b'sBIT' 41 4
+2024-11-11 17:46:20,147 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-11-11 17:46:20,147 - DEBUG - STREAM b'pHYs' 57 9
+2024-11-11 17:46:20,148 - DEBUG - STREAM b'tEXt' 78 25
+2024-11-11 17:46:20,148 - DEBUG - STREAM b'IDAT' 115 7552
+2024-11-11 17:46:20,181 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\folder_icon.png'
+2024-11-11 17:46:20,186 - DEBUG - STREAM b'IHDR' 16 13
+2024-11-11 17:46:20,186 - DEBUG - STREAM b'sBIT' 41 4
+2024-11-11 17:46:20,186 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-11-11 17:46:20,186 - DEBUG - STREAM b'pHYs' 57 9
+2024-11-11 17:46:20,186 - DEBUG - STREAM b'tEXt' 78 25
+2024-11-11 17:46:20,186 - DEBUG - STREAM b'IDAT' 115 8192
+2024-11-11 17:46:20,190 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\file_icon.png'
+2024-11-11 17:46:20,200 - INFO - Creating preview pane.
+2024-11-11 17:46:20,200 - INFO - image_label has been successfully created.
+2024-11-11 17:46:20,200 - INFO - image_label has been successfully created.
+2024-11-11 17:46:20,200 - INFO - Loaded last author from config: Jangunn
+2024-11-11 17:46:45,988 - INFO - Saved last author to config: Jangunn
+2024-11-11 17:46:45,988 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-11-11 17:46:45,988 - INFO - Polling loop callback canceled.
+2024-11-11 17:46:45,988 - INFO - Application is closing.
+2024-11-11 17:47:04,828 - DEBUG - STREAM b'IHDR' 16 13
+2024-11-11 17:47:04,829 - DEBUG - STREAM b'sBIT' 41 4
+2024-11-11 17:47:04,829 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-11-11 17:47:04,829 - DEBUG - STREAM b'pHYs' 57 9
+2024-11-11 17:47:04,829 - DEBUG - STREAM b'tEXt' 78 25
+2024-11-11 17:47:04,829 - DEBUG - STREAM b'IDAT' 115 7552
+2024-11-11 17:47:04,837 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\folder_icon.png'
+2024-11-11 17:47:04,837 - DEBUG - STREAM b'IHDR' 16 13
+2024-11-11 17:47:04,837 - DEBUG - STREAM b'sBIT' 41 4
+2024-11-11 17:47:04,837 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-11-11 17:47:04,837 - DEBUG - STREAM b'pHYs' 57 9
+2024-11-11 17:47:04,837 - DEBUG - STREAM b'tEXt' 78 25
+2024-11-11 17:47:04,837 - DEBUG - STREAM b'IDAT' 115 8192
+2024-11-11 17:47:04,841 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\file_icon.png'
+2024-11-11 17:47:04,849 - INFO - Creating preview pane.
+2024-11-11 17:47:04,849 - INFO - image_label has been successfully created.
+2024-11-11 17:47:04,849 - INFO - image_label has been successfully created.
+2024-11-11 17:47:04,849 - INFO - Loaded last author from config: Jangunn
+2024-11-11 17:47:12,245 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-11-11 17:47:13,994 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-11-11 17:47:14,385 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-11-11 17:47:14,547 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-11-11 17:48:29,614 - WARNING - Rename Images action invoked on a non-directory item: C:\1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png
+2024-11-11 17:48:35,733 - WARNING - Rename Images by Folder Name action invoked on a non-directory item: C:\1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png
+2024-11-11 17:48:37,526 - WARNING - Rename Images by Character Name action invoked on a non-directory item: C:\1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png
+2024-11-11 17:48:41,229 - INFO - Saved last author to config: Jangunn
+2024-11-11 17:48:41,231 - INFO - Renamed 'C:\1MYPROG\AutoName\test_images\2B Screenshot 2024-02-15 111725.png' to 'C:\1MYPROG\AutoName\test_images\test_images by Jangunn 1.png'
+2024-11-11 17:48:41,232 - INFO - Renamed 'C:\1MYPROG\AutoName\test_images\Ada DALL·E 2024-10-17 20.33.07 - A depiction of a supernova, the explosive death of a massive star. The image captures the moment of explosion, with the star radiating intensely brigh.webp' to 'C:\1MYPROG\AutoName\test_images\test_images by Jangunn 2.webp'
+2024-11-11 17:48:41,232 - INFO - Renamed 'C:\1MYPROG\AutoName\test_images\Ivy.webp' to 'C:\1MYPROG\AutoName\test_images\test_images by Jangunn 3.webp'
+2024-11-11 17:51:09,293 - INFO - Saved last author to config: Jangunn
+2024-11-11 17:51:09,293 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-11-11 17:51:09,293 - INFO - Polling loop callback canceled.
+2024-11-11 17:51:09,293 - INFO - Application is closing.
+2024-11-30 22:31:18,993 - INFO - Application started. Logging setup complete.
+2024-11-30 22:31:18,994 - INFO - Starting the application...
+2024-11-30 22:31:19,372 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-11-30 22:31:19,372 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-11-30 22:31:19,379 - INFO - Creating preview pane.
+2024-11-30 22:31:19,379 - INFO - image_label has been successfully created.
+2024-11-30 22:31:19,379 - INFO - image_label has been successfully created.
+2024-11-30 22:31:19,379 - INFO - Loaded last author from config: Jangunn
+2024-11-30 22:31:44,601 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done
+2024-11-30 22:31:53,188 - INFO - Double-clicked on directory: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct
+2024-11-30 22:31:53,188 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:32:00,740 - INFO - Double-clicked on directory: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Judy&Panam
+2024-11-30 22:32:00,741 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:32:10,338 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:32:10,340 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Taker 1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 1.png'
+2024-11-30 22:32:10,340 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Taker 2.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 2.png'
+2024-11-30 22:32:10,341 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Taker 3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 3.png'
+2024-11-30 22:32:10,341 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Taker 4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 4.png'
+2024-11-30 22:32:13,457 - INFO - Initiating rename operation on directory: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10
+2024-11-30 22:32:13,457 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:32:18,467 - INFO - Initiating rename operation on directory: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10
+2024-11-30 22:32:18,468 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:32:40,114 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 1 by Sombra.png'
+2024-11-30 22:32:40,114 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 2.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 2 by Sombra.png'
+2024-11-30 22:32:40,115 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 3 by Sombra.png'
+2024-11-30 22:32:40,116 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 4 by Sombra.png'
+2024-11-30 22:35:02,248 - INFO - Data saved to c:\1MYPROG\AutoName\data\data.json
+2024-11-30 22:35:02,248 - INFO - Added new author: Taker
+2024-11-30 22:35:02,248 - INFO - Added author: Taker
+2024-11-30 22:35:25,199 - INFO - Saved last author to config: Taker
+2024-11-30 22:35:25,201 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 1 by Sombra.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra by Taker.png'
+2024-11-30 22:35:25,202 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 2 by Sombra.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra by Taker 1.png'
+2024-11-30 22:35:25,202 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 3 by Sombra.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra by Taker 2.png'
+2024-11-30 22:35:25,203 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra_09.10 by Jangunn 4 by Sombra.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Sombra_09.10\Sombra by Taker 3.png'
+2024-11-30 22:35:49,064 - INFO - Saved last author to config: Taker
+2024-11-30 22:36:05,658 - ERROR - Error during rename by character name: window ".!_querystring6" was deleted before its visibility changed
+2024-11-30 22:36:14,767 - INFO - Saved last author to config: Taker
+2024-11-30 22:36:22,283 - ERROR - Error during rename by character name: window ".!_querystring7" was deleted before its visibility changed
+2024-11-30 22:38:49,953 - INFO - Initiating rename operation on directory: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10
+2024-11-30 22:38:49,954 - INFO - Saved last author to config: Taker
+2024-11-30 22:38:56,135 - INFO - Saved last author to config: Taker
+2024-11-30 22:38:56,136 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 1.png'
+2024-11-30 22:38:56,137 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\13.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 2.png'
+2024-11-30 22:38:56,137 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 3.png'
+2024-11-30 22:38:56,138 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 4.png'
+2024-11-30 22:38:56,138 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\5.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 5.png'
+2024-11-30 22:38:56,139 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\8.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 6.png'
+2024-11-30 22:38:56,139 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\9.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 7.png'
+2024-11-30 22:39:22,305 - INFO - Saved last author to config: Taker
+2024-11-30 22:39:22,305 - INFO - Application is closing via window manager. Last author saved: 'Taker'
+2024-11-30 22:39:22,306 - INFO - Polling loop callback canceled.
+2024-11-30 22:39:22,306 - INFO - Application is closing.
+2024-11-30 22:39:24,422 - INFO - Application started. Logging setup complete.
+2024-11-30 22:39:24,423 - INFO - Starting the application...
+2024-11-30 22:39:24,492 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-11-30 22:39:24,492 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-11-30 22:39:24,497 - INFO - Creating preview pane.
+2024-11-30 22:39:24,497 - INFO - image_label has been successfully created.
+2024-11-30 22:39:24,497 - INFO - image_label has been successfully created.
+2024-11-30 22:39:24,497 - INFO - Loaded last author from config: Jangunn
+2024-11-30 22:39:35,050 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done
+2024-11-30 22:39:44,553 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:39:44,555 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn.png'
+2024-11-30 22:39:44,556 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 2.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 1.png'
+2024-11-30 22:39:44,556 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 2.png'
+2024-11-30 22:39:44,557 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 3.png'
+2024-11-30 22:39:44,558 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 5.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 4.png'
+2024-11-30 22:39:44,558 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 6.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 5.png'
+2024-11-30 22:39:44,559 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Taker 7.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 6.png'
+2024-11-30 22:39:47,771 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:39:47,773 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 1.png'
+2024-11-30 22:39:47,773 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 2.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 2.png'
+2024-11-30 22:39:47,773 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 3.png'
+2024-11-30 22:39:47,775 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 4.png'
+2024-11-30 22:39:47,775 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 5.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 5.png'
+2024-11-30 22:39:47,775 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 6.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 6.png'
+2024-11-30 22:39:47,776 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 7.png'
+2024-11-30 22:39:50,982 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:39:50,983 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 1_1.png'
+2024-11-30 22:39:50,984 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 2.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 2_1.png'
+2024-11-30 22:39:50,984 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 3_1.png'
+2024-11-30 22:39:50,985 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 4_1.png'
+2024-11-30 22:39:50,985 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 5.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 5_1.png'
+2024-11-30 22:39:50,985 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 6.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 6_1.png'
+2024-11-30 22:39:50,986 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 7.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 7_1.png'
+2024-11-30 22:39:53,029 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:39:53,030 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 1_1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn.png'
+2024-11-30 22:39:53,031 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 2_1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 1.png'
+2024-11-30 22:39:53,031 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 3_1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 2.png'
+2024-11-30 22:39:53,032 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 4_1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 3.png'
+2024-11-30 22:39:53,032 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 5_1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 4.png'
+2024-11-30 22:39:53,033 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 6_1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 5.png'
+2024-11-30 22:39:53,033 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer_25.10 by Jangunn 7_1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10\Tracer by Jangunn 6.png'
+2024-11-30 22:39:58,978 - INFO - Initiating rename operation on directory: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-10\Tracer_25.10
+2024-11-30 22:39:58,979 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:40:23,892 - INFO - Saved last author to config: Jangunn
+2024-11-30 22:40:23,893 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\Animations\Brigitte_Riding_PrivateVersion.mp4' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\Animations\Brigitte by Jangunn.mp4'
+2024-11-30 22:40:43,401 - INFO - Saved last author to config: Taker
+2024-11-30 22:40:43,402 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\Animations\Brigitte by Jangunn.mp4' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\Animations\Brigitte by Taker.mp4'
+2024-11-30 22:42:38,427 - INFO - Saved last author to config: Taker
+2024-11-30 22:42:38,427 - INFO - Application is closing via window manager. Last author saved: 'Taker'
+2024-11-30 22:42:38,427 - INFO - Polling loop callback canceled.
+2024-11-30 22:42:38,427 - INFO - Application is closing.
+2024-11-30 22:42:45,866 - INFO - Application started. Logging setup complete.
+2024-11-30 22:42:45,867 - INFO - Starting the application...
+2024-11-30 22:42:45,920 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-11-30 22:42:45,920 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-11-30 22:42:45,925 - INFO - Creating preview pane.
+2024-11-30 22:42:45,925 - INFO - image_label has been successfully created.
+2024-11-30 22:42:45,925 - INFO - image_label has been successfully created.
+2024-11-30 22:42:45,925 - ERROR - Error loading last author from config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-11-30 22:42:54,463 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done
+2024-11-30 22:43:05,483 - ERROR - Error saving last author to config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-11-30 22:43:05,485 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker.png'
+2024-11-30 22:43:05,485 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 2.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 1.png'
+2024-11-30 22:43:05,486 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 2.png'
+2024-11-30 22:43:05,487 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 3.png'
+2024-11-30 22:43:05,488 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 5.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 4.png'
+2024-11-30 22:43:29,449 - ERROR - Error saving last author to config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-11-30 22:43:29,449 - INFO - Application is closing via window manager. Last author saved: 'Taker'
+2024-11-30 22:43:29,449 - INFO - Polling loop callback canceled.
+2024-11-30 22:43:29,449 - INFO - Application is closing.
+2024-11-30 22:43:31,151 - INFO - Application started. Logging setup complete.
+2024-11-30 22:43:31,152 - INFO - Starting the application...
+2024-11-30 22:43:31,203 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-11-30 22:43:31,203 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-11-30 22:43:31,209 - INFO - Creating preview pane.
+2024-11-30 22:43:31,209 - INFO - image_label has been successfully created.
+2024-11-30 22:43:31,209 - INFO - image_label has been successfully created.
+2024-11-30 22:43:31,209 - ERROR - Error loading last author from config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-11-30 22:43:33,807 - INFO - No author selected upon exit. LastAuthor remains unchanged.
+2024-11-30 22:43:33,807 - INFO - Polling loop callback canceled.
+2024-11-30 22:43:33,807 - INFO - Application is closing.
+2024-12-01 12:05:02,526 - INFO - Application started. Logging setup complete.
+2024-12-01 12:05:02,527 - INFO - Starting the application...
+2024-12-01 12:05:02,838 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 12:05:02,839 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 12:07:11,010 - INFO - Application started. Logging setup complete.
+2024-12-01 12:07:11,010 - INFO - Starting the application...
+2024-12-01 12:07:11,060 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 12:07:11,060 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 12:08:29,809 - INFO - Application started. Logging setup complete.
+2024-12-01 12:08:29,809 - INFO - Starting the application...
+2024-12-01 12:08:29,861 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 12:08:29,862 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 12:10:23,823 - INFO - Application started. Logging setup complete.
+2024-12-01 12:10:23,823 - INFO - Starting the application...
+2024-12-01 12:10:23,873 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 12:10:23,873 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 12:10:23,879 - INFO - Creating preview pane.
+2024-12-01 12:10:23,879 - INFO - image_label has been successfully created.
+2024-12-01 12:10:23,879 - INFO - image_label has been successfully created.
+2024-12-01 12:10:23,879 - ERROR - Error loading last author from config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-12-01 12:45:21,700 - ERROR - Invalid directory path entered: 1
+2024-12-01 12:46:28,265 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done
+2024-12-01 12:46:29,564 - INFO - Double-clicked on directory: C:\Users\rostu\Downloads\1\done\Holopointz_2024_June-Oct
+2024-12-01 12:46:29,564 - INFO - No author selected.
+2024-12-01 12:46:33,019 - INFO - Double-clicked on directory: C:\Users\rostu\Downloads\1\done\Holopointz_2024_June-Oct
+2024-12-01 12:46:33,019 - INFO - No author selected.
+2024-12-01 13:00:45,064 - INFO - No author selected upon exit. LastAuthor remains unchanged.
+2024-12-01 13:00:45,072 - INFO - Polling loop callback canceled.
+2024-12-01 13:00:45,073 - INFO - Application is closing.
+2024-12-01 13:00:45,556 - INFO - Application started. Logging setup complete.
+2024-12-01 13:00:45,556 - INFO - Starting the application...
+2024-12-01 13:00:45,632 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 13:00:45,632 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 13:00:45,640 - INFO - Creating preview pane.
+2024-12-01 13:00:45,640 - INFO - image_label has been successfully created.
+2024-12-01 13:00:45,640 - INFO - image_label has been successfully created.
+2024-12-01 13:00:45,640 - ERROR - Error loading last author from config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-12-01 13:00:49,572 - INFO - Application started. Logging setup complete.
+2024-12-01 13:00:49,573 - INFO - Starting the application...
+2024-12-01 13:00:49,633 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 13:00:49,633 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 13:00:49,640 - INFO - Creating preview pane.
+2024-12-01 13:00:49,640 - INFO - image_label has been successfully created.
+2024-12-01 13:00:49,640 - INFO - image_label has been successfully created.
+2024-12-01 13:00:49,640 - ERROR - Error loading last author from config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-12-01 13:00:55,264 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte
+2024-12-01 13:01:08,320 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\
+2024-12-01 13:01:15,460 - INFO - No author selected.
+2024-12-01 13:01:22,900 - ERROR - Error saving last author to config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-12-01 13:01:22,905 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 1.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 5.png'
+2024-12-01 13:01:22,905 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 2.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 1.png'
+2024-12-01 13:01:22,906 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 3.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 2.png'
+2024-12-01 13:01:22,906 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 4.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 3.png'
+2024-12-01 13:01:22,907 - INFO - Renamed 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker.png' to 'C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte\Brigitte by Taker 4.png'
+2024-12-01 13:01:25,612 - ERROR - Error saving last author to config: '_tkinter.tkapp' object has no attribute 'CONFIG_DIR'
+2024-12-01 13:01:25,612 - INFO - Application is closing via window manager. Last author saved: 'Taker'
+2024-12-01 13:01:25,613 - INFO - Polling loop callback canceled.
+2024-12-01 13:01:25,613 - INFO - Application is closing.
+2024-12-01 15:03:30,223 - INFO - Application started. Logging setup complete.
+2024-12-01 15:03:30,224 - INFO - Starting the application...
+2024-12-01 15:03:30,278 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 15:03:30,278 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 15:03:30,283 - INFO - Creating preview pane.
+2024-12-01 15:03:30,283 - INFO - image_label has been successfully created.
+2024-12-01 15:03:30,283 - INFO - image_label has been successfully created.
+2024-12-01 15:03:30,283 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:05:18,349 - INFO - Application started. Logging setup complete.
+2024-12-01 15:05:18,349 - INFO - Starting the application...
+2024-12-01 15:05:18,402 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 15:05:18,402 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 15:05:18,407 - INFO - Creating preview pane.
+2024-12-01 15:05:18,407 - INFO - image_label has been successfully created.
+2024-12-01 15:05:18,407 - INFO - image_label has been successfully created.
+2024-12-01 15:05:18,407 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:05:23,129 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:05:23,129 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:05:23,129 - INFO - Polling loop callback canceled.
+2024-12-01 15:05:23,129 - INFO - Application is closing.
+2024-12-01 15:07:13,210 - INFO - Application started. Logging setup complete.
+2024-12-01 15:07:13,216 - INFO - Starting the application...
+2024-12-01 15:07:13,268 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 15:07:13,268 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 15:07:13,273 - INFO - Creating preview pane.
+2024-12-01 15:07:13,274 - INFO - image_label has been successfully created.
+2024-12-01 15:07:13,274 - INFO - image_label has been successfully created.
+2024-12-01 15:07:13,274 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:07:19,320 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:07:19,320 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:07:19,320 - INFO - Polling loop callback canceled.
+2024-12-01 15:07:19,320 - INFO - Application is closing.
+2024-12-01 15:11:36,568 - INFO - Application started. Logging setup complete.
+2024-12-01 15:11:36,574 - INFO - Starting the application...
+2024-12-01 15:11:36,626 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 15:11:36,626 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 15:11:36,632 - INFO - Creating preview pane.
+2024-12-01 15:11:36,632 - INFO - image_label has been successfully created.
+2024-12-01 15:11:36,632 - INFO - image_label has been successfully created.
+2024-12-01 15:11:36,632 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:11:42,311 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:11:42,311 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:11:42,311 - INFO - Polling loop callback canceled.
+2024-12-01 15:11:42,312 - INFO - Application is closing.
+2024-12-01 15:12:22,600 - INFO - Application started. Logging setup complete.
+2024-12-01 15:12:22,601 - INFO - Starting the application...
+2024-12-01 15:12:22,654 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 15:12:22,654 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 15:12:22,660 - INFO - Creating preview pane.
+2024-12-01 15:12:22,660 - INFO - image_label has been successfully created.
+2024-12-01 15:12:22,660 - INFO - image_label has been successfully created.
+2024-12-01 15:12:22,660 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:12:24,042 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:12:24,042 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:12:24,042 - INFO - Polling loop callback canceled.
+2024-12-01 15:12:24,042 - INFO - Application is closing.
+2024-12-01 15:13:36,892 - INFO - Application started. Logging setup complete.
+2024-12-01 15:13:36,893 - INFO - Starting the application...
+2024-12-01 15:13:36,948 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 15:13:36,948 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 15:13:36,952 - INFO - Creating preview pane.
+2024-12-01 15:13:36,952 - INFO - image_label has been successfully created.
+2024-12-01 15:13:36,952 - INFO - image_label has been successfully created.
+2024-12-01 15:13:36,952 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:13:39,349 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:13:39,349 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:13:39,350 - INFO - Polling loop callback canceled.
+2024-12-01 15:13:39,350 - INFO - Application is closing.
+2024-12-01 15:18:23,569 - INFO - Application started. Logging setup complete.
+2024-12-01 15:18:23,570 - INFO - Logging is set up.
+2024-12-01 15:18:23,570 - INFO - Config file loaded.
+2024-12-01 15:18:23,571 - INFO - Starting the application...
+2024-12-01 15:18:23,622 - ERROR - Failed to load folder icon from 'c:\1MYPROG\AutoName\src\folder_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\folder_icon.png'
+2024-12-01 15:18:23,623 - ERROR - Failed to load file icon from 'c:\1MYPROG\AutoName\src\file_icon.png': [Errno 2] No such file or directory: 'c:\\1MYPROG\\AutoName\\src\\file_icon.png'
+2024-12-01 15:18:23,626 - INFO - Creating preview pane.
+2024-12-01 15:18:23,627 - INFO - image_label has been successfully created.
+2024-12-01 15:18:23,627 - INFO - image_label has been successfully created.
+2024-12-01 15:18:23,627 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:18:25,547 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:18:25,547 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:18:25,547 - INFO - Polling loop callback canceled.
+2024-12-01 15:18:25,547 - INFO - Application is closing.
+2024-12-01 15:20:16,870 - INFO - Application started. Logging setup complete.
+2024-12-01 15:20:16,871 - INFO - Logging is set up.
+2024-12-01 15:20:16,871 - INFO - Config file loaded.
+2024-12-01 15:20:16,872 - INFO - Starting the application...
+2024-12-01 15:20:16,954 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:20:16,954 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:20:16,954 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:20:16,954 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:20:16,954 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:20:16,954 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:20:16,998 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:20:17,004 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:20:17,004 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:20:17,004 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:20:17,004 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:20:17,005 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:20:17,005 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:20:17,009 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:20:17,017 - INFO - Creating preview pane.
+2024-12-01 15:20:17,017 - INFO - image_label has been successfully created.
+2024-12-01 15:20:17,017 - INFO - image_label has been successfully created.
+2024-12-01 15:20:17,017 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:20:37,257 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:20:37,257 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:20:37,257 - INFO - Polling loop callback canceled.
+2024-12-01 15:20:37,257 - INFO - Application is closing.
+2024-12-01 15:25:01,069 - INFO - Application started. Logging setup complete.
+2024-12-01 15:25:01,069 - INFO - Logging is set up.
+2024-12-01 15:25:01,070 - INFO - Config file loaded.
+2024-12-01 15:25:01,070 - INFO - Starting the application...
+2024-12-01 15:25:01,134 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:25:01,134 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:25:01,134 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:25:01,134 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:25:01,134 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:25:01,134 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:25:01,143 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:25:01,143 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:25:01,143 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:25:01,143 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:25:01,143 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:25:01,143 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:25:01,143 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:25:01,147 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:25:01,153 - INFO - Creating preview pane.
+2024-12-01 15:25:01,154 - INFO - image_label has been successfully created.
+2024-12-01 15:25:01,154 - INFO - image_label has been successfully created.
+2024-12-01 15:25:01,154 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:25:09,378 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte
+2024-12-01 15:25:54,730 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:25:54,730 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:25:54,730 - INFO - Polling loop callback canceled.
+2024-12-01 15:25:54,730 - INFO - Application is closing.
+2024-12-01 15:29:50,571 - INFO - Application started. Logging setup complete.
+2024-12-01 15:29:50,571 - INFO - Logging is set up.
+2024-12-01 15:29:50,572 - INFO - Config file loaded.
+2024-12-01 15:29:50,572 - INFO - Starting the application...
+2024-12-01 15:29:50,642 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:29:50,642 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:29:50,642 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:29:50,642 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:29:50,642 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:29:50,642 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:29:50,651 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:29:50,651 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:29:50,651 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:29:50,651 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:29:50,651 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:29:50,651 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:29:50,651 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:29:50,656 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:29:50,663 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:29:50,663 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:29:50,663 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:29:50,663 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:29:50,663 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:29:50,663 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:29:50,668 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:29:50,668 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:29:50,668 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:29:50,668 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:29:50,668 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:29:50,668 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:29:50,668 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:29:50,672 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:30:27,088 - INFO - Application started. Logging setup complete.
+2024-12-01 15:30:27,088 - INFO - Logging is set up.
+2024-12-01 15:30:27,089 - INFO - Config file loaded.
+2024-12-01 15:30:27,089 - INFO - Starting the application...
+2024-12-01 15:30:27,143 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:30:27,143 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:30:27,143 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:30:27,143 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:30:27,143 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:30:27,143 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:30:27,151 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:30:27,151 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:30:27,151 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:30:27,151 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:30:27,151 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:30:27,151 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:30:27,151 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:30:27,155 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:30:27,163 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:30:27,163 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:30:27,163 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:30:27,163 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:30:27,163 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:30:27,163 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:30:27,166 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:30:27,166 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:30:27,166 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:30:27,166 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:30:27,166 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:30:27,167 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:30:27,167 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:30:27,171 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:30:27,178 - INFO - image_label has been successfully created.
+2024-12-01 15:30:27,178 - INFO - image_label has been successfully created.
+2024-12-01 15:30:27,178 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:30:29,158 - INFO - Preview pane displayed.
+2024-12-01 15:30:29,609 - INFO - Preview pane hidden.
+2024-12-01 15:30:30,230 - INFO - Preview pane displayed.
+2024-12-01 15:30:30,801 - INFO - Preview pane hidden.
+2024-12-01 15:30:31,355 - INFO - Preview pane displayed.
+2024-12-01 15:30:37,528 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09\Brigitte
+2024-12-01 15:30:39,216 - INFO - Preview pane hidden.
+2024-12-01 15:30:40,002 - INFO - Preview pane displayed.
+2024-12-01 15:30:45,345 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\
+2024-12-01 15:30:48,097 - INFO - Saved last author to config: Jangunn
+2024-12-01 15:30:48,097 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 15:30:48,097 - INFO - Polling loop callback canceled.
+2024-12-01 15:30:48,097 - INFO - Application is closing.
+2024-12-01 15:34:00,493 - INFO - Application started. Logging setup complete.
+2024-12-01 15:34:00,493 - INFO - Logging is set up.
+2024-12-01 15:34:00,494 - INFO - Config file loaded.
+2024-12-01 15:34:00,494 - INFO - Starting the application...
+2024-12-01 15:34:00,552 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:34:00,552 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:34:00,552 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:34:00,552 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:34:00,552 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:34:00,552 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:34:00,561 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:34:00,561 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:34:00,561 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:34:00,561 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:34:00,562 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:34:00,562 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:34:00,562 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:34:00,566 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:34:00,571 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:34:00,571 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:34:00,571 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:34:00,572 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:34:00,572 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:34:00,572 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 15:34:00,576 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 15:34:00,576 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 15:34:00,576 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 15:34:00,576 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 15:34:00,576 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 15:34:00,576 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 15:34:00,576 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 15:34:00,581 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 15:34:00,590 - INFO - image_label has been successfully created.
+2024-12-01 15:34:00,590 - INFO - image_label has been successfully created.
+2024-12-01 15:34:00,590 - INFO - Loaded last author from config: Jangunn
+2024-12-01 15:34:02,363 - INFO - Preview pane displayed.
+2024-12-01 15:34:02,919 - INFO - Preview pane hidden.
+2024-12-01 15:34:03,976 - INFO - Preview pane displayed.
+2024-12-01 15:34:10,959 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\
+2024-12-01 17:22:41,858 - INFO - Application started. Logging setup complete.
+2024-12-01 17:22:41,858 - INFO - Logging is set up.
+2024-12-01 17:22:41,859 - INFO - Config file loaded.
+2024-12-01 17:22:41,859 - INFO - Starting the application...
+2024-12-01 17:22:41,933 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:22:41,933 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:22:41,933 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:22:41,933 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:22:41,933 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:22:41,933 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 17:22:41,944 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 17:22:41,944 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:22:41,944 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:22:41,944 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:22:41,944 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:22:41,944 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:22:41,944 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 17:22:41,949 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 17:22:41,956 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:22:41,956 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:22:41,956 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:22:41,956 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:22:41,956 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:22:41,956 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 17:22:41,962 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 17:22:41,962 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:22:41,962 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:22:41,962 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:22:41,962 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:22:41,962 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:22:41,962 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 17:22:41,968 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 17:22:41,978 - INFO - image_label has been successfully created.
+2024-12-01 17:22:41,978 - INFO - image_label has been successfully created.
+2024-12-01 17:22:41,978 - INFO - Loaded last author from config: Jangunn
+2024-12-01 17:22:44,281 - INFO - Preview pane displayed.
+2024-12-01 17:22:44,746 - INFO - Preview pane displayed.
+2024-12-01 17:22:45,024 - INFO - Preview pane displayed.
+2024-12-01 17:22:45,346 - INFO - Preview pane displayed.
+2024-12-01 17:22:45,578 - INFO - Preview pane displayed.
+2024-12-01 17:22:45,766 - INFO - Preview pane displayed.
+2024-12-01 17:22:45,939 - INFO - Preview pane displayed.
+2024-12-01 17:22:46,104 - INFO - Preview pane displayed.
+2024-12-01 17:22:46,269 - INFO - Preview pane displayed.
+2024-12-01 17:22:46,433 - INFO - Preview pane displayed.
+2024-12-01 17:22:46,606 - INFO - Preview pane displayed.
+2024-12-01 17:22:46,740 - INFO - Preview pane displayed.
+2024-12-01 17:22:46,883 - INFO - Preview pane displayed.
+2024-12-01 17:22:47,019 - INFO - Preview pane displayed.
+2024-12-01 17:22:47,124 - INFO - Preview pane displayed.
+2024-12-01 17:22:50,034 - INFO - Saved last author to config: Jangunn
+2024-12-01 17:22:50,034 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 17:22:50,034 - INFO - Polling loop callback canceled.
+2024-12-01 17:22:50,035 - INFO - Application is closing.
+2024-12-01 17:23:10,279 - INFO - Application started. Logging setup complete.
+2024-12-01 17:23:10,279 - INFO - Logging is set up.
+2024-12-01 17:23:10,281 - INFO - Config file loaded.
+2024-12-01 17:23:10,281 - INFO - Starting the application...
+2024-12-01 17:23:10,346 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:23:10,347 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:23:10,347 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:23:10,347 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:23:10,347 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:23:10,347 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 17:23:10,355 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 17:23:10,355 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:23:10,355 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:23:10,355 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:23:10,355 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:23:10,355 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:23:10,355 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 17:23:10,360 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 17:23:10,365 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:23:10,365 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:23:10,365 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:23:10,365 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:23:10,366 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:23:10,366 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 17:23:10,370 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 17:23:10,370 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 17:23:10,370 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 17:23:10,370 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 17:23:10,370 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 17:23:10,370 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 17:23:10,370 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 17:23:10,375 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 17:23:10,385 - INFO - image_label has been successfully created.
+2024-12-01 17:23:10,385 - INFO - image_label has been successfully created.
+2024-12-01 17:23:10,385 - INFO - Loaded last author from config: Jangunn
+2024-12-01 17:23:11,214 - INFO - Preview pane displayed.
+2024-12-01 17:23:11,560 - INFO - Preview pane hidden.
+2024-12-01 17:23:12,143 - INFO - Preview pane displayed.
+2024-12-01 17:23:12,572 - INFO - Preview pane hidden.
+2024-12-01 17:23:12,977 - INFO - Preview pane displayed.
+2024-12-01 17:23:13,683 - INFO - Saved last author to config: Jangunn
+2024-12-01 17:23:13,683 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 17:23:13,683 - INFO - Polling loop callback canceled.
+2024-12-01 17:23:13,683 - INFO - Application is closing.
+2024-12-01 19:33:36,412 - INFO - Application started. Logging setup complete.
+2024-12-01 19:33:36,413 - INFO - Logging is set up.
+2024-12-01 19:33:36,418 - INFO - Config file loaded.
+2024-12-01 19:33:36,418 - INFO - Starting the application...
+2024-12-01 19:33:36,750 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:33:36,750 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:33:36,750 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:33:36,750 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:33:36,750 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:33:36,750 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:33:36,784 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:33:36,789 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:33:36,789 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:33:36,789 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:33:36,789 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:33:36,789 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:33:36,789 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:33:36,793 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:33:36,799 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:33:36,799 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:33:36,799 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:33:36,799 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:33:36,799 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:33:36,799 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:33:36,804 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:33:36,805 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:33:36,805 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:33:36,805 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:33:36,805 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:33:36,805 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:33:36,805 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:33:36,809 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:33:36,817 - INFO - image_label has been successfully created.
+2024-12-01 19:33:36,818 - INFO - image_label has been successfully created.
+2024-12-01 19:33:36,818 - INFO - Loaded last author from config: Jangunn
+2024-12-01 19:33:43,226 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09
+2024-12-01 19:33:45,889 - INFO - Preview pane displayed.
+2024-12-01 19:33:46,280 - INFO - Preview pane hidden.
+2024-12-01 19:33:46,767 - INFO - Preview pane displayed.
+2024-12-01 19:33:54,823 - INFO - Preview pane hidden.
+2024-12-01 19:33:55,618 - INFO - Preview pane displayed.
+2024-12-01 19:33:56,127 - INFO - Preview pane hidden.
+2024-12-01 19:33:56,644 - INFO - Preview pane displayed.
+2024-12-01 19:33:58,160 - INFO - Preview pane hidden.
+2024-12-01 19:33:58,984 - INFO - Preview pane displayed.
+2024-12-01 19:34:03,739 - INFO - Saved last author to config: Jangunn
+2024-12-01 19:34:03,739 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 19:34:03,739 - INFO - Polling loop callback canceled.
+2024-12-01 19:34:03,739 - INFO - Application is closing.
+2024-12-01 19:35:28,909 - INFO - Application started. Logging setup complete.
+2024-12-01 19:35:28,909 - INFO - Logging is set up.
+2024-12-01 19:35:28,910 - INFO - Config file loaded.
+2024-12-01 19:35:28,910 - INFO - Starting the application...
+2024-12-01 19:35:28,967 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:35:28,967 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:35:28,968 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:35:28,968 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:35:28,968 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:35:28,968 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:35:28,975 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:35:28,976 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:35:28,976 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:35:28,976 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:35:28,976 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:35:28,976 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:35:28,976 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:35:28,980 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:35:28,987 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:35:28,987 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:35:28,987 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:35:28,987 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:35:28,987 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:35:28,987 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:35:28,991 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:35:28,991 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:35:28,991 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:35:28,991 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:35:28,991 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:35:28,991 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:35:28,991 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:35:28,996 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:35:29,002 - INFO - image_label has been successfully created.
+2024-12-01 19:35:29,003 - INFO - image_label has been successfully created.
+2024-12-01 19:35:29,003 - INFO - Loaded last author from config: Jangunn
+2024-12-01 19:35:33,163 - INFO - Loaded path: C:\Users\rostu\Downloads\1\done\Taker_2024_Sep-Oct\Taker\2024-09
+2024-12-01 19:35:37,212 - INFO - Preview pane displayed.
+2024-12-01 19:35:37,633 - INFO - Preview pane hidden.
+2024-12-01 19:35:38,727 - INFO - Preview pane displayed.
+2024-12-01 19:36:29,990 - INFO - Saved last author to config: Jangunn
+2024-12-01 19:36:29,991 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 19:36:29,991 - INFO - Polling loop callback canceled.
+2024-12-01 19:36:29,991 - INFO - Application is closing.
+2024-12-01 19:46:46,455 - INFO - Application started. Logging setup complete.
+2024-12-01 19:46:46,456 - INFO - Logging is set up.
+2024-12-01 19:46:46,461 - INFO - Config file loaded.
+2024-12-01 19:46:46,461 - INFO - Starting the application...
+2024-12-01 19:46:46,530 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:46:46,530 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:46:46,530 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:46:46,530 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:46:46,530 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:46:46,530 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:46:46,539 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:46:46,540 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:46:46,540 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:46:46,540 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:46:46,540 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:46:46,540 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:46:46,540 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:46:46,544 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:46:46,550 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:46:46,550 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:46:46,550 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:46:46,550 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:46:46,550 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:46:46,550 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:46:46,555 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:46:46,555 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:46:46,555 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:46:46,555 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:46:46,555 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:46:46,556 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:46:46,556 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:46:46,560 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:46:46,568 - INFO - image_label has been successfully created.
+2024-12-01 19:46:46,569 - INFO - image_label has been successfully created.
+2024-12-01 19:46:46,569 - INFO - Loaded last author from config: Jangunn
+2024-12-01 19:46:48,115 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-12-01 19:47:01,238 - INFO - Preview pane displayed.
+2024-12-01 19:47:01,569 - INFO - Preview pane hidden.
+2024-12-01 19:47:02,078 - INFO - Preview pane displayed.
+2024-12-01 19:47:09,570 - INFO - Saved last author to config: Jangunn
+2024-12-01 19:47:09,570 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 19:47:09,572 - INFO - Polling loop callback canceled.
+2024-12-01 19:47:09,572 - INFO - Application is closing.
+2024-12-01 19:47:33,510 - INFO - Application started. Logging setup complete.
+2024-12-01 19:47:33,510 - INFO - Logging is set up.
+2024-12-01 19:47:33,511 - INFO - Config file loaded.
+2024-12-01 19:47:33,511 - INFO - Starting the application...
+2024-12-01 19:47:33,572 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:33,572 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:33,572 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:33,572 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:33,572 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:33,572 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:47:33,580 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:47:33,581 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:33,581 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:33,581 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:33,581 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:33,581 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:33,581 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:47:33,584 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:47:33,590 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:33,590 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:33,590 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:33,590 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:33,590 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:33,590 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:47:33,596 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:47:33,596 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:33,596 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:33,596 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:33,596 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:33,596 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:33,596 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:47:33,600 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:47:33,608 - INFO - image_label has been successfully created.
+2024-12-01 19:47:33,608 - INFO - image_label has been successfully created.
+2024-12-01 19:47:33,608 - INFO - Loaded last author from config: Jangunn
+2024-12-01 19:47:36,647 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-12-01 19:47:39,894 - INFO - Restarting application.
+2024-12-01 19:47:39,894 - INFO - Saved last author to config: Jangunn
+2024-12-01 19:47:40,007 - INFO - Application started. Logging setup complete.
+2024-12-01 19:47:40,008 - INFO - Logging is set up.
+2024-12-01 19:47:40,009 - INFO - Config file loaded.
+2024-12-01 19:47:40,009 - INFO - Starting the application...
+2024-12-01 19:47:40,066 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:40,066 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:40,066 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:40,067 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:40,067 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:40,067 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:47:40,075 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:47:40,075 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:40,075 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:40,075 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:40,075 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:40,075 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:40,075 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:47:40,079 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:47:40,086 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:40,086 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:40,086 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:40,086 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:40,086 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:40,086 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:47:40,090 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:47:40,091 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:40,091 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:40,091 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:40,091 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:40,091 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:40,091 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:47:40,094 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:47:40,102 - INFO - image_label has been successfully created.
+2024-12-01 19:47:40,103 - INFO - image_label has been successfully created.
+2024-12-01 19:47:40,103 - INFO - Loaded last author from config: Jangunn
+2024-12-01 19:47:43,561 - INFO - Preview pane displayed.
+2024-12-01 19:47:43,944 - INFO - Preview pane hidden.
+2024-12-01 19:47:44,552 - INFO - Preview pane displayed.
+2024-12-01 19:47:48,848 - INFO - Exiting application via Exit button.
+2024-12-01 19:47:48,849 - INFO - Saved last author to config: Jangunn
+2024-12-01 19:47:52,102 - INFO - Application started. Logging setup complete.
+2024-12-01 19:47:52,102 - INFO - Logging is set up.
+2024-12-01 19:47:52,103 - INFO - Config file loaded.
+2024-12-01 19:47:52,103 - INFO - Starting the application...
+2024-12-01 19:47:52,159 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:52,159 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:52,159 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:52,159 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:52,159 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:52,159 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:47:52,167 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:47:52,167 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:52,167 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:52,167 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:52,167 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:52,167 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:52,167 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:47:52,172 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:47:52,179 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:52,179 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:52,179 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:52,179 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:52,179 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:52,179 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 19:47:52,183 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 19:47:52,184 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 19:47:52,184 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 19:47:52,184 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 19:47:52,184 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 19:47:52,184 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 19:47:52,184 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 19:47:52,188 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 19:47:52,194 - INFO - image_label has been successfully created.
+2024-12-01 19:47:52,195 - INFO - image_label has been successfully created.
+2024-12-01 19:47:52,195 - INFO - Loaded last author from config: Jangunn
+2024-12-01 19:47:56,523 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-12-01 19:48:04,509 - INFO - Saved last author to config: Jangunn
+2024-12-01 19:48:04,509 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 19:48:04,509 - INFO - Polling loop callback canceled.
+2024-12-01 19:48:04,509 - INFO - Application is closing.
+2024-12-01 20:14:46,409 - INFO - Application started. Logging setup complete.
+2024-12-01 20:14:46,409 - INFO - Logging is set up.
+2024-12-01 20:14:46,410 - INFO - Config file loaded.
+2024-12-01 20:14:46,410 - INFO - Starting the application...
+2024-12-01 20:14:46,475 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:14:46,475 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:14:46,475 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:14:46,475 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:14:46,476 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:14:46,476 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:14:46,483 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:14:46,483 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:14:46,484 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:14:46,484 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:14:46,484 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:14:46,484 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:14:46,484 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:14:46,489 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:20:10,523 - INFO - Application started. Logging setup complete.
+2024-12-01 20:20:10,523 - INFO - Logging is set up.
+2024-12-01 20:20:10,523 - INFO - Config file loaded.
+2024-12-01 20:20:10,523 - INFO - Starting the application...
+2024-12-01 20:20:10,585 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:20:10,585 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:20:10,585 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:20:10,585 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:20:10,585 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:20:10,585 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:20:10,593 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:20:10,593 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:20:10,594 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:20:10,594 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:20:10,594 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:20:10,594 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:20:10,594 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:20:10,598 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:20:10,602 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:20:10,602 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:20:10,602 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:20:10,602 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:20:10,602 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:20:10,603 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:20:10,607 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:20:10,607 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:20:10,607 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:20:10,607 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:20:10,607 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:20:10,607 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:20:10,607 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:20:10,611 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:29:30,142 - INFO - Application started. Logging setup complete.
+2024-12-01 20:29:30,143 - INFO - Logging is set up.
+2024-12-01 20:29:30,143 - INFO - Config file loaded.
+2024-12-01 20:29:30,143 - INFO - Starting the application...
+2024-12-01 20:29:30,225 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:29:30,226 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:29:30,226 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:29:30,226 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:29:30,226 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:29:30,226 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:29:30,234 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:29:30,234 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:29:30,234 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:29:30,234 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:29:30,234 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:29:30,234 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:29:30,234 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:29:30,238 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:29:30,243 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:29:30,243 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:29:30,243 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:29:30,243 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:29:30,243 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:29:30,244 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:29:30,248 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:29:30,248 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:29:30,248 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:29:30,248 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:29:30,248 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:29:30,248 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:29:30,248 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:29:30,252 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:32:06,173 - INFO - Application started. Logging setup complete.
+2024-12-01 20:32:06,173 - INFO - Logging is set up.
+2024-12-01 20:32:06,173 - INFO - Config file loaded.
+2024-12-01 20:32:06,174 - INFO - Starting the application...
+2024-12-01 20:32:06,234 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:32:06,234 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:32:06,234 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:32:06,234 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:32:06,234 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:32:06,234 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:32:06,243 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:32:06,244 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:32:06,244 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:32:06,244 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:32:06,244 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:32:06,244 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:32:06,244 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:32:06,248 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:32:06,253 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:32:06,253 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:32:06,253 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:32:06,253 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:32:06,253 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:32:06,253 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:32:06,257 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:32:06,258 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:32:06,258 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:32:06,258 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:32:06,258 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:32:06,258 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:32:06,258 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:32:06,263 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:35:06,114 - INFO - Application started. Logging setup complete.
+2024-12-01 20:35:06,114 - INFO - Logging is set up.
+2024-12-01 20:35:06,114 - INFO - Config file loaded.
+2024-12-01 20:35:06,115 - INFO - Starting the application...
+2024-12-01 20:35:06,175 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:35:06,175 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:35:06,175 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:35:06,175 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:35:06,175 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:35:06,175 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:35:06,184 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:35:06,185 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:35:06,185 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:35:06,185 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:35:06,185 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:35:06,185 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:35:06,185 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:35:06,189 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:35:06,194 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:35:06,194 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:35:06,194 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:35:06,194 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:35:06,194 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:35:06,194 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:35:06,198 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:35:06,198 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:35:06,198 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:35:06,198 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:35:06,198 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:35:06,198 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:35:06,198 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:35:06,203 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:35:06,214 - INFO - Creating preview pane.
+2024-12-01 20:35:06,214 - INFO - image_label has been successfully created.
+2024-12-01 20:35:06,214 - INFO - image_label has been successfully created.
+2024-12-01 20:35:06,215 - INFO - Loaded last author from config: Jangunn
+2024-12-01 20:35:55,851 - INFO - Loaded path: C:\1MYPROG\AutoName
+2024-12-01 20:36:04,925 - INFO - Loaded path: C:\1MYPROG\AutoName\.Todo
+2024-12-01 20:36:09,416 - INFO - Preview pane displayed.
+2024-12-01 20:36:09,905 - INFO - Preview pane hidden.
+2024-12-01 20:36:10,444 - INFO - Preview pane displayed.
+2024-12-01 20:37:29,951 - INFO - Application started. Logging setup complete.
+2024-12-01 20:37:29,951 - INFO - Logging is set up.
+2024-12-01 20:37:29,952 - INFO - Config file loaded.
+2024-12-01 20:37:29,952 - INFO - Starting the application...
+2024-12-01 20:37:30,012 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:37:30,012 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:37:30,012 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:37:30,012 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:37:30,012 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:37:30,013 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:37:30,019 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:37:30,021 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:37:30,021 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:37:30,021 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:37:30,021 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:37:30,021 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:37:30,021 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:37:30,025 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:37:30,029 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:37:30,029 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:37:30,029 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:37:30,029 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:37:30,029 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:37:30,029 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:37:30,032 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:37:30,033 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:37:30,033 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:37:30,033 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:37:30,033 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:37:30,033 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:37:30,033 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:37:30,037 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:37:30,045 - INFO - Creating preview pane.
+2024-12-01 20:37:30,045 - INFO - image_label has been successfully created.
+2024-12-01 20:37:30,045 - INFO - image_label has been successfully created.
+2024-12-01 20:37:30,045 - INFO - Loaded last author from config: Jangunn
+2024-12-01 20:37:39,450 - INFO - Loaded path: C:\1MYPROG\AutoName\.Todo
+2024-12-01 20:37:41,744 - INFO - Preview pane displayed.
+2024-12-01 20:37:42,173 - INFO - Preview pane hidden.
+2024-12-01 20:37:42,576 - INFO - Preview pane displayed.
+2024-12-01 20:37:57,780 - INFO - Saved last author to config: Jangunn
+2024-12-01 20:37:57,780 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 20:37:57,780 - INFO - Polling loop callback canceled.
+2024-12-01 20:37:57,780 - INFO - Application is closing.
+2024-12-01 20:39:49,908 - INFO - Application started. Logging setup complete.
+2024-12-01 20:39:49,908 - INFO - Logging is set up.
+2024-12-01 20:39:49,909 - INFO - Config file loaded.
+2024-12-01 20:39:49,909 - INFO - Starting the application...
+2024-12-01 20:39:49,969 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:39:49,969 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:39:49,969 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:39:49,969 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:39:49,969 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:39:49,969 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:39:49,978 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:39:49,978 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:39:49,978 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:39:49,978 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:39:49,978 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:39:49,978 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:39:49,978 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:39:49,983 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:39:49,987 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:39:49,987 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:39:49,987 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:39:49,987 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:39:49,987 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:39:49,987 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:39:49,991 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:39:49,991 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:39:49,991 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:39:49,991 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:39:49,991 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:39:49,991 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:39:49,991 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:39:49,995 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:39:50,002 - INFO - Creating preview pane.
+2024-12-01 20:39:50,003 - INFO - image_label has been successfully created.
+2024-12-01 20:39:50,003 - INFO - image_label has been successfully created.
+2024-12-01 20:39:50,003 - INFO - Loaded last author from config: Jangunn
+2024-12-01 20:39:58,382 - INFO - Saved last author to config: Jangunn
+2024-12-01 20:39:58,382 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 20:39:58,382 - INFO - Polling loop callback canceled.
+2024-12-01 20:39:58,382 - INFO - Application is closing.
+2024-12-01 20:40:09,236 - INFO - Application started. Logging setup complete.
+2024-12-01 20:40:09,236 - INFO - Logging is set up.
+2024-12-01 20:40:09,237 - INFO - Config file loaded.
+2024-12-01 20:40:09,237 - INFO - Starting the application...
+2024-12-01 20:40:09,295 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:40:09,295 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:40:09,295 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:40:09,295 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:40:09,295 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:40:09,295 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:40:09,303 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:40:09,303 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:40:09,303 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:40:09,303 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:40:09,303 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:40:09,303 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:40:09,303 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:40:09,307 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:40:09,314 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:40:09,314 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:40:09,314 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:40:09,314 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:40:09,314 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:40:09,314 - DEBUG - STREAM b'IDAT' 115 7552
+2024-12-01 20:40:09,319 - INFO - Loaded folder icon from 'c:\1MYPROG\AutoName\src\assets\folder_icon.png'
+2024-12-01 20:40:09,319 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-01 20:40:09,319 - DEBUG - STREAM b'sBIT' 41 4
+2024-12-01 20:40:09,319 - DEBUG - b'sBIT' 41 4 (unknown)
+2024-12-01 20:40:09,319 - DEBUG - STREAM b'pHYs' 57 9
+2024-12-01 20:40:09,319 - DEBUG - STREAM b'tEXt' 78 25
+2024-12-01 20:40:09,319 - DEBUG - STREAM b'IDAT' 115 8192
+2024-12-01 20:40:09,323 - INFO - Loaded file icon from 'c:\1MYPROG\AutoName\src\assets\file_icon.png'
+2024-12-01 20:40:09,331 - INFO - image_label has been successfully created.
+2024-12-01 20:40:09,332 - INFO - image_label has been successfully created.
+2024-12-01 20:40:09,332 - INFO - Loaded last author from config: Jangunn
+2024-12-01 20:40:12,969 - INFO - Saved last author to config: Jangunn
+2024-12-01 20:40:12,969 - INFO - Application is closing via window manager. Last author saved: 'Jangunn'
+2024-12-01 20:40:12,969 - INFO - Polling loop callback canceled.
+2024-12-01 20:40:12,969 - INFO - Application is closing.

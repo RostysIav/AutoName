@@ -1,13 +1,7 @@
-+ Fix the numarable at the end, insted of (1) do just 1
-+when opening a app have a author auto selected to the one used previously
-+when exit through the red cross then save aouthr to config
-+ check is "by [author]" present before renaming, because when regular renaming it is just appending the author name to the file name 
-+make the char name same format and usage as author name or vise versa
-+implemet that thing from the previous tries where if files does not much, there is an option to add new Char name to the dictionry by selecting the name from new File name
-+Add Undo Functionality
-+some times when creating a new author the name of that author is the actual folder name ( so maybe a constructor from which can  select an author name - similar to the adding a new char name)
-+Enable users to add, remove, or edit character names within the application.
-+Enable users to add, remove, or edit Authors within the application.
+- tumbnail preview
+- implement unzip with in prog
+
+- create a rename mask where user can create own renaming patterns 
 
 - maybe separate the code even more (creating) ( remanimg by name or author)
 
@@ -20,6 +14,18 @@
 -better UI
   -improve to look like file explorer 
   -make better status bar
+
+-haveing a constracr [Char] & {if 2nd char} [Action:cathegory] [by author] [order num]
+
+-if pressed rename but athor not selected or name of char is not selected then prompt to user to chose from name os the pholder and automaticly selecet a new author (make sure to check is exist alredy)
+
+-when press add author then prompt new filed to fill in
+
+-also when searching for author filter the name by what has been entered
+
+-after operation succes refresh file explorer but with cirrent dictionaly
+
+- when rename after the folder name (which is usualy the name if the char) name sure that the name of the folder chekcs is it contains any char name, if yes then any leave the name of the chr to be as a main work for the remanimg 
 
 MORE CONVINIENT 
 1. Implement Drag-and-Drop Functionality
@@ -279,3 +285,14 @@ Implementation:
 
 Use APIs provided by the cloud services (ensure compliance with their terms).
 Handle authentication and file operations accordingly.
+
++ Fix the numarable at the end, insted of (1) do just 1
++when opening a app have a author auto selected to the one used previously
++when exit through the red cross then save aouthr to config
++ check is "by [author]" present before renaming, because when regular renaming it is just appending the author name to the file name 
++make the char name same format and usage as author name or vise versa
++implemet that thing from the previous tries where if files does not much, there is an option to add new Char name to the dictionry by selecting the name from new File name
++Add Undo Functionality
++some times when creating a new author the name of that author is the actual folder name ( so maybe a constructor from which can  select an author name - similar to the adding a new char name)
++Enable users to add, remove, or edit character names within the application.
++Enable users to add, remove, or edit Authors within the application.

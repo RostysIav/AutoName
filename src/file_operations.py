@@ -9,6 +9,7 @@ from data_storage import save_data, load_data  # Ensure load_data is also import
 from PIL import Image, ImageTk
 import defusedxml.ElementTree as ET  # Ensure defusedxml is installed
 
+
 def rename_images(folder_path, author_name, status_label, app, operation_mode="Rename", destination_folder=None, progress_callback=None):
     """
     Rename, copy, or move images and save the original filenames for undo functionality.
@@ -220,7 +221,10 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                     matched_word = word  # Preserve original capitalization
                     extension = os.path.splitext(filename)[1]
                     author_part = f' by {author_name}' if author_name else ''
-                    base_new_filename = f'{matched_word}{author_part}{extension}'
+                    
+                    # Always append a number to the filename
+                    counter = 1
+                    base_new_filename = f'{matched_word}{author_part} {counter}{extension}'
 
                     # Determine the new file path
                     if operation_mode in ["Copy", "Move"] and destination_folder:
@@ -229,15 +233,13 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                         new_file = os.path.join(folder_path, base_new_filename)
 
                     # Handle duplicate filenames
-                    counter = 1
                     while os.path.exists(new_file):
-                        name_without_ext = os.path.splitext(base_new_filename)[0]
-                        new_filename = f'{name_without_ext} {counter}{extension}'
-                        if operation_mode in ["Copy", "Move"] and destination_folder:
-                            new_file = os.path.join(destination_folder, new_filename)
-                        else:
-                            new_file = os.path.join(folder_path, new_filename)
                         counter += 1
+                        base_new_filename = f'{matched_word}{author_part} {counter}{extension}'
+                        if operation_mode in ["Copy", "Move"] and destination_folder:
+                            new_file = os.path.join(destination_folder, base_new_filename)
+                        else:
+                            new_file = os.path.join(folder_path, base_new_filename)
 
                     # Perform the selected operation
                     try:
@@ -297,7 +299,10 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                     # Proceed to rename the file with the new character name
                     extension = os.path.splitext(filename)[1]
                     author_part = f' by {author_name}' if author_name else ''
-                    base_new_filename = f'{new_character_name}{author_part}{extension}'
+                    
+                    # Always append a number to the filename
+                    counter = 1
+                    base_new_filename = f'{new_character_name}{author_part} {counter}{extension}'
 
                     # Determine the new file path
                     if operation_mode in ["Copy", "Move"] and destination_folder:
@@ -306,15 +311,13 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
                         new_file = os.path.join(folder_path, base_new_filename)
 
                     # Handle duplicate filenames
-                    counter = 1
                     while os.path.exists(new_file):
-                        name_without_ext = os.path.splitext(base_new_filename)[0]
-                        new_filename = f'{name_without_ext} {counter}{extension}'
-                        if operation_mode in ["Copy", "Move"] and destination_folder:
-                            new_file = os.path.join(destination_folder, new_filename)
-                        else:
-                            new_file = os.path.join(folder_path, new_filename)
                         counter += 1
+                        base_new_filename = f'{new_character_name}{author_part} {counter}{extension}'
+                        if operation_mode in ["Copy", "Move"] and destination_folder:
+                            new_file = os.path.join(destination_folder, base_new_filename)
+                        else:
+                            new_file = os.path.join(folder_path, base_new_filename)
 
                     # Perform the selected operation
                     try:
@@ -355,3 +358,45 @@ def rename_images_by_character_name(folder_path, author_name, status_label, char
         logging.error(f"Error during {operation_mode.lower()} by character name: {e}")
         if progress_callback:
             progress_callback("error", f"An error occurred: {e}")
+
+
+def prompt_author_choice(folder_name, preselected_author):
+    """
+    Prompt the user to choose how to select the author name for renaming files.
+
+    Args:
+        folder_name (str): The name of the folder.
+        preselected_author (str): The currently selected author in the UI.
+
+    Returns:
+        str: The chosen author name, or None if canceled.
+    """
+    options = [
+        f"Use '{preselected_author}' (preselected author)",
+        f"Use a word from the folder name '{folder_name}'"
+    ]
+
+    choice = simpledialog.askstring(
+        "Choose Author Name",
+        "Select how you want to rename the files:\n"
+        "1. Use the preselected author.\n"
+        f"2. Use a word from the folder name '{folder_name}'.",
+    )
+
+    if choice == "1":
+        return preselected_author
+    elif choice == "2":
+        # Split the folder name into words and let the user select one
+        folder_words = folder_name.split("_")
+        selected_word = simpledialog.askstring(
+            "Choose Folder Word",
+            f"Available words: {', '.join(folder_words)}\nType one word to use as the author:",
+        )
+        if selected_word in folder_words:
+            return selected_word
+        else:
+            messagebox.showerror("Invalid Choice", "You didn't select a valid word from the folder name.")
+            return None
+    else:
+        messagebox.showwarning("Canceled", "Operation canceled by the user.")
+        return None
