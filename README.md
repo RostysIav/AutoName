@@ -3,8 +3,6 @@
 AutoName is a lightweight desktop tool for **renaming files in bulk** with simple, repeatable rules.  
 Built in **Python** with a **Tkinter** GUI.
 
-> Goal: make common rename workflows fast, predictable, and non-destructive (preview first).
-
 ---
 
 ## Features
@@ -19,17 +17,6 @@ Built in **Python** with a **Tkinter** GUI.
 - **Preview** changes before applying
 - Works offline
 
-> Adjust this list to match what your current version supports.
-
----
-
-## Screenshots
-
-Add screenshots to a folder like `docs/` and link them here:
-
-```md
-![AutoName UI](docs/screenshot.png)
-```
 
 ---
 
@@ -146,12 +133,6 @@ PRs are welcome. If you’re adding a feature:
 
 ---
 
-## License
-
-Pick a license and add a `LICENSE` file (MIT is a common default).
-
----
-
 ## Author
 
-Created by **Rostyslav** (aka **Ross Havryshkiv**).
+Created by **Rostyslav** (aka **Rostyslav Havryshkiv**).
